@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VPN-Compare — OneStop VPN Comparison site</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --bg:       #050d18;
+    --bg2:      #081424;
+    --bg3:      #0c1c30;
+    --cyan:     #38bdf8;
+    --magenta:  #0ea5e9;
+    --gold:     #7dd3fc;
+    --text:     #cbd8e8;
+    --muted:    #4a6a84;
+    --border:   #0f2840;
+    --glow-c:   0 0 14px #38bdf877;
+    --glow-m:   0 0 14px #0ea5e977;
+    --radius:   4px;
+    --mono:     'Share Tech Mono', monospace;
+    --display:  'Rajdhani', sans-serif;
+    --body:     'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── SCANLINE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(56,189,248,.012) 2px, rgba(56,189,248,.012) 4px);
+    pointer-events: none;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+    background: rgba(5,13,24,.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: var(--display);
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--cyan);
+    text-shadow: var(--glow-c);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--magenta); text-shadow: var(--glow-m); }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .85rem; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+  nav a:hover { color: var(--cyan); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan) !important;
+    padding: .3rem .9rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: var(--display);
+    font-size: .85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background .2s, box-shadow .2s;
+  }
+  .nav-cta:hover { background: var(--cyan); color: var(--bg) !important; box-shadow: var(--glow-c); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(56,189,248,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px),
+      repeating-linear-gradient(
+        -30deg,
+        transparent,
+        transparent 28px,
+        rgba(14,165,233,.018) 28px,
+        rgba(14,165,233,.018) 30px
+      );
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    animation: gridScroll 20s linear infinite;
+  }
+  @keyframes gridScroll { to { background-position: 0 40px; } }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(56,189,248,.10), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-badge {
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--cyan);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: .8;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  .hero h1 .c { color: var(--cyan); text-shadow: var(--glow-c); }
+  .hero h1 .m { color: var(--magenta); text-shadow: var(--glow-m); }
+  .hero-sub {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--bg);
+    border: none;
+    padding: .75rem 2rem;
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow .2s, transform .1s;
+    text-transform: uppercase;
+  }
+  .btn-primary:hover { box-shadow: var(--glow-c); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: .75rem 2rem;
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color .2s, color .2s;
+    text-transform: uppercase;
+  }
+  .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+  }
+  .stat { text-align: center; }
+  .stat-val { font-family: var(--display); font-size: 2rem; font-weight: 700; color: var(--cyan); }
+  .stat-label { font-family: var(--mono); font-size: .7rem; color: var(--muted); letter-spacing: 2px; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--magenta);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: .6rem;
+  }
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #e8f0f8;
+  }
+  h2 .accent { color: var(--cyan); }
+  .section-intro { color: var(--muted); max-width: 520px; margin-bottom: 3rem; line-height: 1.7; }
+
+  /* ── QUIZ ── */
+  #quiz { background: var(--bg2); }
+  .quiz-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .quiz-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  }
+  .quiz-progress { margin-bottom: 1.5rem; }
+  .quiz-progress-bar {
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: .5rem;
+  }
+  .quiz-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    transition: width .4s ease;
+  }
+  .quiz-step { font-family: var(--mono); font-size: .7rem; color: var(--muted); }
+  .quiz-q { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: #e8f0f8; }
+  .quiz-options { display: grid; gap: .75rem; }
+  .quiz-opt {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .9rem 1.2rem;
+    color: var(--text);
+    font-family: var(--body);
+    font-size: .95rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color .2s, background .2s, color .2s;
+    display: flex; align-items: center; gap: .75rem;
+  }
+  .quiz-opt:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,255,231,.04); }
+  .quiz-opt.selected { border-color: var(--cyan); background: rgba(0,255,231,.1); color: var(--cyan); }
+  .quiz-opt-icon { font-size: 1.1rem; }
+  .quiz-nav { display: flex; justify-content: space-between; margin-top: 1.5rem; gap: 1rem; }
+  .quiz-result { display: none; }
+  .quiz-result.visible { display: block; }
+  .result-header { font-family: var(--display); font-size: 1.1rem; color: var(--muted); margin-bottom: .5rem; }
+  .result-pick {
+    font-family: var(--display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cyan);
+    text-shadow: var(--glow-c);
+    margin-bottom: 1rem;
+  }
+  .result-why { color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+
+  /* ── COMPARISON TABLE ── */
+  #compare { background: var(--bg); }
+  .vpn-table-wrap { overflow-x: auto; }
+  .vpn-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+    min-width: 700px;
+  }
+  .vpn-table thead th {
+    font-family: var(--display);
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: .75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .vpn-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .vpn-table tr:hover td { background: rgba(0,255,231,.03); }
+  .vpn-name { font-family: var(--display); font-weight: 700; font-size: 1rem; color: #e8f0f8; }
+  .vpn-tag {
+    display: inline-block;
+    font-family: var(--mono); font-size: .65rem;
+    padding: .15rem .5rem;
+    border-radius: 2px;
+    margin-left: .5rem;
+    letter-spacing: 1px;
+  }
+  .tag-best { background: rgba(0,255,231,.15); color: var(--cyan); border: 1px solid var(--cyan); }
+  .tag-biz  { background: rgba(255,45,120,.15); color: var(--magenta); border: 1px solid var(--magenta); }
+  .tag-budget { background: rgba(245,196,0,.15); color: var(--gold); border: 1px solid var(--gold); }
+  .check { color: var(--cyan); font-size: 1rem; }
+  .cross { color: var(--muted); font-size: 1rem; }
+  .price { font-family: var(--mono); color: var(--cyan); }
+  .rating { display: flex; gap: 2px; align-items: center; }
+  .star { color: var(--gold); font-size: .85rem; }
+  .star.off { color: var(--border); }
+  .aff-btn {
+    display: inline-block;
+    padding: .4rem 1rem;
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-family: var(--mono);
+    font-size: .75rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background .2s, box-shadow .2s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .aff-btn:hover { background: var(--cyan); color: var(--bg); box-shadow: var(--glow-c); }
+  .aff-btn.mag { border-color: var(--magenta); color: var(--magenta); }
+  .aff-btn.mag:hover { background: var(--magenta); color: #fff; box-shadow: var(--glow-m); }
+
+  /* ── CALCULATOR ── */
+  #calculator { background: var(--bg2); }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  @media(max-width:700px){ .calc-grid { grid-template-columns: 1fr; } }
+  .calc-panel {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+  }
+  .calc-panel::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+  .calc-panel h3 { font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--cyan); }
+  .calc-row { margin-bottom: 1.2rem; }
+  .calc-label { font-family: var(--mono); font-size: .72rem; color: var(--muted); letter-spacing: 1px; margin-bottom: .4rem; display: block; }
+  .calc-input {
+    width: 100%;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: .95rem;
+    padding: .6rem .9rem;
+    outline: none;
+    transition: border-color .2s;
+    appearance: none;
+  }
+  .calc-input:focus { border-color: var(--cyan); }
+  select.calc-input { cursor: pointer; }
+  .calc-result-panel {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+  }
+  .calc-result-panel::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--magenta), transparent);
+  }
+  .calc-result-panel h3 { font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--magenta); }
+  .result-metric { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .result-metric:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .result-metric-label { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+  .result-metric-val { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--cyan); }
+  .result-metric-val.red { color: var(--magenta); }
+  .result-metric-val.gold { color: var(--gold); }
+  .calc-note { font-family: var(--mono); font-size: .7rem; color: var(--muted); margin-top: 1.5rem; line-height: 1.6; }
+
+  /* ── CARDS ── */
+  #featured { background: var(--bg); }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .vpn-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .25s, transform .2s;
+  }
+  .vpn-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .vpn-card.highlight { border-color: var(--cyan); }
+  .vpn-card.highlight::after {
+    content: 'TOP PICK';
+    position: absolute; top: 12px; right: -28px;
+    background: var(--cyan); color: var(--bg);
+    font-family: var(--mono); font-size: .6rem;
+    padding: .2rem 2.5rem;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .card-logo { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: #e8f0f8; margin-bottom: .4rem; }
+  .card-tagline { font-size: .85rem; color: var(--muted); margin-bottom: 1.2rem; }
+  .card-price { font-family: var(--mono); font-size: 1.1rem; color: var(--cyan); margin-bottom: 1.2rem; }
+  .card-price span { font-size: .75rem; color: var(--muted); }
+  .card-features { list-style: none; margin-bottom: 1.5rem; }
+  .card-features li { font-size: .88rem; color: var(--text); padding: .3rem 0; display: flex; align-items: center; gap: .5rem; }
+  .card-features li::before { content: '▸'; color: var(--cyan); font-size: .7rem; flex-shrink: 0; }
+  .card-footer { display: flex; gap: .75rem; align-items: center; }
+  .card-score { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+  .card-score span { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+  .footer-logo { font-family: var(--display); font-size: 1.2rem; color: var(--cyan); letter-spacing: 2px; margin-bottom: .5rem; }
+  .footer-legal { font-family: var(--mono); font-size: .7rem; color: var(--muted); line-height: 1.8; max-width: 600px; margin: 0 auto 1.5rem; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--muted); font-size: .8rem; text-decoration: none; letter-spacing: 1px; }
+  .footer-links a:hover { color: var(--cyan); }
+
+  /* ── FILTER BAR ── */
+  .filter-bar { display: flex; gap: .75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: .4rem 1rem;
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: 1px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .filter-btn:hover, .filter-btn.active { border-color: var(--cyan); color: var(--cyan); background: rgba(0,255,231,.05); }
+
+  /* ── SCROLL FADE ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* ── TOOLTIP ── */
+  [data-tip] { position: relative; cursor: help; }
+  [data-tip]::after {
+    content: attr(data-tip);
+    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text); font-family: var(--mono); font-size: .7rem;
+    padding: .4rem .8rem; border-radius: var(--radius);
+    white-space: nowrap; pointer-events: none;
+    opacity: 0; transition: opacity .2s;
+    z-index: 10;
+  }
+  [data-tip]:hover::after { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">VPN-Compare<span></span></a>
+  <ul>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#featured">Top Picks</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <p class="hero-badge">// VPN Intelligence Hub — 2026</p>
+  <h1>
+    Find the VPN<br>
+    <span class="c">Built for</span> <span class="m">Your Threat Model</span>
+  </h1>
+  <p class="hero-sub">Unbiased comparisons, an AI-powered quiz, and a live cost calculator for individuals and enterprise teams. Cut through the noise — know exactly what you're buying.</p>
+  <div class="hero-btns">
+    <a href="#quiz" class="btn-primary">Take the Quiz</a>
+    <a href="#compare" class="btn-secondary">View Full Comparison</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-val">23</div><div class="stat-label">VPNs Tested</div></div>
+  <div class="stat"><div class="stat-val">180+</div><div class="stat-label">Speed Tests Run</div></div>
+  <div class="stat"><div class="stat-val">4.9M</div><div class="stat-label">Users Helped</div></div>
+  <div class="stat"><div class="stat-val">0</div><div class="stat-label">Paid Placements</div></div>
+</div>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="container">
+    <p class="section-label">// Step 01</p>
+    <h2>Find Your <span class="accent">Perfect Match</span></h2>
+    <p class="section-intro">Answer 5 quick questions. We'll match you to the VPN that fits your actual use case — not the one with the biggest ad budget.</p>
+
+    <div class="quiz-card">
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill" style="width:20%"></div></div>
+        <span class="quiz-step" id="quizStep">Question 1 of 5</span>
+      </div>
+
+      <div id="quizBody">
+        <p class="quiz-q" id="quizQ"></p>
+        <div class="quiz-options" id="quizOpts"></div>
+        <div class="quiz-nav">
+          <button class="btn-secondary" id="quizBack" onclick="quizBack()" style="display:none">← Back</button>
+          <button class="btn-primary" id="quizNext" onclick="quizNext()">Next →</button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quizResult">
+        <p class="result-header">Based on your answers, we recommend:</p>
+        <p class="result-pick" id="resultName"></p>
+        <p class="result-why" id="resultWhy"></p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a id="resultLink" href="#" class="btn-primary" target="_blank">Get Deal →</a>
+          <button class="btn-secondary" onclick="quizReset()">Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="compare">
+  <div class="container">
+    <p class="section-label">// Step 02</p>
+    <h2>Full <span class="accent">Comparison</span></h2>
+    <p class="section-intro">Every spec that matters, side by side. Click column headers to sort. Affiliate disclosure: links below may earn us a commission at no cost to you.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterTable('all',this)">All VPNs</button>
+      <button class="filter-btn" onclick="filterTable('personal',this)">Personal</button>
+      <button class="filter-btn" onclick="filterTable('business',this)">Business</button>
+      <button class="filter-btn" onclick="filterTable('budget',this)">Budget</button>
+    </div>
+    <div class="vpn-table-wrap">
+      <table class="vpn-table" id="vpnTable">
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th data-tip="Avg across 50 servers">Speed</th>
+            <th>Servers</th>
+            <th>No-Log Audit</th>
+            <th>Kill Switch</th>
+            <th>Devices</th>
+            <th data-tip="Per month, billed annually">Price/mo</th>
+            <th>Score</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="vpnTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div class="container">
+    <p class="section-label">// Step 03</p>
+    <h2>Cost <span class="accent">Calculator</span></h2>
+    <p class="section-intro">Compare real-world total cost across plan lengths and team sizes. Know before you commit.</p>
+    <div class="calc-grid">
+      <div class="calc-panel">
+        <h3>⚙ Parameters</h3>
+        <div class="calc-row">
+          <label class="calc-label">User Type</label>
+          <select class="calc-input" id="calcType" onchange="calcUpdate()">
+            <option value="personal">Personal / Individual</option>
+            <option value="business">Business / Team</option>
+          </select>
+        </div>
+        <div class="calc-row" id="teamRow" style="display:none">
+          <label class="calc-label">Team Size (users)</label>
+          <input type="number" class="calc-input" id="calcTeam" value="10" min="1" max="500" oninput="calcUpdate()">
+        </div>
+        <div class="calc-row">
+          <label class="calc-label">VPN Provider</label>
+          <select class="calc-input" id="calcVPN" onchange="calcUpdate()"></select>
+        </div>
+        <div class="calc-row">
+          <label class="calc-label">Billing Plan</label>
+          <select class="calc-input" id="calcPlan" onchange="calcUpdate()">
+            <option value="monthly">Monthly</option>
+            <option value="annual" selected>Annual (save ~45%)</option>
+            <option value="biennial">2-Year (save ~60%)</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label class="calc-label">Devices per User</label>
+          <input type="number" class="calc-input" id="calcDevices" value="3" min="1" max="10" oninput="calcUpdate()">
+        </div>
+      </div>
+
+      <div class="calc-result-panel">
+        <h3>📊 Cost Breakdown</h3>
+        <div class="result-metric">
+          <span class="result-metric-label">Monthly Cost</span>
+          <span class="result-metric-val" id="rMonthly">—</span>
+        </div>
+        <div class="result-metric">
+          <span class="result-metric-label">Annual Cost</span>
+          <span class="result-metric-val" id="rAnnual">—</span>
+        </div>
+        <div class="result-metric">
+          <span class="result-metric-label">2-Year Total</span>
+          <span class="result-metric-val" id="rBiennial">—</span>
+        </div>
+        <div class="result-metric">
+          <span class="result-metric-label">Savings vs Monthly</span>
+          <span class="result-metric-val gold" id="rSavings">—</span>
+        </div>
+        <div class="result-metric">
+          <span class="result-metric-label">Per User / Per Year</span>
+          <span class="result-metric-val" id="rPerUser">—</span>
+        </div>
+        <p class="calc-note">* Prices are estimates based on publicly listed rates. Business plans may vary — contact provider for volume discounts. Affiliate links earn us a commission at no extra cost to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CARDS -->
+<section id="featured">
+  <div class="container">
+    <p class="section-label">// Step 04</p>
+    <h2>Editor's <span class="accent">Top Picks</span></h2>
+    <p class="section-intro">Handpicked after independent testing — best overall, best for business, and best budget option.</p>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">VPN-Compare</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Affiliate Disclosure</a>
+    <a href="#">Methodology</a>
+    <a href="#">Contact</a>
+  </div>
+  <p class="footer-legal">
+    VPN-Compare is reader-supported. When you buy through links on our site, we may earn an affiliate commission — this never influences our ratings or recommendations. All VPNs are independently tested. Prices shown are estimates and may change; verify on the provider's site before purchasing. © 2026 VPN-Compare. All rights reserved.
+  </p>
+</footer>
+
+<script>
+/* ── DATA ── */
+const vpns = [
+  { id:'nordvpn',  name:'NordVPN',      speed:'⚡ 780 Mbps', servers:'6400+', nolog:true,  kill:true,  devices:10, monthly:11.99, annual:3.99,  biennial:2.99, score:9.4, tags:['personal','best'], tagLabel:'BEST OVERALL', card:true, highlight:true, tagClass:'tag-best', tagline:'Fastest speeds + proven no-log audits', features:['Threat Protection AI','Double VPN','Onion over VPN','Meshnet (LAN tunnels)'], link:'https://nordvpn.com' },
+  { id:'express',  name:'ExpressVPN',   speed:'⚡ 740 Mbps', servers:'3200+', nolog:true,  kill:true,  devices:8,  monthly:12.95, annual:6.67,  biennial:4.99, score:9.1, tags:['personal'],          tagLabel:'',            card:true, highlight:false, tagClass:'', tagline:'Most reliable worldwide server network', features:['Lightway Protocol','Split tunneling','TrustedServer RAM-only','24/7 Live Chat'], link:'https://expressvpn.com' },
+  { id:'cyberghost',name:'CyberGhost',  speed:'🔵 680 Mbps', servers:'9200+', nolog:true,  kill:true,  devices:7,  monthly:12.99, annual:2.19,  biennial:2.03, score:8.6, tags:['personal','budget'], tagLabel:'BEST VALUE',   card:true, highlight:false, tagClass:'tag-budget', tagline:'Most servers + unbeatable price per year', features:['Streaming-optimized servers','Torrent servers','NoSpy Servers','45-day money back'], link:'https://cyberghost.com' },
+  { id:'mullvad',  name:'Mullvad VPN',  speed:'🔵 650 Mbps', servers:'700+',  nolog:true,  kill:true,  devices:5,  monthly:5.50,  annual:5.50,  biennial:5.50, score:9.0, tags:['personal'],          tagLabel:'',            card:false, highlight:false, tagClass:'', tagline:'', features:[], link:'https://mullvad.net' },
+  { id:'proton',   name:'Proton VPN',   speed:'🔵 620 Mbps', servers:'2900+', nolog:true,  kill:true,  devices:10, monthly:9.99,  annual:4.99,  biennial:3.99, score:8.9, tags:['personal'],          tagLabel:'',            card:false, highlight:false, tagClass:'', tagline:'', features:[], link:'https://protonvpn.com' },
+  { id:'pure',     name:'Pure VPN',     speed:'🔵 580 Mbps', servers:'700+',  nolog:true,  kill:true,  devices:999,monthly:8.00,  annual:6.00,  biennial:5.00, score:9.2, tags:['business'],          tagLabel:'BEST BIZ',    card:true, highlight:false, tagClass:'tag-biz', tagline:'Built for teams: zero-trust SASE architecture', features:['Team management console','SSO / SAML 2.0','Split tunneling per app','Dedicated IP per team'], link:'https://perimeter81.com' },
+  { id:'nordlayer',name:'NordLayer',    speed:'⚡ 600 Mbps', servers:'500+',  nolog:true,  kill:true,  devices:999,monthly:9.00,  annual:7.00,  biennial:6.00, score:8.8, tags:['business'],          tagLabel:'',            card:false, highlight:false, tagClass:'', tagline:'', features:[], link:'https://nordlayer.com' },
+  { id:'ivpn',     name:'IVPN',         speed:'🔵 500 Mbps', servers:'80+',   nolog:true,  kill:true,  devices:7,  monthly:6.00,  annual:5.00,  biennial:4.50, score:8.3, tags:['personal'],          tagLabel:'',            card:false, highlight:false, tagClass:'', tagline:'', features:[], link:'https://ivpn.net' },
+];
+
+/* ── TABLE ── */
+let currentFilter = 'all';
+function starsHTML(s) {
+  const full = Math.round(s/2); let h='';
+  for(let i=0;i<5;i++) h+=`<span class="star${i<full?'':' off'}">★</span>`;
+  return h;
+}
+function renderTable(filter){
+  const tbody = document.getElementById('vpnTableBody');
+  tbody.innerHTML = '';
+  vpns.filter(v => filter==='all' || v.tags.includes(filter)).forEach(v=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><span class="vpn-name">${v.name}</span>${v.tagLabel?`<span class="vpn-tag ${v.tagClass}">${v.tagLabel}</span>`:''}</td>
+      <td>${v.speed}</td>
+      <td>${v.servers}</td>
+      <td>${v.nolog?'<span class="check">✔ Audited</span>':'<span class="cross">✘</span>'}</td>
+      <td>${v.kill?'<span class="check">✔</span>':'<span class="cross">✘</span>'}</td>
+      <td>${v.devices>=999?'Unlimited':v.devices}</td>
+      <td><span class="price">$${v.annual}/mo</span></td>
+      <td><div class="rating">${starsHTML(v.score)} <span style="font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-left:.3rem">${v.score}</span></div></td>
+      <td><a href="${v.link}" target="_blank" class="aff-btn ${v.tags.includes('business')?'mag':''}">Get Deal →</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+function filterTable(f, btn){
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable(f);
+}
+renderTable('all');
+
+/* ── CARDS ── */
+function renderCards(){
+  const g = document.getElementById('cardsGrid');
+  vpns.filter(v=>v.card).forEach(v=>{
+    const d = document.createElement('div');
+    d.className = 'vpn-card fade-in' + (v.highlight?' highlight':'');
+    d.innerHTML = `
+      <p class="card-logo">${v.name}</p>
+      <p class="card-tagline">${v.tagline}</p>
+      <p class="card-price">$${v.annual}<span>/mo — billed annually</span></p>
+      <ul class="card-features">${v.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <div class="card-footer">
+        <a href="${v.link}" target="_blank" class="aff-btn ${v.tags.includes('business')?'mag':''}">Get Deal →</a>
+        <span class="card-score">Score: <span>${v.score}/10</span></span>
+      </div>
+    `;
+    g.appendChild(d);
+  });
+}
+renderCards();
+
+/* ── CALCULATOR ── */
+const calcVPNSel = document.getElementById('calcVPN');
+vpns.forEach(v=>{ const o=document.createElement('option'); o.value=v.id; o.textContent=v.name; calcVPNSel.appendChild(o); });
+
+document.getElementById('calcType').addEventListener('change', function(){
+  document.getElementById('teamRow').style.display = this.value==='business'?'block':'none';
+  calcUpdate();
+});
+
+function calcUpdate(){
+  const type = document.getElementById('calcType').value;
+  const users = type==='business' ? parseInt(document.getElementById('calcTeam').value)||1 : 1;
+  const vid = document.getElementById('calcVPN').value;
+  const plan = document.getElementById('calcPlan').value;
+  const v = vpns.find(x=>x.id===vid);
+  if(!v) return;
+  const mo = v.monthly * users;
+  const an = v.annual * 12 * users;
+  const bi = v.biennial * 24 * users;
+  const savings = (mo * 12 - an);
+  document.getElementById('rMonthly').textContent = '$'+mo.toFixed(2)+'/mo';
+  document.getElementById('rAnnual').textContent = '$'+an.toFixed(2)+'/yr';
+  document.getElementById('rBiennial').textContent = '$'+bi.toFixed(2)+' total';
+  document.getElementById('rSavings').textContent = '$'+savings.toFixed(2)+' vs monthly';
+  document.getElementById('rPerUser').textContent = '$'+(an/users).toFixed(2)+'/user/yr';
+}
+calcUpdate();
+
+/* ── QUIZ ── */
+const questions = [
+  { q: "Who will be using this VPN?", opts:[{t:'👤 Just me',v:'personal'},{t:'👨‍👩‍👧 My family (2-5 people)',v:'family'},{t:'🏢 My business / team',v:'business'},{t:'🔐 Privacy-focused power user',v:'privacy'}] },
+  { q: "What's your primary use case?", opts:[{t:'🎬 Streaming (Netflix, HBO, etc.)',v:'streaming'},{t:'🔒 Privacy / anonymity',v:'privacy'},{t:'🌍 Secure remote work',v:'remote'},{t:'💾 P2P / Torrenting',v:'torrent'}] },
+  { q: "How important is connection speed?", opts:[{t:'⚡ Critical — I game or do video calls',v:'speed_high'},{t:'📶 Important but not critical',v:'speed_mid'},{t:'🐢 Speed is secondary to privacy',v:'speed_low'}] },
+  { q: "What's your budget per month?", opts:[{t:'💰 Under $3/mo',v:'budget_low'},{t:'💳 $3–$7/mo',v:'budget_mid'},{t:'🏦 $7+ for premium',v:'budget_high'}] },
+  { q: "What devices do you need covered?", opts:[{t:'📱 1-3 (phone + laptop)',v:'few'},{t:'💻 4-6 (full household)',v:'some'},{t:'🖥️ 7+ or unlimited',v:'many'}] },
+];
+
+let qIdx = 0, answers = [];
+
+function quizRender(){
+  const q = questions[qIdx];
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizStep').textContent = `Question ${qIdx+1} of ${questions.length}`;
+  document.getElementById('quizFill').style.width = `${((qIdx+1)/questions.length)*100}%`;
+  document.getElementById('quizBack').style.display = qIdx>0?'':'none';
+  document.getElementById('quizNext').textContent = qIdx===questions.length-1?'See Results →':'Next →';
+  const opts = document.getElementById('quizOpts'); opts.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const b = document.createElement('button');
+    b.className='quiz-opt'+(answers[qIdx]===o.v?' selected':'');
+    b.innerHTML=`<span class="quiz-opt-icon">${o.t.split(' ')[0]}</span>${o.t.split(' ').slice(1).join(' ')}`;
+    b.onclick=()=>{ answers[qIdx]=o.v; document.querySelectorAll('.quiz-opt').forEach(x=>x.classList.remove('selected')); b.classList.add('selected'); };
+    opts.appendChild(b);
+  });
+}
+
+function quizNext(){
+  if(!answers[qIdx]) { document.getElementById('quizOpts').style.outline='1px solid var(--magenta)'; setTimeout(()=>document.getElementById('quizOpts').style.outline='',600); return; }
+  if(qIdx<questions.length-1){ qIdx++; quizRender(); }
+  else { quizShowResult(); }
+}
+function quizBack(){ if(qIdx>0){ qIdx--; quizRender(); } }
+function quizReset(){ qIdx=0; answers=[]; document.getElementById('quizBody').style.display=''; document.getElementById('quizResult').classList.remove('visible'); quizRender(); }
+
+function quizShowResult(){
+  const isBiz = answers[0]==='business';
+  const isPrivacy = answers[1]==='privacy'||answers[0]==='privacy';
+  const isBudget = answers[3]==='budget_low';
+  const isSpeed = answers[2]==='speed_high';
+  let pick, why, link;
+  if(isBiz){ pick='Pure VPN'; why='With a business or team setup, you need centralized management, SSO, and dedicated IPs. Pure VPN\'s zero-trust SASE architecture was built specifically for distributed teams.'; link='https://https://www.purevpn.com.com'; }
+  else if(isPrivacy){ pick='Mullvad VPN'; why='You care about privacy above all. Mullvad accepts cash and crypto, requires no email to sign up, and has passed independent audits. Zero-logging, zero-drama.'; link='https://mullvad.net'; }
+  else if(isBudget){ pick='CyberGhost'; why='At under $2.50/mo on their 2-year plan, CyberGhost delivers 9,200+ servers, streaming-optimized profiles, and a 45-day money-back guarantee. Unmatched value.'; link='https://cyberghost.com'; }
+  else if(isSpeed){ pick='NordVPN'; why='Your priority is speed — NordVPN tops our 780 Mbps average across 6,400+ servers. NordLynx (WireGuard) protocol keeps latency minimal for gaming and calls.'; link='https://nordvpn.com'; }
+  else { pick='NordVPN'; why='For most users, NordVPN hits the sweet spot: blazing speed, independently audited no-log policy, Threat Protection, and a generous 10-device limit. Our top overall pick.'; link='https://nordvpn.com'; }
+  document.getElementById('resultName').textContent = pick;
+  document.getElementById('resultWhy').textContent = why;
+  document.getElementById('resultLink').href = link;
+  document.getElementById('quizBody').style.display='none';
+  document.getElementById('quizResult').classList.add('visible');
+}
+
+quizRender();
+
+/* ── SCROLL FADE ── */
+const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
