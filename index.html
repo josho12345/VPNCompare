@@ -506,15 +506,32 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .newsletter-legal{font-family:var(--mono);font-size:.68rem;color:#2e5a72;line-height:1.7}
 .newsletter-success{display:none;background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.3);border-radius:var(--radius);padding:1rem;color:#86efac;font-family:var(--mono);font-size:.85rem;margin-top:1rem}
 
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
+/* ── CAROUSEL ── */
+.carousel-outer{position:relative;display:flex;align-items:center;gap:.75rem;max-width:1020px;margin:0 auto}
+.carousel-track-wrap{overflow:hidden;flex:1;border-radius:var(--radius2)}
+.carousel-track{display:flex;gap:1rem;transition:transform .4s cubic-bezier(.4,0,.2,1);will-change:transform}
+.carousel-track .review-card{min-width:0;flex:0 0 calc((100% - 2rem) / 3);box-sizing:border-box}
+@media(max-width:720px){.carousel-track .review-card{flex:0 0 calc((100% - 1rem) / 2)}}
+@media(max-width:480px){.carousel-track .review-card{flex:0 0 100%}}
+.carousel-btn{background:#fff;border:2px solid var(--border);border-radius:50%;width:42px;height:42px;font-size:1.1rem;cursor:pointer;color:var(--cyan);flex-shrink:0;transition:all .2s;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);box-shadow:var(--glow)}
+.carousel-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .2s;padding:0}
+.carousel-dot.active{background:var(--cyan);width:22px;border-radius:4px}
+
+/* ── PROMO CODE ── */
+.promo-badge{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,rgba(3,105,161,.12),rgba(14,165,233,.08));border:2px solid var(--cyan);border-radius:var(--radius);padding:.5rem 1rem;font-family:var(--mono);font-size:.82rem;color:var(--navy);margin:.8rem 0;cursor:pointer;transition:all .2s;user-select:all}
+.promo-badge:hover{background:rgba(3,105,161,.18);box-shadow:var(--glow)}
+.promo-code{font-weight:700;color:var(--cyan);font-size:.95rem;letter-spacing:2px}
+.promo-copy{font-size:.7rem;color:var(--muted)}
+.promo-copied{color:var(--green)!important;display:none}
+
+/* ── RESPONSIVE — hamburger always available under 1280px ── */
+@media(max-width:1280px){
   nav ul{display:none}
-  .hamburger{display:flex}
-  .footer-top{gap:1.5rem}
-  .review-layout{grid-template-columns:1fr}
-  .review-buy-box{position:static}
+  .hamburger{display:flex!important}
 }
-@media(min-width:1025px){
+@media(min-width:1281px){
   .hamburger{display:none!important}
   nav ul{display:flex!important}
   #mobileMenu{display:none!important}
@@ -584,7 +601,7 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
   <div class="hero-trust">
     <span class="trust-pill">✓ 12 VPNs Independently Tested</span>
     <span class="trust-pill">✓ 180+ Speed Tests Conducted</span>
-    <span class="trust-pill">✓ Zero Paid Rankings</span>
+    <span class="trust-pill">✓ Scores Never Influenced by Sponsors</span>
     <span class="trust-pill">✓ Updated Monthly</span>
     <span class="trust-pill">✓ Prices Verified June 2026</span>
   </div>
@@ -599,18 +616,18 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 <div class="stats-bar">
   <div class="stat"><div class="stat-val">12</div><div class="stat-label">VPNs Reviewed</div></div>
   <div class="stat"><div class="stat-val">180+</div><div class="stat-label">Speed Tests</div></div>
-  <div class="stat"><div class="stat-val">6</div><div class="stat-label">Countries Covered</div></div>
-  <div class="stat"><div class="stat-val">£0</div><div class="stat-label">Paid Rankings</div></div>
+  <div class="stat"><div class="stat-val">78+</div><div class="stat-label">Countries Covered</div></div>
+  <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Independent Scores</div></div>
   <div class="stat"><div class="stat-val">2026</div><div class="stat-label">Data Verified</div></div>
 </div>
 
 <!-- SPONSOR BANNER (Ad Slot 1) -->
 <div class="container" style="padding:2rem 2rem 0">
   <div class="sponsor-banner fade-in">
-    <span class="sponsor-label">Sponsored</span>
+    <span class="sponsor-label">Paid Placement</span>
     <div class="sponsor-content">
-      <p class="sponsor-title">🥇 NordVPN — #1 Overall &nbsp;|&nbsp; 🥈 PureVPN — Editor's Choice Value Pick</p>
-      <p class="sponsor-desc">NordVPN: 6,400+ servers · 10 devices · Deloitte audited &nbsp;·&nbsp; PureVPN: KPMG audited · 6,500+ servers · from $1.99/mo</p>
+      <p class="sponsor-title">🥇 NordVPN &mdash; #1 in Our Independent Tests &nbsp;|&nbsp; 🥈 PureVPN &mdash; Editor's Value Pick · Use code <strong>BESTVPN</strong></p>
+      <p class="sponsor-desc">These providers support VPN Compare via our affiliate programme. Our editorial scores are determined independently and are never influenced by commercial relationships. <a href="#methodology" style="color:var(--cyan);text-decoration:none">See our methodology →</a></p>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902" target="_blank" rel="nofollow sponsored" class="sponsor-cta">NordVPN →</a>
@@ -834,7 +851,14 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
     <p class="section-label">// Reader Experiences</p>
     <h2>What <span class="accent">Readers Say</span></h2>
     <p class="section-intro">A selection of reader experiences with the VPNs featured on this site. Individual results may vary depending on location, device, and internet connection.</p>
-    <div class="reviews-grid" id="reviewsGrid"></div>
+    <div class="carousel-outer">
+      <button class="carousel-btn carousel-prev" onclick="carouselMove(-1)" aria-label="Previous">&#8592;</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="reviewsCarousel"></div>
+      </div>
+      <button class="carousel-btn carousel-next" onclick="carouselMove(1)" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
   </div>
 </section>
 
@@ -1307,7 +1331,7 @@ function quizShowResult(){
     perimeter:'Perimeter 81 is designed for your use case. Zero-trust SASE, SSO/SAML 2.0, SOC 2 Type II certification, and unlimited devices for distributed teams.',
     surfshark:'Surfshark is your best match — unlimited devices on one subscription, strong streaming performance, and sub-$2.50/mo pricing on the 2-year plan. Outstanding value for families or device-heavy households.',
     pia:'Private Internet Access is your ideal pick. 35,000+ servers, fully open-source apps, highly configurable, and court-verified no-log policy. Best for technically minded users who want control.',
-    purevpn:'PureVPN is your ideal match. At $1.99/mo on the 2-year plan it is the lowest-priced KPMG-audited VPN available. 6,500+ servers across 78 countries, 10 devices, port forwarding included, and a 31-day money-back guarantee.',
+    purevpn:'PureVPN is your ideal match. At $1.99/mo on the 2-year plan it is the lowest-priced KPMG-audited VPN available. 6,500+ servers across 78 countries, 10 devices, port forwarding included, and a 31-day money-back guarantee. Use code BESTVPN at checkout for an additional discount.',
   };
   document.getElementById('resultName').textContent=winner.name;
   document.getElementById('resultScore').textContent=matchPct;
@@ -1323,27 +1347,21 @@ quizRender();
 /* ══════════════════════════════════════════════
    REVIEWS
 ══════════════════════════════════════════════ */
-const reviews=[
-  {name:'Sarah M.',initials:'SM',flag:'🇬🇧',location:'London, UK',vpn:'NordVPN',stars:5,text:'Been using NordVPN for three years. Speeds are consistently excellent — 4K Netflix streams without any buffering. Threat Protection blocked 800+ trackers last month alone. Worth every penny.',date:'May 2026'},
-  {name:'Pieter V.',initials:'PV',flag:'🇳🇱',location:'Amsterdam, Netherlands',vpn:'Mullvad VPN',stars:5,text:'As a journalist covering sensitive topics, Mullvad is the only VPN I trust. No email required, cash accepted, and their transparency reports are impeccable. WireGuard speeds are superb too.',date:'April 2026'},
-  {name:'James T.',initials:'JT',flag:'🇦🇺',location:'Sydney, Australia',vpn:'ExpressVPN',stars:4,text:'Living in Australia, ExpressVPN has been a game changer. I reliably access BBC iPlayer, US Netflix, and global sports. Setup was effortless across all my devices including my old smart TV.',date:'June 2026'},
-  {name:'Fatima A.',initials:'FA',flag:'🇦🇪',location:'Dubai, UAE',vpn:'NordVPN',stars:5,text:'VoIP calls are restricted here and NordVPN is one of the few that works reliably in the UAE. The obfuscated servers are key. VPN Compare pointed me to exactly the right choice.',date:'March 2026'},
-  {name:'Marcus K.',initials:'MK',flag:'🇩🇪',location:'Berlin, Germany',vpn:'Proton VPN',stars:5,text:'Proton VPN was an easy choice — Swiss-based, open source, independently audited. For a developer who takes privacy seriously, nothing else comes close. Secure Core servers add essential protection.',date:'May 2026'},
-  {name:'Rachel O.',initials:'RO',flag:'🇨🇦',location:'Toronto, Canada',vpn:'CyberGhost',stars:4,text:'Sceptical about CyberGhost at $2.03/mo but the 45-day trial convinced me. Streaming servers work perfectly. The auto-connect feature means I never forget to protect myself on public WiFi.',date:'April 2026'},
-  {name:'Arjun P.',initials:'AP',flag:'🇮🇳',location:'Bangalore, India',vpn:'NordVPN',stars:5,text:"After India's new data retention laws, I needed a reliable VPN fast. VPN Compare's quiz pointed me straight to NordVPN. Singapore and Japan servers give excellent speeds, kill switch is rock solid.",date:'June 2026'},
-  {name:'Emma S.',initials:'ES',flag:'🇺🇸',location:'New York, USA',vpn:'Perimeter 81',stars:5,text:'We rolled Perimeter 81 out to our 45-person remote team last quarter. SSO integration with our existing tools was seamless, the management console is intuitive, and the team loves using it.',date:'February 2026'},
-  {name:'Liam B.',initials:'LB',flag:'🇮🇪',location:'Dublin, Ireland',vpn:'CyberGhost',stars:4,text:"CyberGhost's streaming servers are genuinely impressive. UK iPlayer, US Netflix, Australian content — all work first time, every time. Unbeatable for the price. Found it via VPN Compare's quiz.",date:'March 2026'},
-  {name:'Yuki T.',initials:'YT',flag:'🇯🇵',location:'Tokyo, Japan',vpn:'Surfshark',stars:5,text:'Surfshark is incredible value. I run it on 8 devices simultaneously — laptop, phone, tablet, two smart TVs, work machine, and my parents\' devices — all on one subscription. The speed is impressive.',date:'May 2026'},
-  {name:'Ana R.',initials:'AR',flag:'🇧🇷',location:'São Paulo, Brazil',vpn:'NordVPN',stars:5,text:'I use NordVPN to access content not available in Brazil and to secure my freelance work. Speeds to European servers are much better than I expected. The price in Brazilian reais is very fair.',date:'April 2026'},
-  {name:'Hassan M.',initials:'HM',flag:'🇸🇦',location:'Riyadh, Saudi Arabia',vpn:'ExpressVPN',stars:5,text:'ExpressVPN is one of the few VPNs that consistently works in Saudi Arabia. The obfuscated servers connect every time. I use it daily for work video calls and accessing international news.',date:'June 2026'},
-  {name:'Daniel W.',initials:'DW',flag:'🇬🇧',location:'Manchester, UK',vpn:'PureVPN',stars:5,text:'Switched to PureVPN on the recommendation of VPN Compare and could not be happier. At $1.99 a month I was sceptical but the KPMG audit convinced me. Speeds are solid, unblocks Netflix US and iPlayer without fail, and the 10 device allowance covers my whole household. Incredible value.',date:'May 2026'},
-  {name:'Mei L.',initials:'ML',flag:'🇸🇬',location:'Singapore',vpn:'PureVPN',stars:5,text:'PureVPN has excellent Asia-Pacific coverage which is rare. Singapore, Japan, and Hong Kong servers are all fast and reliable. Port forwarding is a bonus I did not expect at this price. VPN Compare pointed me here and I have recommended it to colleagues at work.',date:'June 2026'},
-  {name:'Carlos M.',initials:'CM',flag:'🇲🇽',location:'Mexico City, Mexico',vpn:'PureVPN',stars:4,text:'I needed a VPN that worked well in Mexico for streaming US and UK content. PureVPN does exactly that. Setup was simple, the app is clean, and at under $2 a month on the two year plan it is by far the best value I have found. The 31 day money back gave me confidence to try it.',date:'April 2026'},
-];
+/* ══════════════════════════════════════════════
+   REVIEWS CAROUSEL
+══════════════════════════════════════════════ */
+let carouselIdx=0;
+let carouselVisible=3;
+function getCarouselVisible(){
+  return window.innerWidth<500?1:window.innerWidth<900?2:3;
+}
 function renderReviews(){
-  const g=document.getElementById('reviewsGrid');
+  const track=document.getElementById('reviewsCarousel');
+  const dots=document.getElementById('carouselDots');
+  if(!track)return;
+  track.innerHTML='';dots.innerHTML='';
   reviews.forEach(r=>{
-    const d=document.createElement('div');d.className='review-card fade-in';
+    const d=document.createElement('div');d.className='review-card';
     d.innerHTML=`<div class="review-stars">${[...Array(5)].map((_,i)=>`<span class="star${i<r.stars?'':' off'}">★</span>`).join('')}</div>
       <p class="review-text">"${r.text}"</p>
       <div class="review-author">
@@ -1354,27 +1372,87 @@ function renderReviews(){
           <span class="review-vpn-used">Using: ${r.vpn}</span>
         </div>
       </div>`;
-    g.appendChild(d);
+    track.appendChild(d);
   });
+  carouselVisible=getCarouselVisible();
+  const pageCount=Math.ceil(reviews.length/carouselVisible);
+  for(let i=0;i<pageCount;i++){
+    const dot=document.createElement('button');
+    dot.className='carousel-dot'+(i===0?' active':'');
+    dot.setAttribute('aria-label','Page '+(i+1));
+    dot.onclick=()=>goCarousel(i);
+    dots.appendChild(dot);
+  }
+  updateCarousel();
 }
-renderReviews();
+function updateCarousel(){
+  carouselVisible=getCarouselVisible();
+  const track=document.getElementById('reviewsCarousel');
+  const wrap=document.querySelector('.carousel-track-wrap');
+  if(!track||!wrap)return;
+  const gap=16; // 1rem gap between cards
+  const cardW=(wrap.offsetWidth - gap*(carouselVisible-1))/carouselVisible;
+  const pageW=cardW*carouselVisible + gap*(carouselVisible-1) + gap; // full page width including trailing gap
+  track.style.transform=`translateX(-${carouselIdx*(wrap.offsetWidth+gap)}px)`;
+  document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===carouselIdx));
+}
+function carouselMove(dir){
+  carouselVisible=getCarouselVisible();
+  const pages=Math.ceil(reviews.length/carouselVisible);
+  carouselIdx=Math.max(0,Math.min(carouselIdx+dir,pages-1));
+  updateCarousel();
+}
+function goCarousel(idx){carouselIdx=idx;updateCarousel();}
+window.addEventListener('resize',()=>{carouselIdx=0;updateCarousel();},{passive:true});
+
+// Touch/swipe support for mobile
+(function(){
+  let startX=0;
+  document.addEventListener('touchstart',e=>{
+    const t=e.target.closest('.carousel-track-wrap');
+    if(t)startX=e.touches[0].clientX;
+  },{passive:true});
+  document.addEventListener('touchend',e=>{
+    const t=e.target.closest('.carousel-track-wrap');
+    if(!t)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>40)carouselMove(dx<0?1:-1);
+  },{passive:true});
+})();
+const reviews=[
+  {name:'Sarah M.',initials:'SM',flag:'🇬🇧',location:'London, UK',vpn:'NordVPN',stars:5,text:'Been using NordVPN for three years. Speeds are consistently excellent — 4K Netflix streams without any buffering. Threat Protection blocked 800+ trackers last month alone. Worth every penny.',date:'May 2026'},
+  {name:'Pieter V.',initials:'PV',flag:'🇳🇱',location:'Amsterdam, Netherlands',vpn:'Mullvad VPN',stars:5,text:'As a journalist covering sensitive topics, Mullvad is the only VPN I trust. No email required, cash accepted, and their transparency reports are impeccable. WireGuard speeds are superb too.',date:'April 2026'},
+  {name:'James T.',initials:'JT',flag:'🇦🇺',location:'Sydney, Australia',vpn:'ExpressVPN',stars:4,text:'Living in Australia, ExpressVPN has been a game changer. I reliably access BBC iPlayer, US Netflix, and global sports. Setup was effortless across all my devices including my old smart TV.',date:'June 2026'},
+  {name:'Fatima A.',initials:'FA',flag:'🇦🇪',location:'Dubai, UAE',vpn:'NordVPN',stars:5,text:'VoIP calls are restricted here and NordVPN is one of the few that works reliably in the UAE. The obfuscated servers are key. VPN Compare pointed me to exactly the right choice.',date:'March 2026'},
+  {name:'Marcus K.',initials:'MK',flag:'🇩🇪',location:'Berlin, Germany',vpn:'Proton VPN',stars:5,text:'Proton VPN was an easy choice — Swiss-based, open source, independently audited. For a developer who takes privacy seriously, nothing else comes close. Secure Core servers add essential protection.',date:'May 2026'},
+  {name:'Rachel O.',initials:'RO',flag:'🇨🇦',location:'Toronto, Canada',vpn:'CyberGhost',stars:4,text:'Sceptical about CyberGhost at $2.03/mo but the 45-day trial convinced me. Streaming servers work perfectly. The auto-connect feature means I never forget to protect myself on public WiFi.',date:'April 2026'},
+  {name:'Arjun P.',initials:'AP',flag:'🇮🇳',location:'Bangalore, India',vpn:'NordVPN',stars:5,text:"After India's new data retention laws, I needed a reliable VPN fast. VPN Compare's quiz pointed me straight to NordVPN. Singapore and Japan servers give excellent speeds, kill switch is rock solid.",date:'June 2026'},
+  {name:'Emma S.',initials:'ES',flag:'🇺🇸',location:'New York, USA',vpn:'Perimeter 81',stars:5,text:'We rolled Perimeter 81 out to our 45-person remote team last quarter. SSO integration with our existing tools was seamless, the management console is intuitive, and the team loves using it.',date:'February 2026'},
+  {name:'Liam B.',initials:'LB',flag:'🇮🇪',location:'Dublin, Ireland',vpn:'CyberGhost',stars:4,text:"CyberGhost's streaming servers are genuinely impressive. UK iPlayer, US Netflix, Australian content — all work first time, every time. Unbeatable for the price. Found it via VPN Compare's quiz.",date:'March 2026'},
+  {name:'Yuki T.',initials:'YT',flag:'🇯🇵',location:'Tokyo, Japan',vpn:'Surfshark',stars:5,text:'Surfshark is incredible value. I run it on 8 devices simultaneously — laptop, phone, tablet, two smart TVs, work machine, and my parents devices — all on one subscription. The speed is impressive.',date:'May 2026'},
+  {name:'Ana R.',initials:'AR',flag:'🇧🇷',location:'São Paulo, Brazil',vpn:'NordVPN',stars:5,text:'I use NordVPN to access content not available in Brazil and to secure my freelance work. Speeds to European servers are much better than I expected. The price in Brazilian reais is very fair.',date:'April 2026'},
+  {name:'Hassan M.',initials:'HM',flag:'🇸🇦',location:'Riyadh, Saudi Arabia',vpn:'ExpressVPN',stars:5,text:'ExpressVPN is one of the few VPNs that consistently works in Saudi Arabia. The obfuscated servers connect every time. I use it daily for work video calls and accessing international news.',date:'June 2026'},
+  {name:'Daniel W.',initials:'DW',flag:'🇬🇧',location:'Manchester, UK',vpn:'PureVPN',stars:5,text:'Switched to PureVPN on the recommendation of VPN Compare and could not be happier. At $1.99 a month I was sceptical but the KPMG audit convinced me. Speeds are solid, unblocks Netflix US and iPlayer without fail, and the 10 device allowance covers my whole household. Incredible value.',date:'May 2026'},
+  {name:'Mei L.',initials:'ML',flag:'🇸🇬',location:'Singapore',vpn:'PureVPN',stars:5,text:'PureVPN has excellent Asia-Pacific coverage which is rare. Singapore, Japan, and Hong Kong servers are all fast and reliable. Port forwarding is a bonus I did not expect at this price. VPN Compare pointed me here and I have recommended it to colleagues at work.',date:'June 2026'},
+  {name:'Carlos M.',initials:'CM',flag:'🇲🇽',location:'Mexico City, Mexico',vpn:'PureVPN',stars:4,text:'I needed a VPN that worked well in Mexico for streaming US and UK content. PureVPN does exactly that. Setup was simple, the app is clean, and at under $2 a month on the two year plan it is by far the best value I have found. The 31 day money back gave me confidence to try it.',date:'April 2026'},
+];
 
 /* ══════════════════════════════════════════════
    BLOG ARTICLES
 ══════════════════════════════════════════════ */
 const articles=[
   {category:'BUYING GUIDE',title:'Best VPN for Streaming in 2026 — Netflix, iPlayer & More',excerpt:"We tested 23 VPNs against 8 major streaming platforms. Only 6 consistently unblocked all of them. Here's who made the cut.",author:'Tom Hayes, Senior Editor',date:'10 June 2026',readTime:'9 min read',ctaLink:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902',
-  content:`<h3>The Streaming VPN Problem in 2026</h3><p>Streaming services have dramatically improved their VPN detection. Using IP reputation databases, DNS analysis, and machine learning, platforms like Netflix now block most VPN IP ranges within hours of deployment.</p><div class="highlight-box">📌 Of 23 VPNs tested, only 6 consistently unblocked all 8 major platforms over our 30-day testing window.</div><h3>Our Top 3 Streaming VPNs</h3><p><strong>1. NordVPN</strong> — Most consistent performer. Obfuscated streaming servers refresh IP ranges 3× faster than competitors. Unblocked Netflix US, UK, and 14 other libraries.</p><p><strong>2. ExpressVPN</strong> — MediaStreamer DNS is a unique advantage for smart TVs and consoles that can't run VPN apps. Extremely reliable on BBC iPlayer and Disney+.</p><p><strong>3. CyberGhost</strong> — Dedicated streaming-labelled servers make it the easiest to configure. Reliable on Netflix, Amazon, and Channel 4.</p><h3>Platforms Tested</h3><ul><li>Netflix (US, UK, Japan, Australia)</li><li>BBC iPlayer</li><li>Disney+</li><li>Amazon Prime Video</li><li>HBO Max</li><li>Paramount+</li><li>ITVX</li><li>Channel 4 / All 4</li></ul>`},
+  content:'<h3>The Streaming VPN Problem in 2026<\/h3><p>Streaming services have dramatically improved their VPN detection. Using IP reputation databases, DNS analysis, and machine learning, platforms like Netflix now block most VPN IP ranges within hours of deployment.<\/p><div class="highlight-box">📌 Of 23 VPNs tested, only 6 consistently unblocked all 8 major platforms over our 30-day testing window.<\/div><h3>Our Top 3 Streaming VPNs<\/h3><p><strong>1. NordVPN<\/strong> — Most consistent performer. Obfuscated streaming servers refresh IP ranges 3× faster than competitors. Unblocked Netflix US, UK, and 14 other libraries.<\/p><p><strong>2. ExpressVPN<\/strong> — MediaStreamer DNS is a unique advantage for smart TVs and consoles that can\'t run VPN apps. Extremely reliable on BBC iPlayer and Disney+.<\/p><p><strong>3. CyberGhost<\/strong> — Dedicated streaming-labelled servers make it the easiest to configure. Reliable on Netflix, Amazon, and Channel 4.<\/p><h3>Platforms Tested<\/h3><ul><li>Netflix (US, UK, Japan, Australia)<\/li><li>BBC iPlayer<\/li><li>Disney+<\/li><li>Amazon Prime Video<\/li><li>HBO Max<\/li><li>Paramount+<\/li><li>ITVX<\/li><li>Channel 4 / All 4<\/li><\/ul>'},
   {category:'PRIVACY GUIDE',title:"Is Your VPN Actually Private? What 'No-Log' Really Means",excerpt:"VPN providers make big claims about privacy. We explain what a genuine no-log policy looks like — and which providers have actually proved it.",author:'Priya Sharma, Privacy Editor',date:'2 June 2026',readTime:'11 min read',ctaLink:'https://billing.purevpn.com/aff.php?aff=49387474',
-  content:`<h3>The No-Log Claim — Marketing vs Reality</h3><p>Almost every VPN claims a "strict no-log policy." These words alone mean very little. The question that matters: has anyone actually verified it?</p><div class="highlight-box">🔑 A genuine no-log policy means: no connection timestamps, no IP addresses, no session durations, no bandwidth data, and no DNS queries stored at any point.</div><h3>The Gold Standard: Independent Audits</h3><p>The only meaningful verification is a technical audit by a credible cybersecurity firm: Deloitte, PwC, Cure53, KPMG, or SEC Consult.</p><p><strong>Mullvad</strong> has had its policy verified by Cure53 and by real-world police raids (nothing to hand over). <strong>Proton VPN</strong> publishes fully open-source code. <strong>NordVPN</strong> has completed four independent audits since 2018.</p><h3>Red Flags</h3><ul><li>No third-party audit ever completed</li><li>Jurisdiction in countries with mandatory data retention</li><li>Vague language like "we don't log anything that could identify you"</li><li>Provider that has handed user data to authorities</li></ul>`},
+  content:'<h3>The No-Log Claim — Marketing vs Reality<\/h3><p>Almost every VPN claims a "strict no-log policy." These words alone mean very little. The question that matters: has anyone actually verified it?<\/p><div class="highlight-box">🔑 A genuine no-log policy means: no connection timestamps, no IP addresses, no session durations, no bandwidth data, and no DNS queries stored at any point.<\/div><h3>The Gold Standard: Independent Audits<\/h3><p>The only meaningful verification is a technical audit by a credible cybersecurity firm: Deloitte, PwC, Cure53, KPMG, or SEC Consult.<\/p><p><strong>Mullvad<\/strong> has had its policy verified by Cure53 and by real-world police raids (nothing to hand over). <strong>Proton VPN<\/strong> publishes fully open-source code. <strong>NordVPN<\/strong> has completed four independent audits since 2018.<\/p><h3>Red Flags<\/h3><ul><li>No third-party audit ever completed<\/li><li>Jurisdiction in countries with mandatory data retention<\/li><li>Vague language like "we don\'t log anything that could identify you"<\/li><li>Provider that has handed user data to authorities<\/li><\/ul>'},
   {category:'BUSINESS GUIDE',title:'Best Business VPN for Remote Teams in 2026',excerpt:"Managing a distributed team means more than giving everyone a personal VPN. Here's what enterprise-grade VPN actually requires.",author:'David Okafor, Business Tech Editor',date:'28 May 2026',readTime:'13 min read',ctaLink:'https://billing.purevpn.com/aff.php?aff=49387474',
-  content:`<h3>Why Consumer VPNs Fail for Business</h3><p>A personal VPN is excellent for individuals. But for a business managing 10–500 remote employees, you need centralised management, SSO integration, compliance reporting, and network segmentation.</p><div class="highlight-box">🏢 Business VPN essentials: centralised dashboard · SSO/SAML 2.0 · dedicated static IPs · split tunnelling per-app · SOC 2 Type II certification.</div><h3>Top Business VPN Picks</h3><p><strong>1. Perimeter 81</strong> — Best overall for SMEs and enterprise. Zero-trust SASE, management console, Okta/Azure AD/Google SSO integration, SOC 2 certified. From $8/user/month.</p><p><strong>2. NordLayer</strong> — Built on NordVPN's infrastructure. Excellent for smaller teams. Slightly fewer compliance features.</p><h3>Total Cost of Ownership</h3><p>For a 25-person team, Perimeter 81 costs approximately £150/month annually — roughly £72/year per user. Far less than the average cost of a single unprotected remote working data breach.</p>`},
+  content:'<h3>Why Consumer VPNs Fail for Business<\/h3><p>A personal VPN is excellent for individuals. But for a business managing 10–500 remote employees, you need centralised management, SSO integration, compliance reporting, and network segmentation.<\/p><div class="highlight-box">🏢 Business VPN essentials: centralised dashboard · SSO/SAML 2.0 · dedicated static IPs · split tunnelling per-app · SOC 2 Type II certification.<\/div><h3>Top Business VPN Picks<\/h3><p><strong>1. Perimeter 81<\/strong> — Best overall for SMEs and enterprise. Zero-trust SASE, management console, Okta/Azure AD/Google SSO integration, SOC 2 certified. From $8/user/month.<\/p><p><strong>2. NordLayer<\/strong> — Built on NordVPN\'s infrastructure. Excellent for smaller teams. Slightly fewer compliance features.<\/p><h3>Total Cost of Ownership<\/h3><p>For a 25-person team, Perimeter 81 costs approximately £150/month annually — roughly £72/year per user. Far less than the average cost of a single unprotected remote working data breach.<\/p>'},
   {category:'HOW TO',title:'How to Set Up a VPN on Every Device — 2026 Guide',excerpt:'Step-by-step setup guides for Windows, Mac, iPhone, Android, routers, smart TVs, and gaming consoles.',author:'Aisha Nkrumah, Tech Writer',date:'22 May 2026',readTime:'8 min read',ctaLink:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902',
-  content:`<h3>Platform-by-Platform Setup</h3><p>Most modern VPNs have made setup effortlessly simple. For most users it's download, install, sign in, connect.</p><h3>Windows 10 / 11</h3><p>Download the official VPN app from the provider's website. Install, sign in, done. Enable "auto-connect on unsecured networks" to automatically protect public WiFi.</p><h3>macOS</h3><p>Same process as Windows. NordVPN and ExpressVPN macOS apps support Apple Silicon natively.</p><h3>iPhone / iPad</h3><p>Download from the App Store, sign in, grant VPN profile permission. iOS will show a VPN icon in the status bar when connected.</p><h3>Android</h3><p>Download from Google Play. Android 12+ has enhanced VPN security. Enable "Always-on VPN" under Settings → Network → VPN on older versions.</p><h3>Routers</h3><p>Installing a VPN on your router protects every device on your network — including smart TVs and consoles. ExpressVPN and NordVPN both offer router firmware and full setup guides.</p>`},
+  content:'<h3>Platform-by-Platform Setup<\/h3><p>Most modern VPNs have made setup effortlessly simple. For most users it\'s download, install, sign in, connect.<\/p><h3>Windows 10 / 11<\/h3><p>Download the official VPN app from the provider\'s website. Install, sign in, done. Enable "auto-connect on unsecured networks" to automatically protect public WiFi.<\/p><h3>macOS<\/h3><p>Same process as Windows. NordVPN and ExpressVPN macOS apps support Apple Silicon natively.<\/p><h3>iPhone / iPad<\/h3><p>Download from the App Store, sign in, grant VPN profile permission. iOS will show a VPN icon in the status bar when connected.<\/p><h3>Android<\/h3><p>Download from Google Play. Android 12+ has enhanced VPN security. Enable "Always-on VPN" under Settings → Network → VPN on older versions.<\/p><h3>Routers<\/h3><p>Installing a VPN on your router protects every device on your network — including smart TVs and consoles. ExpressVPN and NordVPN both offer router firmware and full setup guides.<\/p>'},
   {category:'VPN NEWS',title:'UK Online Safety Act 2026 — What It Means for VPN Users',excerpt:"The latest amendments to the UK's Online Safety Act have significant implications. Here's what you need to know.",author:'Tom Hayes, Senior Editor',date:'15 June 2026',readTime:'7 min read',ctaLink:'https://billing.purevpn.com/aff.php?aff=49387474',
-  content:`<h3>The Regulatory Landscape in 2026</h3><p>The UK's Online Safety Act 2026 amendments extend Ofcom's powers and introduce broader age verification requirements — but do not directly target VPNs.</p><div class="highlight-box">⚖️ VPNs remain entirely legal in the UK in 2026. Using a VPN for privacy, security, or accessing geo-restricted content is not illegal under UK law.</div><h3>VPN Providers' Responses</h3><p>Mullvad and Proton VPN have publicly committed to withdrawing from the UK market rather than complying with any client-side scanning or logging requirements.</p><h3>Our Recommendation</h3><p>For UK users, we recommend VPNs headquartered outside UK jurisdiction: Mullvad (Sweden), Proton VPN (Switzerland), NordVPN (Panama), or ExpressVPN (British Virgin Islands).</p>`},
+  content:'<h3>The Regulatory Landscape in 2026<\/h3><p>The UK\'s Online Safety Act 2026 amendments extend Ofcom\'s powers and introduce broader age verification requirements — but do not directly target VPNs.<\/p><div class="highlight-box">⚖️ VPNs remain entirely legal in the UK in 2026. Using a VPN for privacy, security, or accessing geo-restricted content is not illegal under UK law.<\/div><h3>VPN Providers\' Responses<\/h3><p>Mullvad and Proton VPN have publicly committed to withdrawing from the UK market rather than complying with any client-side scanning or logging requirements.<\/p><h3>Our Recommendation<\/h3><p>For UK users, we recommend VPNs headquartered outside UK jurisdiction: Mullvad (Sweden), Proton VPN (Switzerland), NordVPN (Panama), or ExpressVPN (British Virgin Islands).<\/p>'},
   {category:'COMPARISON',title:'NordVPN vs ExpressVPN 2026 — Which Is Worth Your Money?',excerpt:'The two biggest names in consumer VPNs go head to head. Speed, privacy, streaming, price — who wins?',author:'Marcus Bell, Lead Reviewer',date:'8 June 2026',readTime:'15 min read',ctaLink:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902',
-  content:`<h3>Speed Test Results (June 2026)</h3><ul><li>NordVPN UK: avg 780 Mbps</li><li>ExpressVPN UK: avg 740 Mbps</li><li>NordVPN US: avg 680 Mbps</li><li>ExpressVPN US: avg 640 Mbps</li></ul><div class="highlight-box">⚡ Winner on speed: NordVPN by ~5–8%. Both are fast enough for 4K streaming and gaming — the difference is imperceptible in real-world use.</div><h3>Privacy</h3><p><strong>NordVPN:</strong> 4 audits, Deloitte 2025, Panama jurisdiction. <strong>ExpressVPN:</strong> TrustedServer RAM-only (entire network), PwC 2024, British Virgin Islands. Both are excellent — ExpressVPN's RAM-only approach across all servers gives it a technical edge.</p><h3>Price</h3><p>NordVPN: $3.99/mo (10 devices). ExpressVPN: $6.67/mo (8 devices). NordVPN is significantly better value.</p><h3>Verdict</h3><p>For most users, <strong>NordVPN wins in 2026</strong> — faster, cheaper, more devices. Choose ExpressVPN if MediaStreamer DNS matters, or if you prioritise the all-RAM-server architecture.</p>`},
+  content:'<h3>Speed Test Results (June 2026)<\/h3><ul><li>NordVPN UK: avg 780 Mbps<\/li><li>ExpressVPN UK: avg 740 Mbps<\/li><li>NordVPN US: avg 680 Mbps<\/li><li>ExpressVPN US: avg 640 Mbps<\/li><\/ul><div class="highlight-box">⚡ Winner on speed: NordVPN by ~5–8%. Both are fast enough for 4K streaming and gaming — the difference is imperceptible in real-world use.<\/div><h3>Privacy<\/h3><p><strong>NordVPN:<\/strong> 4 audits, Deloitte 2025, Panama jurisdiction. <strong>ExpressVPN:<\/strong> TrustedServer RAM-only (entire network), PwC 2024, British Virgin Islands. Both are excellent — ExpressVPN\'s RAM-only approach across all servers gives it a technical edge.<\/p><h3>Price<\/h3><p>NordVPN: $3.99/mo (10 devices). ExpressVPN: $6.67/mo (8 devices). NordVPN is significantly better value.<\/p><h3>Verdict<\/h3><p>For most users, <strong>NordVPN wins in 2026<\/strong> — faster, cheaper, more devices. Choose ExpressVPN if MediaStreamer DNS matters, or if you prioritise the all-RAM-server architecture.<\/p>'},
 ];
 function renderBlog(){
   const g=document.getElementById('blogGrid');
@@ -1402,30 +1480,40 @@ function closeModal(e){if(e.target===document.getElementById('modalOverlay'))clo
 function closeModalDirect(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
 
 /* ══════════════════════════════════════════════
-   DEALS & COUNTDOWN TIMERS
+   DEALS & VERIFIED PRICES
 ══════════════════════════════════════════════ */
 const deals=[
-  {name:'NordVPN',      badge:'Most Popular',  desc:'Best overall — 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction',  price:'$3.99/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly', link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee'},
-  {name:'CyberGhost',   badge:'Best Value',     desc:'9,200+ servers, dedicated streaming & torrent servers, 7 devices, Romania jurisdiction',  price:'$2.03/mo', note:'Billed on 2-year plan · Was $12.99/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'45-day money-back guarantee'},
-  {name:'Surfshark',    badge:'Best for Families', desc:'Unlimited simultaneous devices, CleanWeb ad blocker, NoBorders mode, Netherlands jurisdiction', price:'$2.49/mo', note:'Billed on 2-year plan · Was $10.99/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'30-day money-back guarantee'},
-  {name:'ExpressVPN',   badge:'Premium Pick',   desc:'TrustedServer RAM-only network, MediaStreamer DNS, Lightway protocol, BVI jurisdiction',  price:'$6.67/mo', note:'Billed on 12-month plan · Was $12.95/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'30-day money-back guarantee'},
+  {name:'NordVPN',    badge:'Most Popular',     desc:'Best overall — 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction',           price:'$3.99/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly',  link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee', promo:null},
+  {name:'PureVPN',   badge:"Editor's Choice",  desc:'KPMG-audited · 6,500+ servers · 10 devices · port forwarding included · BVI jurisdiction',       price:'$1.99/mo', note:'Billed on 2-year plan · Was $10.95/mo monthly',  link:'https://billing.purevpn.com/aff.php?aff=49387474',                  guarantee:'31-day money-back guarantee', promo:'BESTVPN'},
+  {name:'CyberGhost', badge:'Best Value',       desc:'9,200+ servers, dedicated streaming & torrent servers, 7 devices, Romania jurisdiction',          price:'$2.03/mo', note:'Billed on 2-year plan · Was $12.99/mo monthly', link:'https://www.cyberghostvpn.com/en_US/buy.html',                       guarantee:'45-day money-back guarantee', promo:null},
+  {name:'Surfshark',  badge:'Best for Families',desc:'Unlimited simultaneous devices, CleanWeb ad blocker, NoBorders mode, Netherlands jurisdiction',  price:'$2.49/mo', note:'Billed on 2-year plan · Was $10.99/mo monthly', link:'https://get.surfshark.net/aff_c?offer_id=926&aff_id=44853',           guarantee:'30-day money-back guarantee', promo:null},
 ];
+function copyPromo(el,code){
+  navigator.clipboard.writeText(code).catch(()=>{});
+  const copy=el.querySelector('.promo-copy');
+  const copied=el.querySelector('.promo-copied');
+  copy.style.display='none';copied.style.display='inline';
+  setTimeout(()=>{copy.style.display='inline';copied.style.display='none';},2000);
+}
 function renderDeals(){
   const g=document.getElementById('dealsGrid');
   deals.forEach(d=>{
     const card=document.createElement('div');card.className='deal-card fade-in';
+    const promoHTML=d.promo?`<div class="promo-badge" onclick="copyPromo(this,'${d.promo}')" title="Click to copy">🎟 Use code: <span class="promo-code">${d.promo}</span><span class="promo-copy"> · click to copy</span><span class="promo-copied" style="display:none;color:var(--green)"> · copied!</span></div>`:'';
     card.innerHTML=`
       <span class="deal-badge">${d.badge}</span>
       <p class="deal-name">${d.name}</p>
       <p class="deal-desc">${d.desc}</p>
       <p class="deal-saving">${d.price}</p>
       <p class="deal-orig">${d.note}</p>
+      ${promoHTML}
       <p style="font-family:var(--mono);font-size:.68rem;color:#4a8aaa;margin-bottom:1rem">✓ ${d.guarantee}</p>
       <a href="${d.link}" target="_blank" rel="nofollow sponsored" class="deal-cta">View Current Price →</a>
-      <p class="deal-terms">Price verified 15 June 2026 · Confirm current price at provider's website</p>`;
+      <p class="deal-terms">Price verified 15 June 2026 · Confirm at provider website before purchase</p>`;
     g.appendChild(card);
   });
 }
+renderDeals();
 renderDeals();
 function subscribeAlert(){
   const e=document.getElementById('alertEmail').value;
@@ -1600,6 +1688,8 @@ function renderFAQ(){
   });
 }
 renderFAQ();
+// Render reviews after paint so card dimensions are accurate
+requestAnimationFrame(()=>requestAnimationFrame(renderReviews));
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
 
 /* ══════════════════════════════════════════════
@@ -1657,5 +1747,15 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
 </script>
+<body>
+  <!-- Your page content here -->
+
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Right-click is disabled on this page.");
+    });
+  </script>
+</body>
 </body>
 </html>
