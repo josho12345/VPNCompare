@@ -6,6 +6,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://www.bestvpncompareonline.com/sitemap.xml
-
-# Crawl delay (optional — helps with server load)
-Crawl-delay: 10
