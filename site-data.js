@@ -152,7 +152,7 @@ const SITE_DATA = {
       desc:      '9,200+ servers, dedicated streaming & torrent servers, 7 devices, Romania jurisdiction',
       price:     '$2.03/mo',
       note:      'Billed on 2-year plan · Was $12.99/mo monthly',
-      link:      'https://www.cyberghostvpn.com/en_US/buy.html',
+      link:      'https://www.cyberghostvpn.com/en_US/pricing',
       guarantee: '45-day money-back guarantee',
       promo:     null,
     },
