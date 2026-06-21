@@ -4,12 +4,17 @@
  * bestvpncompareonline.com
  * ============================================================
  *
+ * v2 — retrofitted 20 June 2026 for the "3-file architecture"
+ * rebuild (index.html + style.css + script.js). VPN price/
+ * score/speed data and the deals array now live in script.js,
+ * not index.html — update-site.js was rewritten to match.
+ * World Cup section removed (promo retired in the rebuild).
+ *
  * HOW TO USE THIS FILE
  * ─────────────────────
- * This is the single source of truth for everything that
- * changes on the site. Instead of hunting through 2,000 lines
- * of HTML, you edit ONE value here, save, run the update
- * script (see automation.md), and the whole site refreshes.
+ * Single source of truth for everything that changes on the
+ * site. Edit a value here, save, run `node update-site.js`
+ * (see automation.md), and the site refreshes automatically.
  *
  * WHAT LIVES HERE
  *   1. DATES          — "last checked", hero date, table date
@@ -17,14 +22,11 @@
  *   3. VPN SCORES     — overall score per VPN
  *   4. SPEED RESULTS  — Mbps per VPN from latest test
  *   5. DEALS          — deal cards (price, note, promo code)
- *   6. ARTICLES       — blog post dates (titles live in HTML)
- *   7. PROMO FLAGS    — which VPNs show gold/orange button
- *   8. WORLD CUP      — promo end date & visibility toggle
+ *   6. ARTICLES       — blog post dates (titles live in script.js)
  *
  * UPDATE SCHEDULE (see automation.md for full checklist)
  *   Weekly  → DATES, DEALS, PRICES (check for changes)
  *   Monthly → SCORES, SPEED_RESULTS, ARTICLES dates
- *   Yearly  → WORLD CUP toggle (event-based)
  * ============================================================
  */
 
@@ -33,15 +35,17 @@ const SITE_DATA = {
   /* ──────────────────────────────────────────────
      1. DATES
      Update: every Monday morning
-     These feed the announcement bar, hero badge,
-     comparison table footer, and pricing section.
+     lastChecked/tableUpdated/pricesVerified/legalUpdated
+     patch index.html. dealDate + legalUpdated also patch
+     matching strings inside script.js (deal cards + the
+     4 legal-modal pages, which are JS template strings).
   ────────────────────────────────────────────── */
   dates: {
-    lastChecked:    '15 June 2026',   // announcement bar + pricing disclaimer
-    heroUpdated:    'June 2026',      // hero badge "Updated [month year]"
+    lastChecked:    '15 June 2026',   // announcement bar + pricing disclaimer + deal-card date (script.js)
+    heroUpdated:    'June 2026',      // hero badge "Updated [month year]" + trust pill
     tableUpdated:   '15 June 2026',   // comparison table footer timestamp
     pricesVerified: '15 June 2026',   // pricing section header + disclaimer
-    legalUpdated:   'June 2026',      // privacy policy / cookie policy dates
+    legalUpdated:   'June 2026',      // legal modal pages (script.js) — privacy/cookies/terms/affiliate
   },
 
   /* ──────────────────────────────────────────────
@@ -52,6 +56,8 @@ const SITE_DATA = {
      annual    = best 1-year plan price
      biennial  = best 2-year plan price (lowest shown)
      origPrice = monthly price (shown as strikethrough)
+     buyPrice/buyNote = shown in deep-review buy box
+     ALL PATCHES TARGET script.js (vpns array)
   ────────────────────────────────────────────── */
   prices: {
     nordvpn:    { monthly: 11.99, annual: 3.99,  biennial: 2.99, origPrice: 11.99, buyPrice: '$3.99',  buyNote: 'per month · billed $95.76 every 2 years' },
@@ -72,8 +78,7 @@ const SITE_DATA = {
   /* ──────────────────────────────────────────────
      3. VPN OVERALL SCORES  (out of 10, 1 decimal)
      Update: monthly, after speed/feature re-test
-     Drives the comparison table score column and
-     the star display in deep review cards.
+     ALL PATCHES TARGET script.js (vpns array)
   ────────────────────────────────────────────── */
   scores: {
     nordvpn:    9.4,
@@ -94,7 +99,7 @@ const SITE_DATA = {
   /* ──────────────────────────────────────────────
      4. SPEED TEST RESULTS  (Mbps, WireGuard)
      Update: monthly (re-run speed tests)
-     Drives the speed column and speedLabel in table.
+     ALL PATCHES TARGET script.js (vpns array)
      Test from UK server to London endpoint at 1Gbps.
   ────────────────────────────────────────────── */
   speeds: {
@@ -118,6 +123,7 @@ const SITE_DATA = {
      Update: weekly — check for new promos,
      price drops, or promo code expiry.
      promo: null = no code. 'CODE' = shows copy badge.
+     ALL PATCHES TARGET script.js (deals array)
   ────────────────────────────────────────────── */
   deals: [
     {
@@ -133,7 +139,7 @@ const SITE_DATA = {
     {
       name:      'PureVPN',
       badge:     "Editor's Choice",
-      desc:      'KPMG-audited · 6,500+ servers · 10 devices · port forwarding · BVI jurisdiction',
+      desc:      'KPMG-audited · 6,500+ servers · 10 devices · port forwarding included · BVI jurisdiction',
       price:     '$1.99/mo',
       note:      'Billed on 2-year plan · Was $10.95/mo monthly',
       link:      'https://billing.purevpn.com/aff.php?aff=49387474',
@@ -165,9 +171,8 @@ const SITE_DATA = {
   /* ──────────────────────────────────────────────
      6. ARTICLE PUBLISH DATES
      Update: when you publish a new article.
-     Only the date field needs changing usually —
-     titles and content live in the HTML articles array.
-     Order matches the articles[] array in index.html.
+     Titles/content live in script.js's articles[] array —
+     this only patches the date field for each, by position.
   ────────────────────────────────────────────── */
   articleDates: [
     '10 June 2026',   // [0] Best VPN for Streaming
@@ -179,57 +184,14 @@ const SITE_DATA = {
   ],
 
   /* ──────────────────────────────────────────────
-     7. PROMO FLAGS
-     Which VPNs show a gold/orange button vs blue.
-     true  = gold promo button (active deal/promotion)
-     false = standard blue button
-     Perimeter 81 always gets purple (biz) regardless.
-  ────────────────────────────────────────────── */
-  promoActive: {
-    nordvpn:    false,
-    purevpn:    true,    // World Cup promo + BESTVPN code active
-    express:    false,
-    cyberghost: false,
-    proton:     false,
-    mullvad:    false,
-    surfshark:  false,
-    perimeter:  false,   // always biz/purple, not gold
-    nordlayer:  false,
-    ivpn:       false,
-    pia:        false,
-    windscribe: false,
-    hidemyass:  false,
-  },
-
-  /* ──────────────────────────────────────────────
-     AFFILIATE LINKS — Nord ecosystem
-     NordVPN:  go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902
-     NordPass: go.nordpass.io/aff_c?offer_id=488&aff_id=141394&url_id=9356
-     NordLayer: nordlayer.com/pricing/ (get tracked Impact link — same account)
+     AFFILIATE LINKS — Nord ecosystem (reference only,
+     not patched automatically — edit script.js directly
+     if these ever change)
+     NordVPN:   go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902
+     NordPass:  go.nordpass.io/aff_c?offer_id=488&aff_id=141394&url_id=9356
+     NordLayer: nordlayer.com/pricing/ (tracked Impact link — same account)
      All via Impact Radius · aff_id=141394
   ────────────────────────────────────────────── */
-
-  /* ──────────────────────────────────────────────
-     9. NORDPASS  (password manager — not a VPN)
-     Shown in the NordVPN deep review section only.
-     Update if offer_id or url_id changes.
-  ────────────────────────────────────────────── */
-  nordpass: {
-    link:    'https://go.nordpass.io/aff_c?offer_id=488&aff_id=141394&url_id=9356',
-    network: 'Impact Radius',
-    note:    'Password manager — shown in NordVPN review section',
-  },
-     Set showBanner: false to hide all WC banners.
-     endDate auto-hides the banner on expiry.
-     Update promoUrl if PureVPN changes the landing page.
-  ────────────────────────────────────────────── */
-  worldCup: {
-    showBanner:  true,
-    endDate:     '2026-07-19T20:00:00Z',   // World Cup final UTC
-    promoCode:   'BESTVPN',
-    promoUrl:    'https://www.purevpn.com/stream-sports/fifa?aff=49387474',
-    deadlineText: '19 July 2026',
-  },
 
 };
 
