@@ -66,7 +66,8 @@ if /i not "%confirm%"=="y" (
 )
 
 :: 6. Commit message
-set commitdate=%date:~6,4%-%date:~3,2%-%date:~0,2%
+for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /value') do set dt=%%I
+set commitdate=%dt:~0,4%-%dt:~4,2%-%dt:~6,2%
 set /p msg=Commit message (press Enter for "Site update %commitdate%"): 
 if "%msg%"=="" set msg=Site update %commitdate%
 
