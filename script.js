@@ -209,9 +209,9 @@ function quizRender(){
 }
 function quizNext(){
   if(!answers[qIdx]){document.getElementById('quizOpts').style.outline='2px solid var(--sky)';setTimeout(()=>document.getElementById('quizOpts').style.outline='',700);return;}
-  if(qIdx<questions.length-1){qIdx++;quizRender();}else{quizShowResult();}
+    if(qIdx<questions.length-1){qIdx++;quizRender();document.querySelector('#quiz .quiz-card').scrollIntoView({behavior:'smooth',block:'center'});}else{quizShowResult();}
 }
-function quizBack(){if(qIdx>0){qIdx--;quizRender();}}
+function quizBack(){if(qIdx>0){qIdx--;quizRender();document.querySelector('#quiz .quiz-card').scrollIntoView({behavior:'smooth',block:'center'});}}
 function quizReset(){qIdx=0;answers=[];document.getElementById('quizBody').style.display='';document.getElementById('quizResult').classList.remove('visible');quizRender();}
 function quizShowResult(){
   const sc={nordvpn:0,express:0,cyberghost:0,proton:0,mullvad:0,perimeter:0,surfshark:0,pia:0,purevpn:0};
