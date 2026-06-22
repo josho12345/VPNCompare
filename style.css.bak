@@ -92,7 +92,7 @@ h2 .accent{color:var(--cyan)}
 .method-desc{font-size:.88rem;color:var(--muted);line-height:1.6}
 
 /* QUIZ */
-#quiz{background:#a8c8dc;position:relative;overflow:hidden;z-index:0}
+#quiz{background:var(--bg)}
 .quiz-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius2);padding:2.5rem;max-width:700px;margin:0 auto;position:relative;box-shadow:var(--shadow2)}
 .quiz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cyan),var(--sky));border-radius:var(--radius2) var(--radius2) 0 0}
 .quiz-progress{margin-bottom:1.5rem}
@@ -166,7 +166,7 @@ h2 .accent{color:var(--cyan)}
 .filter-btn:hover,.filter-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(2,132,199,.08)}
 
 /* CALCULATOR */
-#calculator{background:#a8c8dc;position:relative;overflow:hidden;z-index:0}
+#calculator{background:var(--bg)}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 @media(max-width:700px){.calc-grid{grid-template-columns:1fr}}
 .calc-panel{background:#fff;border:2px solid var(--border);border-radius:var(--radius2);padding:2rem;position:relative;box-shadow:var(--shadow)}
@@ -220,7 +220,7 @@ select.calc-input{cursor:pointer}
 .ad-slot.sidebar-style{max-width:320px;min-height:250px;float:right;margin:0 0 1rem 2rem}
 
 /* REVIEWS / TESTIMONIALS */
-#reviews{background:#a8c8dc;position:relative;overflow:hidden;z-index:0}
+#reviews{background:var(--bg)}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
 .review-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius2);padding:1.6rem;box-shadow:var(--shadow);position:relative;transition:box-shadow .2s}
 .review-card:hover{box-shadow:var(--shadow2)}
@@ -268,7 +268,7 @@ select.calc-input{cursor:pointer}
 .modal-aff-note{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 
 /* FAQ */
-#faq{background:#a8c8dc;position:relative;overflow:hidden;z-index:0}
+#faq{background:var(--bg)}
 .faq-list{max-width:780px}
 .faq-item{border:2px solid var(--border);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(2,132,199,.06)}
 .faq-q{padding:1.1rem 1.3rem;font-family:var(--display);font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
@@ -442,7 +442,7 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .review-body-text p{font-size:.92rem;color:var(--text);line-height:1.8;margin-bottom:.8rem}
 
 /* ── COUNTRY GUIDES ── */
-#countries{background:#a8c8dc;position:relative;overflow:hidden;z-index:0}
+#countries{background:var(--bg)}
 .country-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
 .country-tab{background:#fff;border:2px solid var(--border);border-radius:20px;padding:.5rem 1.2rem;font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.5px}
 .country-tab:hover,.country-tab.active{border-color:var(--cyan);color:var(--cyan);background:rgba(2,132,199,.07)}
@@ -520,14 +520,6 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
   .review-pros-cons{grid-template-columns:1fr}
 }
 
-/* -- CLOUD BACKGROUND ANIMATION -- */
-@keyframes cloudDrift{from{background-position-x:0}to{background-position-x:-1200px}}
-@keyframes cloudDriftSlow{from{background-position-x:0}to{background-position-x:-900px}}
-#quiz::before,#calculator::before,#reviews::before,#faq::before,#countries::before,
-#quiz::after,#calculator::after,#reviews::after,#faq::after,#countries::after{content:'';position:absolute;inset:0;pointer-events:none}
-#quiz::before,#calculator::before,#reviews::before,#faq::before,#countries::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cg opacity='.6'%3E%3Ccircle cx='80' cy='130' r='35' fill='white'/%3E%3Ccircle cx='130' cy='112' r='44' fill='white'/%3E%3Ccircle cx='188' cy='118' r='37' fill='white'/%3E%3Ccircle cx='233' cy='130' r='28' fill='white'/%3E%3Crect x='45' y='130' width='216' height='40' fill='white'/%3E%3C/g%3E%3Cg opacity='.5'%3E%3Ccircle cx='520' cy='90' r='26' fill='white'/%3E%3Ccircle cx='558' cy='76' r='32' fill='white'/%3E%3Ccircle cx='600' cy='80' r='27' fill='white'/%3E%3Ccircle cx='630' cy='90' r='20' fill='white'/%3E%3Crect x='494' y='90' width='156' height='30' fill='white'/%3E%3C/g%3E%3Cg opacity='.4'%3E%3Ccircle cx='990' cy='55' r='20' fill='white'/%3E%3Ccircle cx='1018' cy='44' r='25' fill='white'/%3E%3Ccircle cx='1050' cy='48' r='20' fill='white'/%3E%3Ccircle cx='1072' cy='56' r='15' fill='white'/%3E%3Crect x='970' y='55' width='117' height='22' fill='white'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-size:1200px 200px;background-position:0 15%;animation:cloudDrift 60s linear infinite;opacity:.38;z-index:-1}
-#quiz::after,#calculator::after,#reviews::after,#faq::after,#countries::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 140'%3E%3Cg opacity='.7'%3E%3Ccircle cx='60' cy='90' r='25' fill='white'/%3E%3Ccircle cx='95' cy='76' r='30' fill='white'/%3E%3Ccircle cx='135' cy='80' r='25' fill='white'/%3E%3Ccircle cx='163' cy='90' r='19' fill='white'/%3E%3Crect x='35' y='90' width='147' height='28' fill='white'/%3E%3C/g%3E%3Cg opacity='.55'%3E%3Ccircle cx='480' cy='60' r='18' fill='white'/%3E%3Ccircle cx='506' cy='50' r='22' fill='white'/%3E%3Ccircle cx='534' cy='54' r='18' fill='white'/%3E%3Ccircle cx='554' cy='61' r='13' fill='white'/%3E%3Crect x='462' y='61' width='105' height='20' fill='white'/%3E%3C/g%3E%3Cg opacity='.45'%3E%3Ccircle cx='760' cy='85' r='22' fill='white'/%3E%3Ccircle cx='792' cy='72' r='27' fill='white'/%3E%3Ccircle cx='826' cy='76' r='22' fill='white'/%3E%3Ccircle cx='849' cy='85' r='16' fill='white'/%3E%3Crect x='738' y='85' width='127' height='25' fill='white'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-size:900px 140px;background-position:0 75%;animation:cloudDriftSlow 90s linear infinite;opacity:.22;z-index:-1}
-#quiz>.container,#calculator>.container,#reviews>.container,#faq>.container,#countries>.container{position:relative;z-index:1}
 /* COMPARE HIGHLIGHT */
 .winner-cell{background:rgba(22,163,74,.06)!important}
 .loser-cell{background:rgba(220,38,38,.03)!important}
