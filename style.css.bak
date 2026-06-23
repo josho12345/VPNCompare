@@ -534,3 +534,6 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 
 /* -- BURNT ORANGE ACCENT RINGS -- */
 .method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.pros-box,.cons-box,.score-bars,.review-body-text{outline:1px solid rgba(204,85,0,.4);outline-offset:0}
+
+/* -- BURNT ORANGE ACCENT RINGS -- */
+.method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.pros-box,.cons-box,.score-bars,.review-body-text{outline:1px solid rgba(204,85,0,.4);outline-offset:0}
