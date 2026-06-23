@@ -30,29 +30,41 @@ git fetch origin --quiet 2>nul
 git status -uno
 echo.
 
-echo [5] FILE CHECKS — did the edits land?
+echo [5] LOCAL FILE CHECKS
 echo ----------------------------------------
 
 findstr /c:"cloudDrift" style.css >nul 2>&1 && (
-  echo [OK]  style.css — cloudDrift animation FOUND
+  echo [OK]  style.css - cloudDrift animation FOUND
 ) || (
-  echo [!!]  style.css — cloudDrift animation MISSING
+  echo [!!]  style.css - cloudDrift animation MISSING
 )
 
 findstr /c:"#a8c8dc" style.css >nul 2>&1 && (
-  echo [OK]  style.css — #a8c8dc background FOUND
+  echo [OK]  style.css - #a8c8dc background FOUND
 ) || (
-  echo [!!]  style.css — #a8c8dc background MISSING
+  echo [!!]  style.css - #a8c8dc background MISSING
 )
 
 findstr /c:"scrollIntoView" script.js >nul 2>&1 && (
-  echo [OK]  script.js — scrollIntoView FOUND
+  echo [OK]  script.js - scrollIntoView FOUND
 ) || (
-  echo [!!]  script.js — scrollIntoView MISSING
+  echo [!!]  script.js - scrollIntoView MISSING
+)
+
+findstr /c:"Daniel Cross" script.js >nul 2>&1 && (
+  echo [OK]  script.js - Cybersecurity article FOUND
+) || (
+  echo [!!]  script.js - Cybersecurity article MISSING
 )
 
 echo.
-echo [6] REMOTE URL
+echo [6] LIVE SITE CSS CHECK (fetching style.css from GitHub Pages)
+echo ----------------------------------------
+powershell -ExecutionPolicy Bypass -Command ^
+  "try { $r = Invoke-WebRequest 'https://bestvpncompareonline.com/style.css' -UseBasicParsing -TimeoutSec 10; if ($r.Content -match 'cloudDrift') { Write-Host '[OK]  LIVE - cloudDrift found in production CSS' } else { Write-Host '[!!]  LIVE - cloudDrift NOT in production CSS (deploy may not have propagated yet)' } } catch { Write-Host '[??]  Could not reach live site: ' + $_.Exception.Message }"
+
+echo.
+echo [7] REMOTE URL
 echo ----------------------------------------
 git remote get-url origin
 echo.
