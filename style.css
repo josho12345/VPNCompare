@@ -550,3 +550,14 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:5px solid rgba(204,85,0,.7);outline-offset:3px}
 /* -- FIX v7: orange borders + matching orange shadow for 3D effect -- */
 .method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:none;border-color:rgba(204,85,0,.7);box-shadow:0 4px 24px rgba(204,85,0,.15)}
+/* -- FIX v8: orange card effects + orange table lines -- */
+.quiz-card::before{background:linear-gradient(90deg,rgba(204,85,0,.8),rgba(204,85,0,.25))}
+.calc-panel::before{background:linear-gradient(90deg,rgba(204,85,0,.8),transparent)}
+.vpn-card:hover{border-color:rgba(204,85,0,.9);transform:translateY(-4px);box-shadow:0 8px 32px rgba(204,85,0,.25)}
+.vpn-card.highlight{border-color:rgba(204,85,0,.9)}
+.vpn-card.highlight::after{background:rgba(204,85,0,.9)}
+.vpn-table td{border-bottom:1px solid rgba(204,85,0,.2)}
+.vpn-table tr:hover td{background:rgba(204,85,0,.04)}
+.vpn-table-wrap::-webkit-scrollbar-thumb{background:rgba(204,85,0,.4)}
+.vpn-table-wrap{scrollbar-color:rgba(204,85,0,.4) transparent}
+.vpn-table-outer::after{background:linear-gradient(to right,transparent,rgba(204,85,0,.08))}
