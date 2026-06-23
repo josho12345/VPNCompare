@@ -564,10 +564,19 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 
 
 /* -- QUIZ CARD TOP SPACING FIX (vpnc4) -- */
+
 @media(max-width:768px){
-  #quiz{padding-top:2rem}
-  #quiz .section-intro{margin-bottom:0.75rem}
-  .quiz-card{padding-top:1rem}
-  .quiz-progress{margin-bottom:0.5rem}
-  .quiz-q{margin-bottom:1rem}
+
+#quiz{padding-top:1.5rem}
+
+#quiz .section-intro{margin-bottom:0.5rem}
+
+.quiz-card{padding-top:1rem}
+
+.quiz-progress{margin-bottom:0.25rem}
+
+.quiz-q{margin-bottom:1rem}
+
+.quiz-nav{margin-top:1rem}
+
 }
