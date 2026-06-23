@@ -562,3 +562,12 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .vpn-table-wrap{scrollbar-color:rgba(204,85,0,.4) transparent}
 .vpn-table-outer::after{background:linear-gradient(to right,transparent,rgba(204,85,0,.08))}
 
+
+/* -- QUIZ CARD TOP SPACING FIX (vpnc4) -- */
+@media(max-width:768px){
+  #quiz{padding-top:2rem}
+  #quiz .section-intro{margin-bottom:0.75rem}
+  .quiz-card{padding-top:1rem}
+  .quiz-progress{margin-bottom:0.5rem}
+  .quiz-q{margin-bottom:1rem}
+}
