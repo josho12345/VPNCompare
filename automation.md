@@ -1,5 +1,5 @@
 # VPN Compare — Site Maintenance & Automation Guide
-**bestvpncompareonline.com** · Last updated: June 2026
+**bestvpncompareonline.com** · Last updated: 23 June 2026
 
 ---
 
@@ -11,9 +11,9 @@ Instead of editing 2,000 lines of HTML every week, you maintain **one file** —
 1. Open `site-data.js`
 2. Update any changed prices / dates
 3. Save
-4. Run `node update-site.js` in Terminal
+4. Run `node update-site.js` in Terminal (via Termux on Android)
 5. Check the change log it prints
-6. Push to GitHub (one click in GitHub Desktop) → site is live
+6. Double-click `push.bat` → site is live
 
 **Total time: 10–20 minutes per week.**
 
@@ -22,57 +22,55 @@ Instead of editing 2,000 lines of HTML every week, you maintain **one file** —
 ## File Structure
 
 ```
-your-site-folder/
+C:\_PROJECTS\VPNCompare\
 │
 ├── index.html          ← The website (don't edit dates/prices here directly)
+├── style.css           ← All styling and animations
+├── script.js           ← All interactivity, VPN data, articles, reviews, FAQ
 ├── site-data.js        ← YOUR MASTER UPDATE FILE (edit this weekly)
 ├── update-site.js      ← Automation script (run this, don't edit)
+├── push.bat            ← Deploy tool — double-click to publish
+├── diag.bat            ← Diagnostics tool
 ├── automation.md       ← This document
+├── .gitignore          ← Keeps dev tools out of repo
 │
-├── banners/
-│   ├── adset1/         ← PureVPN World Cup banners set 1
-│   │   ├── 728x90.png
-│   │   ├── 970x90.png
-│   │   ├── 300x250.png
-│   │   ├── 300x600.png
-│   │   ├── 160x600.png
-│   │   ├── 320x50.png
-│   │   └── 1200x628.png
-│   └── adset2/         ← PureVPN World Cup banners set 2
-│       └── (same filenames)
+├── _UPDATES\           ← Local dev scripts (gitignored, never committed)
 │
-└── backups/            ← Auto-created by update script
-    └── index.2026-06-15T09-00-00.html  ← Dated backup before each run
+└── backups\            ← Auto-created by update script
+    └── index.2026-06-15T09-00-00.html
 ```
 
 ---
 
-## One-Time Setup (do this once)
+## One-Time Setup (already done — for reference only)
 
-### 1. Install Node.js
-Go to **nodejs.org** → download the LTS version → install.
-Test it worked: open Terminal and type `node --version` — you should see `v20.x.x` or similar.
+### 1. Node.js
+Not available on Win7 laptop. Use **Termux on Android** to run `node update-site.js`.
 
-### 2. Install GitHub Desktop
-Download from **desktop.github.com** — free, no command line needed for deploying.
+### 2. Git / Push
+Use **push.bat** (double-click) — handles add, commit, push in one shot.
 
-### 3. MailerLite (newsletter)
+### 3. MailerLite (newsletter — optional)
 1. Sign up free at **mailerlite.com** (free forever up to 1,000 subscribers)
 2. Go to **Integrations → API** → copy your API token
-3. Go to **Subscribers → Groups** → create a group called "VPN Compare Newsletter" → copy the numeric group ID
+3. Go to **Subscribers → Groups** → create a group → copy the numeric group ID
 4. In `index.html` find these two lines near the top of the `<script>` section and paste your values:
    ```js
    const ML_API_TOKEN = 'PASTE_YOUR_MAILERLITE_API_TOKEN';
    const ML_GROUP_ID  = 'PASTE_YOUR_GROUP_ID';
    ```
-5. In MailerLite **Settings → Sender** → add your Zoho domain email as the "From" address
+5. In MailerLite **Settings → Sender** → add `info@bestvpncompareonline.com` as the From address
 
-### 4. Zoho Mail (your business email)
-1. Sign up free at **zoho.com/mail**
-2. During setup, choose "Add an existing domain" → enter `bestvpncompareonline.com`
-3. Zoho will give you DNS records to add in GoDaddy — add them in GoDaddy DNS settings
-4. You'll get `hello@bestvpncompareonline.com` (or any prefix you choose) for free
-5. Use this address as your MailerLite sender and for advertise@ contact
+### 4. Business Email — ✅ DONE (23 June 2026)
+Email is fully set up via **Brevo + Gmail**. See `mail-architecture.md` for full details.
+
+**Send from:** Gmail → compose → From dropdown → select address
+- `info@bestvpncompareonline.com` — main contact (default)
+- `advertise@bestvpncompareonline.com` — advertising enquiries
+
+**Receive:** Any `@bestvpncompareonline.com` address forwards to `joshinparadise081@gmail.com` via ForwardEmail.
+
+**SMTP:** smtp-relay.brevo.com:587 — credentials in Brevo dashboard.
 
 ---
 
@@ -98,9 +96,9 @@ Only update if the price has actually changed.
 Open `site-data.js`, update the `dates` section:
 ```js
 dates: {
-  lastChecked:    '22 June 2026',   // ← change to today's date
-  tableUpdated:   '22 June 2026',   // ← same
-  pricesVerified: '22 June 2026',   // ← same
+  lastChecked:    '23 June 2026',   // ← change to today's date
+  tableUpdated:   '23 June 2026',   // ← same
+  pricesVerified: '23 June 2026',   // ← same
   heroUpdated:    'June 2026',      // ← only change month when month changes
   legalUpdated:   'June 2026',      // ← only change when legal pages are edited
 },
@@ -110,8 +108,9 @@ dates: {
 In `site-data.js`, update the `prices` section for any VPN with a new price.
 
 ### Step 4: Run the Update Script (10 seconds)
-Open Terminal in your site folder:
+Open Termux on Android:
 ```bash
+cd ~/VPNCompare
 node update-site.js
 ```
 Read the change log. If you see ⚠ warnings, a pattern wasn't found — check the relevant section in index.html.
@@ -128,8 +127,7 @@ And remove the promo from the deals array:
 ```
 
 ### Step 6: Deploy (1 min)
-Open **GitHub Desktop** → you'll see the changed `index.html` → write a commit message like "Weekly update 22 June" → click **Commit** → **Push origin**.
-Your site goes live automatically if GitHub Pages is enabled, or sync to GoDaddy hosting.
+Double-click **push.bat** in `C:\_PROJECTS\VPNCompare\` — commits and pushes to main in one shot. Site goes live within ~10 minutes via GitHub Pages.
 
 ---
 
@@ -156,7 +154,7 @@ Review whether any score needs adjusting based on:
 Update `site-data.js → scores` if needed.
 
 ### Add a New Article (10 min)
-In `index.html`, find the `articles` array (search for `const articles=[`) and add a new entry following the existing format. Add the date to `site-data.js → articleDates` array.
+Articles live in `script.js` in the `articles[]` array (search for `const articles=[`). Add a new entry following the existing format — 7 articles currently, add as entry 8 onwards.
 
 **Article ideas rotation (keeps Google happy with fresh content):**
 - Week 1: Comparison head-to-head (NordVPN vs X)
@@ -172,8 +170,8 @@ Click each affiliate link to confirm it's not 404ing or redirecting wrong.
 | NordVPN | Impact Radius | go.nordvpn.net link |
 | PureVPN | Direct | billing.purevpn.com link |
 | CyberGhost | Direct / CJ | cyberghostvpn.com link |
-| Surfshark | get.surfshark.net | All 5 offer IDs |
-| Perimeter 81 | Direct | perimeter81.com — need proper aff link |
+| Surfshark | get.surfshark.net | All offer IDs |
+| Perimeter 81 | Impact Radius | ⚠️ Proper tracked link still needed |
 
 **Outstanding: Get a proper tracked affiliate link for Perimeter 81.** Their programme is on Impact Radius — sign up at impact.com and search for "Perimeter 81".
 
@@ -213,7 +211,8 @@ After the World Cup ends:
 | Deals section rebuild | ✅ Script | |
 | World Cup banner on/off | ✅ Script | |
 | Backup before every change | ✅ Script | |
-| Deploy to GitHub | | ✅ 1 click |
+| Price Watch (broken link check) | ✅ GitHub Actions (Monday 08:00 UTC) | |
+| Deploy to GitHub | | ✅ push.bat |
 | Price checking (visit sites) | | ✅ 8 min |
 | Speed tests | | ✅ 15 min/month |
 | New articles | | ✅ As needed |
@@ -221,16 +220,21 @@ After the World Cup ends:
 
 ---
 
-## Pending Items (to action)
+## Pending Items
 
-- [ ] **MailerLite** — create account, paste API token + group ID into index.html
-- [ ] **Zoho Mail** — create free account, add DNS records to GoDaddy, get business email
+- [ ] **MailerLite** — create account, paste API token + group ID into index.html when ready to send newsletters
 - [ ] **Perimeter 81** — get proper affiliate tracking link from Impact Radius
-- [ ] **GitHub Pages / GoDaddy hosting** — confirm deployment pipeline is live
-- [ ] **og:image** — create a 1200×630 social share image and upload as `/images/og-vpncompare-2026.png`
-- [ ] **Google Search Console** — submit sitemap, verify property, monitor indexing
-- [ ] **Google Analytics** — add GA4 tracking snippet for traffic monitoring
-- [ ] **World Cup banners** — upload adset1/ and adset2/ folders alongside index.html on server
+- [ ] **Google Analytics** — add GA4 tracking snippet to index.html
+- [ ] **og:image** — create a 1200×630 social share image for social previews
+
+## Completed Items (for reference)
+
+- [x] **Business email** — info@ and advertise@ via Brevo + Gmail. See mail-architecture.md
+- [x] **GitHub Pages** — live at bestvpncompareonline.com
+- [x] **Google Search Console** — domain property verified, sitemap submitted, homepage indexed
+- [x] **Price Watch automation** — running weekly on GitHub Actions
+- [x] **.gitignore** — in place, _UPDATES/ folder gitignored
+- [x] **World Cup banners** — live via site-data.js
 
 ---
 
@@ -240,4 +244,4 @@ Every time the update script runs it saves a backup to the `backups/` folder wit
 ```bash
 cp backups/index.2026-06-15T09-00-00.html index.html
 ```
-Then redeploy. You will never lose more than one week's work.
+Then run push.bat. You will never lose more than one week's work.

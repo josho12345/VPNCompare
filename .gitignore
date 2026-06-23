@@ -1,0 +1,14 @@
+# VPN Compare — .gitignore
+
+_UPDATES/
+backups/
+*.bak
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+node_modules/
+*.log
+npm-debug.log*
