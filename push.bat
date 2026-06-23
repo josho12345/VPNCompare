@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 :: ============================================================
 :: VPN Compare — Push Changes
 :: bestvpncompareonline.com

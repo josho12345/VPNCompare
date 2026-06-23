@@ -579,4 +579,6 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 
 .quiz-nav{margin-top:1rem}
 
+#quiz{padding-top:1.5rem} → #quiz{padding-top:1rem}
+
 }
