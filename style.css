@@ -548,3 +548,5 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:2px solid rgba(204,85,0,.7);outline-offset:6px}
 /* -- FIX v6: gap 3px, width 5px to fill space -- */
 .method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:5px solid rgba(204,85,0,.7);outline-offset:3px}
+/* -- FIX v7: orange borders + matching orange shadow for 3D effect -- */
+.method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:none;border-color:rgba(204,85,0,.7);box-shadow:0 4px 24px rgba(204,85,0,.15)}
