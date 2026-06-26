@@ -93,7 +93,7 @@ h2 .accent{color:var(--cyan)}
 
 /* QUIZ */
 #quiz{background:#96c8e6;position:relative;overflow:hidden;z-index:0;padding-top:3rem}
-.quiz-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius2);padding:2.5rem;max-width:700px;margin:0 auto;position:relative;box-shadow:var(--shadow2)}
+.quiz-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius2);padding:2.5rem;max-width:700px;margin:0 auto;position:relative;box-shadow:var(--shadow2);scroll-margin-top:calc(var(--nav-h) + 16px)}
 .quiz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cyan),var(--sky));border-radius:var(--radius2) var(--radius2) 0 0}
 .quiz-progress{margin-bottom:1.5rem}
 .quiz-progress-bar{height:4px;background:var(--bg2);border-radius:2px;overflow:hidden;margin-bottom:.5rem;border:1px solid var(--border)}
