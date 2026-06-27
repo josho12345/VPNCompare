@@ -43,10 +43,12 @@
 const PRICE_SOURCES = {
 
   nordvpn: {
-    name:       'NordVPN',
-    pricingUrl: 'https://nordvpn.com/pricing/',
-    domain:     'nordvpn.com',
-    watchPrice: { field: 'biennial', currency: '$', min: 1.00, max: 8.00 },
+    name:           'NordVPN',
+    pricingUrl:     'https://nordvpn.com/pricing/',
+    domain:         'nordvpn.com',
+    skipLinkCheck:  true,  // CDN blocks GitHub Actions IPs with 403 -- false positive
+    skipPriceWatch: true,  // Same CDN block affects pricing page fetch
+    watchPrice:     { field: 'biennial', currency: '$', min: 1.00, max: 8.00 },
   },
 
   purevpn: {
@@ -88,7 +90,7 @@ const PRICE_SOURCES = {
     name:       'Mullvad VPN',
     pricingUrl: 'https://mullvad.net/en/account/create',
     domain:     'mullvad.net',
-    // Flat-rate model -- monthly = annual = biennial = same price
+    jsRendered: true,  // Prices load via JS -- raw fetch returns zero tokens
     watchPrice: { field: 'monthly', currency: '\u20ac', min: 3.00, max: 10.00 },
   },
 
@@ -103,6 +105,7 @@ const PRICE_SOURCES = {
     name:       'Windscribe',
     pricingUrl: 'https://windscribe.com/pricing',
     domain:     'windscribe.com',
+    jsRendered: true,  // Prices load via JS -- raw fetch returns zero tokens
     watchPrice: { field: 'annual', currency: '$', min: 2.00, max: 10.00 },
   },
 
@@ -110,7 +113,7 @@ const PRICE_SOURCES = {
     name:       'HideMyAss',
     pricingUrl: 'https://www.hidemyass.com/en-gb/index',
     domain:     'hidemyass.com',
-    // Cookie-consent wall may block raw fetch -- may stay in errors list
+    jsRendered: true,  // Cookie-consent wall + JS rendering blocks raw fetch
     watchPrice: { field: 'annual', currency: '$', min: 2.00, max: 10.00 },
   },
 
@@ -125,6 +128,7 @@ const PRICE_SOURCES = {
     name:       'IVPN',
     pricingUrl: 'https://www.ivpn.net/pricing/',
     domain:     'ivpn.net',
+    jsRendered: true,  // Prices load via JS -- raw fetch returns zero tokens
     watchPrice: { field: 'annual', currency: '$', min: 2.00, max: 12.00 },
   },
 
@@ -132,7 +136,7 @@ const PRICE_SOURCES = {
     name:       'Perimeter 81',
     pricingUrl: 'https://sase.checkpoint.com',
     domain:     'checkpoint.com',
-    // B2B per-user pricing -- too variable for auto-update
+    jsRendered: true,  // JS-rendered + B2B per-user pricing too variable for auto-update
     watchPrice: null,
   },
 
