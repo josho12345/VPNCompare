@@ -4,7 +4,7 @@
    ============================================================ */
 
 :root {
-  --bg:#d6eaf5; --bg2:#bdd8ec; --bg3:#ffffff;
+  --bg:#bddff8; --bg2:#88c4ef; --bg3:#ffffff;
   --navy:#0a2540; --cyan:#0369a1; --sky:#0ea5e9;
   --teal:#065a8a; --gold:#d97706; --green:#15803d;
   --red:#b91c1c; --text:#0c2030; --muted:#2c5878;
@@ -54,8 +54,15 @@ nav a:hover{color:#38bdf8}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative}
 .btn-primary{background:var(--cyan);color:#fff;border:none;padding:.8rem 2.2rem;font-family:var(--display);font-size:1rem;font-weight:700;letter-spacing:1px;border-radius:var(--radius);cursor:pointer;text-decoration:none;transition:box-shadow .2s,transform .15s,background .2s;text-transform:uppercase;display:inline-block}
 .btn-primary:hover{box-shadow:var(--glow);transform:translateY(-2px);background:var(--teal)}
-.btn-secondary{background:transparent;color:#38bdf8;border:2px solid #38bdf8;padding:.8rem 2.2rem;font-family:var(--display);font-size:1rem;font-weight:700;letter-spacing:1px;border-radius:var(--radius);cursor:pointer;text-decoration:none;transition:all .2s;text-transform:uppercase;display:inline-block}
+.btn-secondary{background:rgba(56,189,248,.1);color:#0369a1;border:2px solid #38bdf8;padding:.8rem 2.2rem;font-family:var(--display);font-size:1rem;font-weight:700;letter-spacing:1px;border-radius:var(--radius);cursor:pointer;text-decoration:none;transition:all .2s;text-transform:uppercase;display:inline-block}
 .btn-secondary:hover{background:#38bdf8;color:#0a2540}
+/* Quiz nav and retake buttons — override browser defaults */
+.quiz-nav button,.quiz-result button{font-family:var(--display);font-size:.95rem;font-weight:700;letter-spacing:.5px;border-radius:var(--radius);cursor:pointer;padding:.7rem 1.8rem;transition:all .2s;text-transform:uppercase}
+.quiz-nav button:last-child,.quiz-result button{background:var(--cyan);color:#fff;border:2px solid var(--cyan)}
+.quiz-nav button:last-child:hover,.quiz-result button:hover{background:var(--teal);border-color:var(--teal);box-shadow:var(--glow)}
+.quiz-nav button:first-child:not(:last-child){background:rgba(56,189,248,.12);color:#0369a1;border:2px solid #38bdf8}
+.quiz-nav button:first-child:not(:last-child):hover{background:#38bdf8;color:#0a2540}
+.quiz-nav button:disabled,.quiz-nav button[disabled]{opacity:.35;cursor:not-allowed;pointer-events:none}
 .hero-updated{font-family:var(--mono);font-size:.7rem;color:#4a8aaa;margin-top:1.5rem;position:relative}
 
 /* SPONSOR BANNER */
@@ -133,7 +140,7 @@ h2 .accent{color:var(--cyan)}
 .vpn-table-wrap::-webkit-scrollbar-track{background:transparent}
 .vpn-table-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .vpn-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:920px}
-.vpn-table thead th{font-family:var(--display);font-size:.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--navy);padding:.9rem 1rem;text-align:left;border-bottom:2px solid var(--border2);background:#c0dff0;font-weight:700;white-space:nowrap}
+.vpn-table thead th{font-family:var(--display);font-size:.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--navy);padding:.9rem 1rem;text-align:left;border-bottom:2px solid var(--border2);background:#9ecff2;font-weight:700;white-space:nowrap}
 .vpn-table td{padding:.9rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle;background:#fff;white-space:nowrap}
 .vpn-table tr:last-child td{border-bottom:none}
 .vpn-table tr:hover td{background:rgba(2,114,176,.05)}
@@ -533,15 +540,15 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 #quiz::before,#calculator::before,#reviews::before,#faq::before,#countries::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cg fill='white' opacity='.58'%3E%3Ccircle cx='70' cy='85' r='28'/%3E%3Ccircle cx='115' cy='68' r='38'/%3E%3Ccircle cx='168' cy='62' r='44'/%3E%3Ccircle cx='220' cy='68' r='36'/%3E%3Ccircle cx='258' cy='82' r='24'/%3E%3Ccircle cx='70' cy='115' r='28'/%3E%3Ccircle cx='115' cy='132' r='38'/%3E%3Ccircle cx='168' cy='138' r='44'/%3E%3Ccircle cx='220' cy='132' r='36'/%3E%3Ccircle cx='258' cy='118' r='24'/%3E%3Ccircle cx='164' cy='100' r='44'/%3E%3C/g%3E%3Cg fill='white' opacity='.42'%3E%3Ccircle cx='340' cy='148' r='18'/%3E%3Ccircle cx='368' cy='136' r='24'/%3E%3Ccircle cx='398' cy='130' r='28'/%3E%3Ccircle cx='428' cy='136' r='22'/%3E%3Ccircle cx='450' cy='146' r='16'/%3E%3Ccircle cx='340' cy='168' r='18'/%3E%3Ccircle cx='368' cy='180' r='24'/%3E%3Ccircle cx='398' cy='186' r='28'/%3E%3Ccircle cx='428' cy='180' r='22'/%3E%3Ccircle cx='450' cy='170' r='16'/%3E%3Ccircle cx='396' cy='158' r='28'/%3E%3C/g%3E%3Cg fill='white' opacity='.46'%3E%3Ccircle cx='498' cy='78' r='18'/%3E%3Ccircle cx='526' cy='66' r='24'/%3E%3Ccircle cx='558' cy='60' r='28'/%3E%3Ccircle cx='590' cy='66' r='22'/%3E%3Ccircle cx='614' cy='76' r='16'/%3E%3Ccircle cx='498' cy='98' r='18'/%3E%3Ccircle cx='526' cy='110' r='24'/%3E%3Ccircle cx='558' cy='116' r='28'/%3E%3Ccircle cx='590' cy='110' r='22'/%3E%3Ccircle cx='614' cy='100' r='16'/%3E%3Ccircle cx='556' cy='88' r='26'/%3E%3C/g%3E%3Cg fill='white' opacity='.38'%3E%3Ccircle cx='700' cy='55' r='16'/%3E%3Ccircle cx='724' cy='44' r='20'/%3E%3Ccircle cx='750' cy='38' r='24'/%3E%3Ccircle cx='776' cy='44' r='19'/%3E%3Ccircle cx='796' cy='54' r='14'/%3E%3Ccircle cx='700' cy='71' r='16'/%3E%3Ccircle cx='724' cy='82' r='20'/%3E%3Ccircle cx='750' cy='88' r='24'/%3E%3Ccircle cx='776' cy='82' r='19'/%3E%3Ccircle cx='796' cy='72' r='14'/%3E%3Ccircle cx='748' cy='63' r='24'/%3E%3C/g%3E%3Cg fill='white' opacity='.34'%3E%3Ccircle cx='965' cy='44' r='14'/%3E%3Ccircle cx='988' cy='34' r='18'/%3E%3Ccircle cx='1014' cy='30' r='20'/%3E%3Ccircle cx='1040' cy='36' r='16'/%3E%3Ccircle cx='1058' cy='44' r='12'/%3E%3Ccircle cx='965' cy='56' r='14'/%3E%3Ccircle cx='988' cy='66' r='18'/%3E%3Ccircle cx='1014' cy='70' r='20'/%3E%3Ccircle cx='1040' cy='64' r='16'/%3E%3Ccircle cx='1058' cy='56' r='12'/%3E%3Ccircle cx='1012' cy='50' r='20'/%3E%3C/g%3E%3Cg fill='white' opacity='.28'%3E%3Ccircle cx='1100' cy='120' r='14'/%3E%3Ccircle cx='1122' cy='110' r='18'/%3E%3Ccircle cx='1146' cy='105' r='20'/%3E%3Ccircle cx='1168' cy='110' r='15'/%3E%3Ccircle cx='1184' cy='119' r='11'/%3E%3Ccircle cx='1100' cy='134' r='14'/%3E%3Ccircle cx='1122' cy='144' r='18'/%3E%3Ccircle cx='1146' cy='149' r='20'/%3E%3Ccircle cx='1168' cy='144' r='15'/%3E%3Ccircle cx='1184' cy='135' r='11'/%3E%3Ccircle cx='1144' cy='127' r='20'/%3E%3C/g%3E%3C/svg%3E")}
 #quiz::after,#calculator::after,#reviews::after,#faq::after,#countries::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 140'%3E%3Cg fill='white' opacity='.68'%3E%3Ccircle cx='38' cy='58' r='18'/%3E%3Ccircle cx='64' cy='46' r='24'/%3E%3Ccircle cx='94' cy='40' r='28'/%3E%3Ccircle cx='124' cy='46' r='22'/%3E%3Ccircle cx='148' cy='58' r='16'/%3E%3Ccircle cx='38' cy='82' r='18'/%3E%3Ccircle cx='64' cy='94' r='24'/%3E%3Ccircle cx='94' cy='100' r='28'/%3E%3Ccircle cx='124' cy='94' r='22'/%3E%3Ccircle cx='148' cy='82' r='16'/%3E%3Ccircle cx='93' cy='70' r='28'/%3E%3C/g%3E%3Cg fill='white' opacity='.48'%3E%3Ccircle cx='210' cy='95' r='13'/%3E%3Ccircle cx='230' cy='85' r='17'/%3E%3Ccircle cx='252' cy='80' r='20'/%3E%3Ccircle cx='274' cy='85' r='15'/%3E%3Ccircle cx='290' cy='94' r='11'/%3E%3Ccircle cx='210' cy='111' r='13'/%3E%3Ccircle cx='230' cy='121' r='17'/%3E%3Ccircle cx='252' cy='126' r='20'/%3E%3Ccircle cx='274' cy='121' r='15'/%3E%3Ccircle cx='290' cy='112' r='11'/%3E%3Ccircle cx='250' cy='103' r='20'/%3E%3C/g%3E%3Cg fill='white' opacity='.5'%3E%3Ccircle cx='428' cy='58' r='15'/%3E%3Ccircle cx='452' cy='48' r='19'/%3E%3Ccircle cx='476' cy='43' r='22'/%3E%3Ccircle cx='500' cy='48' r='17'/%3E%3Ccircle cx='518' cy='57' r='13'/%3E%3Ccircle cx='428' cy='82' r='15'/%3E%3Ccircle cx='452' cy='92' r='19'/%3E%3Ccircle cx='476' cy='97' r='22'/%3E%3Ccircle cx='500' cy='92' r='17'/%3E%3Ccircle cx='518' cy='83' r='13'/%3E%3Ccircle cx='474' cy='70' r='22'/%3E%3C/g%3E%3Cg fill='white' opacity='.38'%3E%3Ccircle cx='590' cy='45' r='12'/%3E%3Ccircle cx='608' cy='36' r='16'/%3E%3Ccircle cx='628' cy='31' r='18'/%3E%3Ccircle cx='648' cy='36' r='14'/%3E%3Ccircle cx='662' cy='45' r='10'/%3E%3Ccircle cx='590' cy='59' r='12'/%3E%3Ccircle cx='608' cy='68' r='16'/%3E%3Ccircle cx='628' cy='73' r='18'/%3E%3Ccircle cx='648' cy='68' r='14'/%3E%3Ccircle cx='662' cy='59' r='10'/%3E%3Ccircle cx='626' cy='52' r='18'/%3E%3C/g%3E%3Cg fill='white' opacity='.4'%3E%3Ccircle cx='716' cy='58' r='16'/%3E%3Ccircle cx='740' cy='46' r='22'/%3E%3Ccircle cx='766' cy='40' r='26'/%3E%3Ccircle cx='792' cy='46' r='20'/%3E%3Ccircle cx='812' cy='57' r='14'/%3E%3Ccircle cx='716' cy='82' r='16'/%3E%3Ccircle cx='740' cy='94' r='22'/%3E%3Ccircle cx='766' cy='100' r='26'/%3E%3Ccircle cx='792' cy='94' r='20'/%3E%3Ccircle cx='812' cy='83' r='14'/%3E%3Ccircle cx='764' cy='70' r='26'/%3E%3C/g%3E%3Cg fill='white' opacity='.3'%3E%3Ccircle cx='856' cy='100' r='11'/%3E%3Ccircle cx='870' cy='92' r='14'/%3E%3Ccircle cx='885' cy='88' r='16'/%3E%3Ccircle cx='898' cy='92' r='12'/%3E%3Ccircle cx='856' cy='112' r='11'/%3E%3Ccircle cx='870' cy='120' r='14'/%3E%3Ccircle cx='885' cy='124' r='16'/%3E%3Ccircle cx='898' cy='120' r='12'/%3E%3Ccircle cx='883' cy='106' r='16'/%3E%3C/g%3E%3C/svg%3E")}
 
-/* -- BURNT ORANGE ACCENTS (final) -- */
-.method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:none;border-color:rgba(204,85,0,.7);box-shadow:0 4px 24px rgba(204,85,0,.15)}
-.quiz-card::before{background:linear-gradient(90deg,rgba(204,85,0,.8),rgba(204,85,0,.25))}
-.calc-panel::before{background:linear-gradient(90deg,rgba(204,85,0,.8),transparent)}
-.vpn-card:hover{border-color:rgba(204,85,0,.9);transform:translateY(-4px);box-shadow:0 8px 32px rgba(204,85,0,.25)}
-.vpn-card.highlight{border-color:rgba(204,85,0,.9)}
-.vpn-card.highlight::after{background:rgba(204,85,0,.9)}
-.vpn-table td{border-bottom:1px solid rgba(204,85,0,.2)}
-.vpn-table tr:hover td{background:rgba(204,85,0,.04)}
-.vpn-table-wrap::-webkit-scrollbar-thumb{background:rgba(204,85,0,.4)}
-.vpn-table-wrap{scrollbar-color:rgba(204,85,0,.4) transparent}
-.vpn-table-outer::after{background:linear-gradient(to right,transparent,rgba(204,85,0,.08))}
+/* -- GOLD ACCENTS (v8 final) -- */
+.method-card,.quiz-card,.vpn-table-wrap,.calc-panel,.vpn-card,.review-card,.blog-card,.faq-item,.review-header-box,.cons-box,.score-bars,.review-body-text{outline:none;border-color:rgba(217,119,6,.75);box-shadow:0 4px 24px rgba(217,119,6,.18),0 3px 0 rgba(155,82,4,.35)}
+.quiz-card::before{background:linear-gradient(90deg,rgba(217,119,6,.85),rgba(217,119,6,.25))}
+.calc-panel::before{background:linear-gradient(90deg,rgba(217,119,6,.85),transparent)}
+.vpn-card:hover{border-color:rgba(217,119,6,.95);transform:translateY(-4px);box-shadow:0 8px 32px rgba(217,119,6,.28),0 3px 0 rgba(155,82,4,.4)}
+.vpn-card.highlight{border-color:rgba(217,119,6,.95)}
+.vpn-card.highlight::after{background:rgba(217,119,6,.95)}
+.vpn-table td{border-bottom:1px solid rgba(217,119,6,.2)}
+.vpn-table tr:hover td{background:rgba(217,119,6,.04)}
+.vpn-table-wrap::-webkit-scrollbar-thumb{background:rgba(217,119,6,.45)}
+.vpn-table-wrap{scrollbar-color:rgba(217,119,6,.45) transparent}
+.vpn-table-outer::after{background:linear-gradient(to right,transparent,rgba(217,119,6,.08))}
