@@ -66,7 +66,7 @@ nav a:hover{color:#38bdf8}
 .hero-updated{font-family:var(--mono);font-size:.7rem;color:#4a8aaa;margin-top:1.5rem;position:relative}
 
 /* SPONSOR BANNER */
-.sponsor-banner{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.2rem 2rem;margin:2rem auto;max-width:900px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:var(--shadow)}
+.sponsor-banner{background:#6eb6e9;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.2rem 2rem;margin:2rem auto;max-width:900px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:var(--shadow)}
 .sponsor-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(217,119,6,.5);padding:.15rem .5rem;border-radius:3px;white-space:nowrap}
 .sponsor-content{flex:1;min-width:200px}
 .sponsor-title{font-family:var(--display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
