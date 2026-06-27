@@ -18,7 +18,7 @@ env:
   #         run update-site.js, commit, then email you the diff.
   #         Prices outside safety range still go to manual review.
   # Change this one line to flip between modes.
-  AUTO_UPDATE: 'false'
+  AUTO_UPDATE: 'true'
 
 jobs:
   price-watch:
