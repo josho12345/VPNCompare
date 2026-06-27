@@ -185,7 +185,7 @@ h2 .accent{color:var(--cyan)}
 .calc-input:focus{border-color:var(--cyan)}
 select.calc-input{cursor:pointer}
 .calc-result-panel{background:#fff;border:2px solid rgba(217,119,6,.8);border-radius:var(--radius2);padding:2rem;position:relative;box-shadow:var(--shadow)}
-.calc-result-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--sky));border-radius:var(--radius2) var(--radius2) 0 0}
+.calc-result-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,rgba(217,119,6,.85),transparent);border-radius:var(--radius2) var(--radius2) 0 0}
 .calc-result-panel h3{font-family:var(--display);font-size:1.15rem;font-weight:700;margin-bottom:1.5rem;color:var(--teal)}
 .result-metric{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(217,119,6,.5)}
 .result-metric:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
