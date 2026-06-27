@@ -66,7 +66,7 @@ nav a:hover{color:#38bdf8}
 .hero-updated{font-family:var(--mono);font-size:.7rem;color:#4a8aaa;margin-top:1.5rem;position:relative}
 
 /* SPONSOR BANNER */
-.sponsor-banner{background:var(--bg2);border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.2rem 2rem;margin:2rem auto;max-width:900px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:var(--shadow)}
+.sponsor-banner{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.2rem 2rem;margin:2rem auto;max-width:900px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:var(--shadow)}
 .sponsor-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(217,119,6,.5);padding:.15rem .5rem;border-radius:3px;white-space:nowrap}
 .sponsor-content{flex:1;min-width:200px}
 .sponsor-title{font-family:var(--display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
@@ -90,7 +90,7 @@ h2 .accent{color:var(--cyan)}
 .section-intro{color:var(--muted);font-size:.97rem;max-width:560px;margin-bottom:3rem;line-height:1.75}
 
 /* HOW WE TEST */
-#methodology{background:linear-gradient(180deg,#f9adb0 0%,#fddece 100%)}
+#methodology{background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%)}
 .method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
 .method-card{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.5rem;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
 .method-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
@@ -99,7 +99,7 @@ h2 .accent{color:var(--cyan)}
 .method-desc{font-size:.88rem;color:var(--muted);line-height:1.6}
 
 /* QUIZ */
-#quiz{background:var(--bg2);position:relative;overflow:hidden;z-index:0;padding-top:3rem}
+#quiz{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);position:relative;overflow:hidden;z-index:0;padding-top:3rem}
 .quiz-card{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:2.5rem;max-width:700px;margin:0 auto;position:relative;box-shadow:var(--shadow2);scroll-margin-top:calc(var(--nav-h) + 16px)}
 .quiz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cyan),var(--sky));border-radius:var(--radius2) var(--radius2) 0 0}
 .quiz-progress{margin-bottom:1.5rem}
@@ -127,7 +127,7 @@ h2 .accent{color:var(--cyan)}
 .alt-pill{font-family:var(--mono);font-size:.72rem;background:#fff;border:1px solid rgba(217,119,6,.5);color:var(--muted);padding:.25rem .7rem;border-radius:20px}
 
 /* COMPARE TABLE */
-#compare{background:linear-gradient(180deg,#f9adb0 0%,#fddece 100%)}
+#compare{background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%)}
 .table-scroll-hint{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.75rem;color:var(--cyan);margin-bottom:.75rem;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.6}50%{opacity:1}}
 .hint-arrow{font-size:1.1rem;animation:hintSlide 1.4s ease-in-out infinite}
@@ -173,7 +173,7 @@ h2 .accent{color:var(--cyan)}
 .filter-btn:hover,.filter-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(2,132,199,.08)}
 
 /* CALCULATOR */
-#calculator{background:var(--bg2);position:relative;overflow:hidden;z-index:0}
+#calculator{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);position:relative;overflow:hidden;z-index:0}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 @media(max-width:700px){.calc-grid{grid-template-columns:1fr}}
 .calc-panel{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:2rem;position:relative;box-shadow:var(--shadow)}
@@ -199,7 +199,7 @@ select.calc-input{cursor:pointer}
 .vs-badge{font-family:var(--display);font-weight:700;color:var(--muted);font-size:1rem;padding-bottom:.65rem}
 
 /* FEATURED CARDS */
-#featured{background:linear-gradient(180deg,#f9adb0 0%,#fddece 100%)}
+#featured{background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%)}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
 .vpn-card{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.8rem;position:relative;overflow:hidden;transition:border-color .25s,transform .2s,box-shadow .25s;box-shadow:var(--shadow)}
 .vpn-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:var(--shadow2)}
@@ -227,7 +227,7 @@ select.calc-input{cursor:pointer}
 .ad-slot.sidebar-style{max-width:320px;min-height:250px;float:right;margin:0 0 1rem 2rem}
 
 /* REVIEWS / TESTIMONIALS */
-#reviews{background:var(--bg2);position:relative;overflow:hidden;z-index:0}
+#reviews{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);position:relative;overflow:hidden;z-index:0}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
 .review-card{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);padding:1.6rem;box-shadow:var(--shadow);position:relative;transition:box-shadow .2s}
 .review-card:hover{box-shadow:var(--shadow2)}
@@ -242,7 +242,7 @@ select.calc-input{cursor:pointer}
 .review-flag{font-size:1.1rem}
 
 /* BLOG / ARTICLES */
-#blog{background:linear-gradient(180deg,#f9adb0 0%,#fddece 100%)}
+#blog{background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%)}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
 .blog-card{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:var(--radius2);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;cursor:pointer}
 .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
@@ -275,7 +275,7 @@ select.calc-input{cursor:pointer}
 .modal-aff-note{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 
 /* FAQ */
-#faq{background:linear-gradient(180deg,#f9adb0 0%,#fddece 100%);position:relative;overflow:hidden;z-index:0}
+#faq{background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%);position:relative;overflow:hidden;z-index:0}
 .faq-list{max-width:780px}
 .faq-item{border:2px solid rgba(217,119,6,.7);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(2,132,199,.06)}
 .faq-q{padding:1.1rem 1.3rem;font-family:var(--display);font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
@@ -397,7 +397,7 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .btn-alert:hover{opacity:.85}
 
 /* ── DEEP REVIEWS ── */
-#deepreviews{background:var(--bg2)}
+#deepreviews{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%)}
 .review-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;border-bottom:2px solid rgba(217,119,6,.7);padding-bottom:0}
 .review-tab{background:none;border:none;border-bottom:3px solid transparent;padding:.7rem 1.3rem;font-family:var(--display);font-size:.95rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;margin-bottom:-2px;letter-spacing:.5px}
 .review-tab:hover{color:var(--cyan)}
@@ -449,7 +449,7 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .review-body-text p{font-size:.92rem;color:var(--text);line-height:1.8;margin-bottom:.8rem}
 
 /* ── COUNTRY GUIDES ── */
-#countries{background:var(--bg2);position:relative;overflow:hidden;z-index:0}
+#countries{background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);position:relative;overflow:hidden;z-index:0}
 .country-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
 .country-tab{background:#fff;border:2px solid rgba(217,119,6,.7);border-radius:20px;padding:.5rem 1.2rem;font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.5px}
 .country-tab:hover,.country-tab.active{border-color:var(--cyan);color:var(--cyan);background:rgba(2,132,199,.07)}
