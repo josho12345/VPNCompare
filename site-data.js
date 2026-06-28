@@ -51,8 +51,8 @@ const SITE_DATA = {
      origPrice = monthly price (strikethrough)
   ────────────────────────────────────────────── */
   prices: {
-    nordvpn:       { monthly: 11.99, annual: 3.99,  biennial: 2.99, origPrice: 11.99, buyPrice: '$3.99',  buyNote: 'per month · billed $95.76 every 2 years' },
-    purevpn:       { monthly: 10.95, annual: 3.74,  biennial: 1.99, origPrice: 10.95, buyPrice: '$1.99',  buyNote: 'per month · billed every 2 years' },
+    nordvpn:       { monthly: 11.99, annual: 3.49,  biennial: 2.99, origPrice: 11.99, buyPrice: '$3.49',  buyNote: 'per month · billed $83.76 every 2 years'},
+    purevpn:       { monthly: 10.95, annual: 3.74,  biennial: 2.15, origPrice: 10.95, buyPrice: '$2.15',  buyNote: 'per month · billed every 2 years' },
     express:       { monthly: 12.95, annual: 6.67,  biennial: 4.99, origPrice: 12.95, buyPrice: '$6.67',  buyNote: 'per month · billed $80.04 per year' },
     cyberghost:    { monthly: 12.99, annual: 2.19,  biennial: 2.03, origPrice: 12.99, buyPrice: '$2.03',  buyNote: 'per month · billed every 2 years' },
     proton:        { monthly: 9.99,  annual: 4.99,  biennial: 3.99, origPrice: 9.99,  buyPrice: '$4.99',  buyNote: 'per month · billed $59.88 per year' },
@@ -131,7 +131,7 @@ const SITE_DATA = {
       name:      'NordVPN',
       badge:     'Most Popular',
       desc:      'Best overall -- 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction',
-      price:     '$3.99/mo',
+      price:     '$3.49/mo',
       note:      'Billed on 2-year plan · Was $11.99/mo monthly',
       link:      'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902',
       guarantee: '30-day money-back guarantee',
@@ -141,7 +141,7 @@ const SITE_DATA = {
       name:      'PureVPN',
       badge:     "Editor's Choice",
       desc:      'KPMG-audited · 6,500+ servers · 10 devices · port forwarding · BVI jurisdiction',
-      price:     '$1.99/mo',
+      price:     '$2.15/mo',
       note:      'Billed on 2-year plan · Was $10.95/mo monthly',
       link:      'https://billing.purevpn.com/aff.php?aff=49387474',
       guarantee: '31-day money-back guarantee',
@@ -161,7 +161,7 @@ const SITE_DATA = {
       name:      'IPVanish',
       badge:     'Unlimited Devices',
       desc:      'Unlimited simultaneous devices, WireGuard & IKEv2, 2,200+ servers, 30-day money-back',
-      price:     '$3.99/mo',
+      price:     '$3.49/mo',
       note:      'Billed annually · Was $10.99/mo monthly',
       link:      'https://www.ipvanish.com/',   // TODO: replace with CJ affiliate link when approved
       guarantee: '30-day money-back guarantee',
