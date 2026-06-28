@@ -707,7 +707,7 @@
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 <!-- COOKIE CONSENT BANNER -->
-<div id="vcCookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a2540;border-top:3px solid #d4af37;padding:.9rem 2rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,.3)">
+<div id="vcCookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a2540;border-top:3px solid #d4af37;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,.3)">
   <p style="margin:0;font-family:var(--mono,monospace);font-size:.78rem;color:#93c5e8;flex:1;min-width:200px">🍪 This site uses cookies for analytics to help us improve. <a href="javascript:void(0)" onclick="openLegal('cookies')" style="color:#d4af37;text-decoration:underline">Cookie Policy</a></p>
   <div style="display:flex;gap:.6rem;flex-shrink:0">
     <button onclick="vcConsent('accepted')" style="background:#d4af37;color:#0a2540;border:none;padding:.45rem 1.2rem;border-radius:4px;font-family:var(--mono,monospace);font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.5px">Accept</button>
@@ -721,13 +721,12 @@
     document.getElementById('vcCookieBanner').style.display='none';
     if(choice==='accepted')vcLoadGA4();
   }
-  (function(){
-    var c=vcGetCookie('vc_consent');
-    if(!c){
+  window.addEventListener('DOMContentLoaded',function(){
+    if(document.cookie.indexOf('vc_consent=')===-1){
       var b=document.getElementById('vcCookieBanner');
       if(b)b.style.display='flex';
     }
-  })();
+  });
 </script>
 </body>
 </html>
