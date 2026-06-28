@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRJP2W44ZE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HRJP2W44ZE');
+  // GA4 loads only after cookie consent
+  function vcLoadGA4(){
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-HRJP2W44ZE';
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js',new Date());
+    gtag('config','G-HRJP2W44ZE');
+  }
+  function vcGetCookie(n){var m=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return m?m.pop():'';}
+  if(vcGetCookie('vc_consent')==='accepted'){vcLoadGA4();}
 </script>
 <!-- VPN Compare · bestvpncompareonline.com · v1.1.4 · 20 June 2026 (tab-scroll fix, deals-grid spacing, section-label contrast, blog carousel) -->
 <html lang="en">
@@ -374,9 +381,6 @@
           <span class="result-metric-label">Per User / Per Year (A)</span>
           <span class="result-metric-val gold" id="rPerUser">—</span>
         </div>
-        <div id="calcCTA" style="display:none;margin-top:1.2rem;text-align:center">
-          <a id="calcCtaLink" href="#" target="_blank" rel="nofollow sponsored noopener" class="btn-primary" style="font-size:.9rem;padding:.7rem 1.8rem">Get Deal →</a>
-        </div>
         <p class="calc-note">💡 Prices are estimates based on publicly listed rates as of June 2026. Business plans may have volume discounts — contact providers directly. Affiliate links may earn us a commission.</p>
       </div>
     </div>
@@ -701,5 +705,29 @@
   var AUTOHIDE = Boolean(0);
 </script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="vcCookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a2540;border-top:3px solid #d4af37;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,.3)">
+  <p style="margin:0;font-family:var(--mono,monospace);font-size:.78rem;color:#93c5e8;flex:1;min-width:200px">🍪 This site uses cookies for analytics to help us improve. <a href="javascript:void(0)" onclick="openLegal('cookies')" style="color:#d4af37;text-decoration:underline">Cookie Policy</a></p>
+  <div style="display:flex;gap:.6rem;flex-shrink:0">
+    <button onclick="vcConsent('accepted')" style="background:#d4af37;color:#0a2540;border:none;padding:.45rem 1.2rem;border-radius:4px;font-family:var(--mono,monospace);font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.5px">Accept</button>
+    <button onclick="vcConsent('declined')" style="background:transparent;color:#93c5e8;border:1px solid #93c5e8;padding:.45rem 1.2rem;border-radius:4px;font-family:var(--mono,monospace);font-size:.78rem;cursor:pointer;letter-spacing:.5px">Decline</button>
+  </div>
+</div>
+<script>
+  function vcConsent(choice){
+    var exp=new Date();exp.setFullYear(exp.getFullYear()+1);
+    document.cookie='vc_consent='+choice+';expires='+exp.toUTCString()+';path=/;SameSite=Lax';
+    document.getElementById('vcCookieBanner').style.display='none';
+    if(choice==='accepted')vcLoadGA4();
+  }
+  (function(){
+    var c=vcGetCookie('vc_consent');
+    if(!c){
+      var b=document.getElementById('vcCookieBanner');
+      if(b)b.style.display='flex';
+    }
+  })();
+</script>
 </body>
 </html>
