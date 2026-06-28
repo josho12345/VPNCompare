@@ -7,14 +7,14 @@
    VPN DATA — extended to 12 providers
 ══════════════════════════════════════════════ */
 const vpns = [
-  { id:'nordvpn',    name:'NordVPN',        speed:780, speedLabel:'⚡ 780 Mbps', servers:'6,400+', nolog:true,  kill:true,  devices:10,  monthly:11.99, annual:3.49,  biennial:2.99, score:9.4, tags:['personal','best'],     tagLabel:'BEST OVERALL',  tagClass:'tag-best',    card:true,  highlight:true, live:true,  tagline:'Fastest speeds + independently audited no-log policy',      features:['Threat Protection AI','Double VPN','Onion over VPN','Meshnet peer-to-peer','6,400+ servers in 111 countries','10 simultaneous devices'], link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back', origPrice:11.99,
+  { id:'nordvpn',    name:'NordVPN',        speed:780, speedLabel:'⚡ 780 Mbps', servers:'6,400+', nolog:true,  kill:true,  devices:10,  monthly:11.99, annual:3.99,  biennial:2.99, score:9.4, tags:['personal','best'],     tagLabel:'BEST OVERALL',  tagClass:'tag-best',    card:true,  highlight:true, live:true,  tagline:'Fastest speeds + independently audited no-log policy',      features:['Threat Protection AI','Double VPN','Onion over VPN','Meshnet peer-to-peer','6,400+ servers in 111 countries','10 simultaneous devices'], link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back', origPrice:11.99,
     pros:['Fastest average speeds in our testing','Independently audited 4× by Deloitte','Threat Protection blocks malware & ads','10 device allowance is class-leading','NordLynx (WireGuard) protocol'],
     cons:['2-year plan required for best price','Desktop app can feel feature-heavy','No split tunnelling on iOS'],
     scores:{speed:9.8,privacy:9.2,streaming:9.6,value:9.0,ease:9.3},
     review:'<h3>Overview<\/h3><p>NordVPN has been our top overall pick for three consecutive years. In our June 2026 testing round, it achieved an average of 780 Mbps on UK servers using NordLynx (WireGuard) — the fastest result of any VPN we tested.<\/p><h3>Speed & Performance<\/h3><p>On a 1Gbps test connection, NordVPN averaged 780 Mbps locally and 680 Mbps to US servers — a speed retention of roughly 78%, exceptional for a VPN.<\/p><h3>Privacy & Security<\/h3><p>NordVPN\'s fourth independent audit, completed by Deloitte in early 2025, confirmed no logs are retained. Incorporated in Panama, outside the 5\/9\/14 Eyes alliances.<\/p><h3>Streaming Performance<\/h3><p>Unblocked all 8 streaming platforms in our tests including Netflix US, UK, Japan and Australia. BBC iPlayer worked reliably across all 15 UK server locations tested.<\/p><h3>Value<\/h3><p>At $3.99\/mo on the 2-year plan, NordVPN represents excellent value. The 10-device allowance is particularly generous — most competitors offer 5–8.<\/p><h3>Nord Ecosystem — Beyond the VPN<\/h3><p>If you\'re already a NordVPN subscriber, two companion products are worth considering from the same provider family:</p><ul><li><a href="https:\/\/go.nordpass.io\/aff_c?offer_id=488&aff_id=141394&url_id=9356" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)"><strong>NordPass<\/strong><\/a> — Nord\'s password manager. End-to-end encrypted vault, zero-knowledge architecture, biometric unlock, secure sharing, and a data breach scanner. A natural pairing with NordVPN for complete online security.<\/li><li><a href="https:\/\/nordlayer.com\/pricing\/" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)"><strong>NordLayer<\/strong><\/a> — Nord\'s business VPN solution for teams. Built on the same infrastructure as NordVPN with centralised management, SSO, and dedicated IPs.<\/li><\/ul>',
     buyPrice:'$3.99', buyNote:'per month · billed $95.76 every 2 years' },
 
-  { id:'purevpn',   name:'PureVPN',         speed:600, speedLabel:'🔵 600 Mbps', servers:'6,500+', nolog:true,  kill:true,  devices:10,  monthly:10.95, annual:3.74,  biennial:2.15, score:8.5, tags:['personal','budget'],   tagLabel:'EDITORS CHOICE', tagClass:'tag-best',   card:true,  highlight:false, live:true, tagline:'Outstanding value — KPMG-audited, 6,500+ servers, just $1.99/mo',
+  { id:'purevpn',   name:'PureVPN',         speed:600, speedLabel:'🔵 600 Mbps', servers:'6,500+', nolog:true,  kill:true,  devices:10,  monthly:10.95, annual:3.74,  biennial:1.99, score:8.5, tags:['personal','budget'],   tagLabel:'EDITORS CHOICE', tagClass:'tag-best',   card:true,  highlight:false, live:true, tagline:'Outstanding value — KPMG-audited, 6,500+ servers, just $1.99/mo',
     features:['6,500+ servers in 78 countries','KPMG independently audited no-log policy','10 simultaneous devices','Port forwarding included','Dedicated IP available','31-day money-back guarantee'],
     link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'31-day money-back', origPrice:10.95,
     pros:['Lowest price of any audited VPN at $1.99\/mo','KPMG-verified no-log policy since 2023','6,500+ servers — one of the largest networks','Port forwarding built-in (rare feature)','10 devices — matches NordVPN','31-day money-back guarantee'],
@@ -461,10 +461,10 @@ function closeModalDirect(){document.getElementById('modalOverlay').classList.re
    DEALS & VERIFIED PRICES
 ══════════════════════════════════════════════ */
 const deals=[
-  {name:'NordVPN', badge:'Most Popular', desc:'Best overall -- 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction', price:'$3.49/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly', link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee', promo:null},
-  {name:'PureVPN', badge:"Editor's Choice", desc:'KPMG-audited · 6,500+ servers · 10 devices · port forwarding · BVI jurisdiction', price:'$2.15/mo', note:'Billed on 2-year plan · Was $10.95/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'31-day money-back guarantee', promo:'BESTVPN'},
+  {name:'NordVPN', badge:'Most Popular', desc:'Best overall -- 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction', price:'$3.99/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly', link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee', promo:null},
+  {name:'PureVPN', badge:"Editor's Choice", desc:'KPMG-audited · 6,500+ servers · 10 devices · port forwarding · BVI jurisdiction', price:'$1.99/mo', note:'Billed on 2-year plan · Was $10.95/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'31-day money-back guarantee', promo:'BESTVPN'},
   {name:'Surfshark', badge:'Best for Families', desc:'Unlimited simultaneous devices, CleanWeb ad blocker, NoBorders mode, Netherlands jurisdiction', price:'$2.49/mo', note:'Billed on 2-year plan · Was $10.99/mo monthly', link:'https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853', guarantee:'30-day money-back guarantee', promo:null},
-  {name:'IPVanish', badge:'Unlimited Devices', desc:'Unlimited simultaneous devices, WireGuard & IKEv2, 2,200+ servers, 30-day money-back', price:'$3.49/mo', note:'Billed annually · Was $10.99/mo monthly', link:'https://www.ipvanish.com/', guarantee:'30-day money-back guarantee', promo:null},
+  {name:'IPVanish', badge:'Unlimited Devices', desc:'Unlimited simultaneous devices, WireGuard & IKEv2, 2,200+ servers, 30-day money-back', price:'$3.99/mo', note:'Billed annually · Was $10.99/mo monthly', link:'https://www.ipvanish.com/', guarantee:'30-day money-back guarantee', promo:null},
 ];
 function copyPromo(el,code){
   navigator.clipboard.writeText(code).catch(()=>{});
@@ -487,7 +487,7 @@ function renderDeals(){
       ${promoHTML}
       <p style="font-family:var(--mono);font-size:.68rem;color:#4a8aaa;margin-bottom:1rem">✓ ${d.guarantee}</p>
       <a href="${d.link}" target="_blank" rel="nofollow sponsored noopener" class="deal-cta">View Current Price →</a>
-      <p class="deal-terms">Price verified 28 June 2026 · Confirm at provider website before purchase</p>`;
+      <p class="deal-terms">Price verified 27 June 2026 · Confirm at provider website before purchase</p>`;
     g.appendChild(card);
   });
 }
@@ -671,51 +671,11 @@ requestAnimationFrame(()=>requestAnimationFrame(renderReviews));
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
 
 /* ══════════════════════════════════════════════
-   NEWSLETTER — MailerLite integration
-   SETUP INSTRUCTIONS (one-time, takes 5 minutes):
-   1. Sign up free at mailerlite.com (free forever up to 1,000 subscribers)
-   2. Go to Integrations → API → copy your API token
-   3. Go to Subscribers → Groups → create a group, copy its numeric ID
-   4. Replace PASTE_YOUR_MAILERLITE_API_TOKEN and PASTE_YOUR_GROUP_ID below
-   5. In MailerLite Settings → Sender → set your Zoho domain email as "From" address
+   PRICE ALERT — Brevo integration
+   Submits to the same Brevo list as the newsletter form (list #3).
+   No API key needed — uses the public form endpoint.
 ══════════════════════════════════════════════ */
-const ML_API_TOKEN = 'PASTE_YOUR_MAILERLITE_API_TOKEN';
-const ML_GROUP_ID  = 'PASTE_YOUR_GROUP_ID';
-
-async function subscribeNewsletter(){
-  const name  = document.getElementById('nlName').value.trim();
-  const email = document.getElementById('nlEmail').value.trim();
-  const btn   = document.querySelector('.btn-newsletter');
-  if(!email || !email.includes('@')){
-    document.getElementById('nlEmail').style.borderColor='var(--red)';
-    setTimeout(()=>document.getElementById('nlEmail').style.borderColor='',1000);
-    return;
-  }
-  btn.textContent = 'Subscribing…';
-  btn.disabled = true;
-  try {
-    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_API_TOKEN},
-      body: JSON.stringify({ email, fields:{ name }, groups:[ML_GROUP_ID] })
-    });
-    if(res.ok || res.status===409){
-      document.getElementById('nlSuccess').style.display = 'block';
-      document.getElementById('nlName').value  = '';
-      document.getElementById('nlEmail').value = '';
-    } else {
-      document.getElementById('nlSuccess').style.display = 'block'; // still show success UX
-      console.warn('MailerLite newsletter:', res.status);
-    }
-  } catch(e) {
-    // API token not yet configured — show success so UX works during setup
-    document.getElementById('nlSuccess').style.display = 'block';
-    document.getElementById('nlName').value  = '';
-    document.getElementById('nlEmail').value = '';
-  }
-  btn.textContent = 'Subscribe Free →';
-  btn.disabled = false;
-}
+const BREVO_FORM_URL = 'https://a45e080b.sibforms.com/serve/MUIFAAHo55ssodidAa5ePc9-kzlcryEvnKzC2-TNxPvaQaFuVK46vNWr5CzcUV6l9i3LxPTjtXeD82bfzhgmPU-T7cCCCx0bDOpBcR0N6g53fuVIQq8OutSIWCmE1N_ofbhZR4TW3qrgf0354t2bxO-i-Z7kZrm9fuFXO9gp9QZzJft7HLL-eFh_AzXAEFdYQJypsQQ6SqGuYH-TQw==';
 
 async function subscribeAlert(){
   const email = document.getElementById('alertEmail').value.trim();
@@ -728,12 +688,12 @@ async function subscribeAlert(){
   btn.textContent = 'Sending…';
   btn.disabled = true;
   try {
-    await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_API_TOKEN},
-      body: JSON.stringify({ email, fields:{ name:'Price Alert' }, groups:[ML_GROUP_ID] })
-    });
-  } catch(e) { /* shows confirm either way */ }
+    const fd = new FormData();
+    fd.append('EMAIL', email);
+    fd.append('email_address_check', '');
+    fd.append('locale', 'en');
+    await fetch(BREVO_FORM_URL, { method:'POST', body:fd, mode:'no-cors' });
+  } catch(e) { /* show confirm either way */ }
   document.getElementById('alertConfirm').style.display = 'block';
   document.getElementById('alertEmail').value = '';
   btn.textContent = 'Notify Me';
