@@ -555,4 +555,4 @@ footer{background:#05182a;border-top:3px solid var(--cyan);color:#a8c8e0}
 .vpn-table-wrap{scrollbar-color:rgba(217,119,6,.45) transparent}
 .vpn-table-outer::after{background:linear-gradient(to right,transparent,rgba(217,119,6,.08))}
 /* -- GOLD 3D SHADOW EXTENSION -- */
-.sponsor-banner,.pros-box,.quiz-opt,.calc-result-panel,.calc-note,.ad-slot,.filter-btn,.carousel-btn,.country-tab,.country-intro,.country-card{box-shadow:0 4px 24px rgba(217,119,6,.18),0 3px 0 rgba(155,82,4,.35)}
+.pros-box,.quiz-opt,.calc-result-panel,.calc-note,.ad-slot,.filter-btn,.carousel-btn,.country-tab,.country-intro,.country-card{box-shadow:0 4px 24px rgba(217,119,6,.18),0 3px 0 rgba(155,82,4,.35)}
