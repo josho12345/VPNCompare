@@ -487,7 +487,7 @@ function renderDeals(){
       ${promoHTML}
       <p style="font-family:var(--mono);font-size:.68rem;color:#4a8aaa;margin-bottom:1rem">✓ ${d.guarantee}</p>
       <a href="${d.link}" target="_blank" rel="nofollow sponsored noopener" class="deal-cta">View Current Price →</a>
-      <p class="deal-terms">Price verified 27 June 2026 · Confirm at provider website before purchase</p>`;
+      <p class="deal-terms">Price verified 28 June 2026 · Confirm at provider website before purchase</p>`;
     g.appendChild(card);
   });
 }
