@@ -197,6 +197,17 @@ function calcUpdate(){
   const diff=an2-an1;
   document.getElementById('rDiff').textContent=(diff>=0?'+':'−')+'$'+Math.abs(diff).toFixed(2)+'/yr';
   document.getElementById('rPerUser').textContent='$'+(an1/users).toFixed(2)+'/user/yr';
+  // Calculator winner CTA
+  const winner=an1<=an2?v1:v2;
+  const calcCTA=document.getElementById('calcCTA');
+  const calcCtaLink=document.getElementById('calcCtaLink');
+  if(calcCTA&&calcCtaLink&&winner&&winner.live){
+    calcCtaLink.href=winner.link;
+    calcCtaLink.textContent='Get '+winner.name+' Deal →';
+    calcCTA.style.display='block';
+  } else if(calcCTA){
+    calcCTA.style.display='none';
+  }
 }
 calcUpdate();
 
