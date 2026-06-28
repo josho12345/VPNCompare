@@ -1,0 +1,31 @@
+name: Update Site from site-data.js
+
+# Manual trigger only -- run this after any manual edit to site-data.js
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run update-site.js
+        run: node update-site.js
+
+      - name: Commit updated script.js
+        run: |
+          git config user.name "VPN Compare Bot"
+          git config user.email "bot@bestvpncompareonline.com"
+          git add script.js
+          git diff --staged --quiet || git commit -m "Update script.js from site-data.js: $(date '+%d %B %Y')"
+          git push

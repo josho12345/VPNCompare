@@ -7,14 +7,14 @@
    VPN DATA — extended to 12 providers
 ══════════════════════════════════════════════ */
 const vpns = [
-  { id:'nordvpn',    name:'NordVPN',        speed:780, speedLabel:'⚡ 780 Mbps', servers:'6,400+', nolog:true,  kill:true,  devices:10,  monthly:11.99, annual:3.99,  biennial:2.99, score:9.4, tags:['personal','best'],     tagLabel:'BEST OVERALL',  tagClass:'tag-best',    card:true,  highlight:true,  tagline:'Fastest speeds + independently audited no-log policy',      features:['Threat Protection AI','Double VPN','Onion over VPN','Meshnet peer-to-peer','6,400+ servers in 111 countries','10 simultaneous devices'], link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back', origPrice:11.99,
+  { id:'nordvpn',    name:'NordVPN',        speed:780, speedLabel:'⚡ 780 Mbps', servers:'6,400+', nolog:true,  kill:true,  devices:10,  monthly:11.99, annual:3.49,  biennial:2.99, score:9.4, tags:['personal','best'],     tagLabel:'BEST OVERALL',  tagClass:'tag-best',    card:true,  highlight:true, live:true,  tagline:'Fastest speeds + independently audited no-log policy',      features:['Threat Protection AI','Double VPN','Onion over VPN','Meshnet peer-to-peer','6,400+ servers in 111 countries','10 simultaneous devices'], link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back', origPrice:11.99,
     pros:['Fastest average speeds in our testing','Independently audited 4× by Deloitte','Threat Protection blocks malware & ads','10 device allowance is class-leading','NordLynx (WireGuard) protocol'],
     cons:['2-year plan required for best price','Desktop app can feel feature-heavy','No split tunnelling on iOS'],
     scores:{speed:9.8,privacy:9.2,streaming:9.6,value:9.0,ease:9.3},
-    review:'<h3>Overview<\/h3><p>NordVPN has been our top overall pick for three consecutive years. In our June 2026 testing round, it achieved an average of 780 Mbps on UK servers using NordLynx (WireGuard) — the fastest result of any VPN we tested.<\/p><h3>Speed & Performance<\/h3><p>On a 1Gbps test connection, NordVPN averaged 780 Mbps locally and 680 Mbps to US servers — a speed retention of roughly 78%, exceptional for a VPN.<\/p><h3>Privacy & Security<\/h3><p>NordVPN\'s fourth independent audit, completed by Deloitte in early 2025, confirmed no logs are retained. Incorporated in Panama, outside the 5\/9\/14 Eyes alliances.<\/p><h3>Streaming Performance<\/h3><p>Unblocked all 8 streaming platforms in our tests including Netflix US, UK, Japan and Australia. BBC iPlayer worked reliably across all 15 UK server locations tested.<\/p><h3>Value<\/h3><p>At $3.99\/mo on the 2-year plan, NordVPN represents excellent value. The 10-device allowance is particularly generous — most competitors offer 5–8.<\/p><h3>Nord Ecosystem — Beyond the VPN<\/h3><p>If you\'re already a NordVPN subscriber, two companion products are worth considering from the same provider family:</p><ul><li><a href="https:\/\/go.nordpass.io\/aff_c?offer_id=488&aff_id=141394&url_id=9356" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)"><strong>NordPass<\/strong><\/a> — Nord\'s password manager. End-to-end encrypted vault, zero-knowledge architecture, biometric unlock, secure sharing, and a data breach scanner. A natural pairing with NordVPN for complete online security.<\/li><li><a href="https:\/\/nordlayer.com\/pricing\/" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)"><strong>NordLayer<\/strong><\/a> — Nord\'s business VPN solution for teams. Built on the same infrastructure as NordVPN with centralised management, SSO, and dedicated IPs.<\/li><\/ul>',
+    review:'<h3>Overview<\/h3><p>NordVPN has been our top overall pick for three consecutive years. In our June 2026 testing round, it achieved an average of 780 Mbps on UK servers using NordLynx (WireGuard) — the fastest result of any VPN we tested.<\/p><h3>Speed & Performance<\/h3><p>On a 1Gbps test connection, NordVPN averaged 780 Mbps locally and 680 Mbps to US servers — a speed retention of roughly 78%, exceptional for a VPN.<\/p><h3>Privacy & Security<\/h3><p>NordVPN\'s fourth independent audit, completed by Deloitte in early 2025, confirmed no logs are retained. Incorporated in Panama, outside the 5\/9\/14 Eyes alliances.<\/p><h3>Streaming Performance<\/h3><p>Unblocked all 8 streaming platforms in our tests including Netflix US, UK, Japan and Australia. BBC iPlayer worked reliably across all 15 UK server locations tested.<\/p><h3>Value<\/h3><p>At $3.99\/mo on the 2-year plan, NordVPN represents excellent value. The 10-device allowance is particularly generous — most competitors offer 5–8.<\/p><h3>Nord Ecosystem — Beyond the VPN<\/h3><p>If you\'re already a NordVPN subscriber, two companion products are worth considering from the same provider family:</p><ul><li><a href="https:\/\/go.nordpass.io\/aff_c?offer_id=488&aff_id=141394&url_id=9356" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)"><strong>NordPass<\/strong><\/a> — Nord\'s password manager. End-to-end encrypted vault, zero-knowledge architecture, biometric unlock, secure sharing, and a data breach scanner. A natural pairing with NordVPN for complete online security.<\/li><li><a href="https:\/\/nordlayer.com\/pricing\/" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)"><strong>NordLayer<\/strong><\/a> — Nord\'s business VPN solution for teams. Built on the same infrastructure as NordVPN with centralised management, SSO, and dedicated IPs.<\/li><\/ul>',
     buyPrice:'$3.99', buyNote:'per month · billed $95.76 every 2 years' },
 
-  { id:'purevpn',   name:'PureVPN',         speed:600, speedLabel:'🔵 600 Mbps', servers:'6,500+', nolog:true,  kill:true,  devices:10,  monthly:10.95, annual:3.74,  biennial:1.99, score:8.5, tags:['personal','budget'],   tagLabel:'EDITORS CHOICE', tagClass:'tag-best',   card:true,  highlight:false, tagline:'Outstanding value — KPMG-audited, 6,500+ servers, just $1.99/mo',
+  { id:'purevpn',   name:'PureVPN',         speed:600, speedLabel:'🔵 600 Mbps', servers:'6,500+', nolog:true,  kill:true,  devices:10,  monthly:10.95, annual:3.74,  biennial:2.15, score:8.5, tags:['personal','budget'],   tagLabel:'EDITORS CHOICE', tagClass:'tag-best',   card:true,  highlight:false, live:true, tagline:'Outstanding value — KPMG-audited, 6,500+ servers, just $1.99/mo',
     features:['6,500+ servers in 78 countries','KPMG independently audited no-log policy','10 simultaneous devices','Port forwarding included','Dedicated IP available','31-day money-back guarantee'],
     link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'31-day money-back', origPrice:10.95,
     pros:['Lowest price of any audited VPN at $1.99\/mo','KPMG-verified no-log policy since 2023','6,500+ servers — one of the largest networks','Port forwarding built-in (rare feature)','10 devices — matches NordVPN','31-day money-back guarantee'],
@@ -23,82 +23,106 @@ const vpns = [
     review:'<h3>Overview<\/h3><p>PureVPN is one of the longest-running VPN providers, founded in 2007 and now headquartered in the British Virgin Islands. In 2026 it offers outstanding value — the $1.99\/mo two-year plan is the lowest price of any independently audited VPN we review.<\/p><h3>KPMG Audit<\/h3><p>PureVPN completed an independent no-log audit with KPMG in 2023. KPMG confirmed that PureVPN retains no browsing activity, connection logs, DNS queries, IP addresses, or session data — placing it in the same verified tier as NordVPN and ExpressVPN for log policy credibility.<\/p><h3>Server Network<\/h3><p>With 6,500+ servers across 78 countries, PureVPN has one of the largest networks reviewed. Coverage is particularly strong across Asia-Pacific.<\/p><h3>Port Forwarding<\/h3><p>Port forwarding is included as a standard feature — something most VPNs either omit or charge extra for. Particularly useful for torrent users and remote desktop connections.<\/p><h3>Value Assessment<\/h3><p>At $1.99\/mo with a 31-day money-back guarantee, PureVPN delivers verified privacy, a large server network, 10 device coverage, and port forwarding at an unmatched price point.<\/p>',
     buyPrice:'$1.99', buyNote:'per month · billed every 2 years' },
 
-  { id:'express',    name:'ExpressVPN',     speed:740, speedLabel:'⚡ 740 Mbps', servers:'3,200+', nolog:true,  kill:true,  devices:8,   monthly:12.95, annual:6.67,  biennial:4.99, score:9.1, tags:['personal'],            tagLabel:'',              tagClass:'',            card:true,  highlight:false, tagline:'Most reliable worldwide server network',                    features:['Lightway Protocol (ultra-fast)','TrustedServer RAM-only','Split tunnelling','24/7 live chat','Works in China','MediaStreamer DNS'], link:'https://www.expressvpn.com/order/', guarantee:'30-day money-back', origPrice:12.95,
+  { id:'express',    name:'ExpressVPN',     speed:740, speedLabel:'⚡ 740 Mbps', servers:'3,200+', nolog:true,  kill:true,  devices:8,   monthly:12.95, annual:6.67,  biennial:4.99, score:9.1, tags:['personal'],            tagLabel:'',              tagClass:'',            card:true,  highlight:false, live:false, tagline:'Most reliable worldwide server network',                    features:['Lightway Protocol (ultra-fast)','TrustedServer RAM-only','Split tunnelling','24/7 live chat','Works in China','MediaStreamer DNS'], link:'https://www.expressvpn.com/order/', guarantee:'30-day money-back', origPrice:12.95,
     pros:['TrustedServer RAM-only across ALL servers','MediaStreamer DNS for smart TVs','Lightway protocol is exceptionally fast','Works reliably in China','Excellent 24\/7 live chat support'],
     cons:['Most expensive premium option','8 device limit (vs NordVPN\'s 10)','Acquired by Kape Technologies in 2021'],
     scores:{speed:9.5,privacy:9.0,streaming:9.7,value:7.8,ease:9.5},
     review:'<h3>Overview<\/h3><p>ExpressVPN remains one of the most polished and reliable VPNs in 2026. While NordVPN edges it on raw speed and value, ExpressVPN leads on ease of use, streaming reliability, and its unique MediaStreamer DNS feature.<\/p><h3>TrustedServer Architecture<\/h3><p>ExpressVPN runs its entire server network on RAM only — meaning no data can ever be written to a hard drive. This was independently verified by PwC in 2024 and represents the strongest technical implementation of a no-log policy available.<\/p><h3>Streaming<\/h3><p>ExpressVPN consistently leads our streaming tests. MediaStreamer DNS allows devices that cannot run VPN software to benefit from geo-unblocking without a full VPN connection.<\/p>',
     buyPrice:'$6.67', buyNote:'per month · billed $80.04 per year' },
 
-  { id:'cyberghost', name:'CyberGhost',     speed:680, speedLabel:'🔵 680 Mbps', servers:'9,200+', nolog:true,  kill:true,  devices:7,   monthly:12.99, annual:2.19,  biennial:2.03, score:8.6, tags:['personal','budget'],   tagLabel:'BEST VALUE',    tagClass:'tag-budget',  card:true,  highlight:false, tagline:'9,200+ servers — biggest network, lowest price',            features:['Streaming-optimised servers','Torrent-optimised servers','45-day money-back','NoSpy Servers','WireGuard & OpenVPN','7 devices'], link:'https://www.cyberghostvpn.com/en_US/pricing', guarantee:'45-day money-back', origPrice:12.99,
+  { id:'cyberghost', name:'CyberGhost',     speed:680, speedLabel:'🔵 680 Mbps', servers:'9,200+', nolog:true,  kill:true,  devices:7,   monthly:12.99, annual:2.19,  biennial:2.03, score:8.6, tags:['personal','budget'],   tagLabel:'BEST VALUE',    tagClass:'tag-budget',  card:true,  highlight:false, live:false, tagline:'9,200+ servers — biggest network, lowest price',            features:['Streaming-optimised servers','Torrent-optimised servers','45-day money-back','NoSpy Servers','WireGuard & OpenVPN','7 devices'], link:'https://www.cyberghostvpn.com/en_US/pricing', guarantee:'45-day money-back', origPrice:12.99,
     pros:['Cheapest reputable VPN at $2.03\/mo','Longest money-back guarantee (45 days)','9,200+ servers — largest network tested','Dedicated streaming & torrent servers','NoSpy servers for extra privacy'],
     cons:['Based in Romania (EU data laws apply)','Desktop app less refined than NordVPN','Slower speeds than top-tier providers'],
     scores:{speed:8.2,privacy:8.4,streaming:8.8,value:9.8,ease:8.9},
     review:'<h3>Overview<\/h3><p>CyberGhost is our best value pick for 2026. At $2.03\/month on the 2-year plan with a 45-day money-back guarantee, it is the most risk-free way to try a premium VPN.<\/p><h3>Server Network<\/h3><p>With 9,200+ servers across 91 countries, CyberGhost has the largest network of any VPN tested. Servers are organised by use case — dedicated streaming and torrent servers make setup straightforward for beginners.<\/p>',
     buyPrice:'$2.03', buyNote:'per month · billed every 2 years' },
 
-  { id:'proton',     name:'Proton VPN',     speed:620, speedLabel:'🔵 620 Mbps', servers:'2,900+', nolog:true,  kill:true,  devices:10,  monthly:9.99,  annual:4.99,  biennial:3.99, score:8.9, tags:['personal','privacy'],  tagLabel:'BEST PRIVACY',  tagClass:'tag-privacy', card:true,  highlight:false, tagline:'Swiss privacy law + open-source code — verified',            features:['Open-source & independently audited','Secure Core multi-hop routing','NetShield ad/malware blocker','Stealth protocol (censored countries)','Free tier available','10 devices'], link:'https://protonvpn.com/pricing/', guarantee:'30-day money-back', origPrice:9.99,
+  { id:'proton',     name:'Proton VPN',     speed:620, speedLabel:'🔵 620 Mbps', servers:'2,900+', nolog:true,  kill:true,  devices:10,  monthly:9.99,  annual:4.99,  biennial:3.99, score:8.9, tags:['personal','privacy'],  tagLabel:'BEST PRIVACY',  tagClass:'tag-privacy', card:true,  highlight:false, live:false, tagline:'Swiss privacy law + open-source code — verified',            features:['Open-source & independently audited','Secure Core multi-hop routing','NetShield ad/malware blocker','Stealth protocol (censored countries)','Free tier available','10 devices'], link:'https://protonvpn.com/pricing/', guarantee:'30-day money-back', origPrice:9.99,
     pros:['Fully open-source — anyone can inspect the code','Based in Switzerland (outside EU & US jurisdiction)','Free tier with unlimited data','Secure Core adds multi-hop protection','Accepts Bitcoin'],
     cons:['Slower than NordVPN and ExpressVPN','Fewer servers than competitors','Free tier server locations limited'],
     scores:{speed:7.8,privacy:9.9,streaming:8.2,value:8.8,ease:8.4},
     review:'<h3>Overview<\/h3><p>Proton VPN is the most credible privacy-first VPN in 2026, headquartered in Geneva, Switzerland — one of the world\'s strongest legal frameworks for digital privacy.<\/p><h3>Open Source<\/h3><p>All Proton VPN client apps are fully open source and available on GitHub. Any security researcher in the world can inspect the code for backdoors or vulnerabilities.<\/p><h3>Secure Core<\/h3><p>Proton\'s Secure Core routes traffic through privacy-friendly countries before exiting through the destination server — meaning even if a destination server is compromised, your real IP cannot be determined.<\/p>',
     buyPrice:'$4.99', buyNote:'per month · billed $59.88 per year' },
 
-  { id:'mullvad',    name:'Mullvad VPN',    speed:650, speedLabel:'🔵 650 Mbps', servers:'700+',   nolog:true,  kill:true,  devices:5,   monthly:5.50,  annual:5.50,  biennial:5.50, score:9.0, tags:['personal','privacy'],  tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://mullvad.net/en/account/create', guarantee:'No contract', origPrice:5.50,
+  { id:'mullvad',    name:'Mullvad VPN',    speed:650, speedLabel:'🔵 650 Mbps', servers:'700+',   nolog:true,  kill:true,  devices:5,   monthly:5.50,  annual:5.50,  biennial:5.50, score:9.0, tags:['personal','privacy'],  tagLabel:'',              tagClass:'',            card:false, highlight:false, live:false, tagline:'', features:[], link:'https://mullvad.net/en/account/create', guarantee:'No contract', origPrice:5.50,
     pros:['No email required to sign up','Accepts cash and Monero','Flat pricing — no lock-in contracts','RAM-only servers verified by Cure53','Court-verified no-log policy'],
     cons:['Only 5 simultaneous devices','Smallest server network (700+)','No dedicated streaming servers'],
     scores:{speed:8.5,privacy:9.9,streaming:7.5,value:9.0,ease:7.8},
     review:'<h3>Overview<\/h3><p>Mullvad is the VPN for users who take anonymity seriously. It requires no email, accepts cash and Monero, and in 2023 Swedish police raided their offices — and left empty-handed, providing real-world verification of their no-log policy.<\/p>',
     buyPrice:'€5.00', buyNote:'per month · no long-term contract required' },
 
-  { id:'surfshark',  name:'Surfshark',      speed:710, speedLabel:'⚡ 710 Mbps', servers:'3,200+', nolog:true,  kill:true,  devices:999, monthly:10.99, annual:2.49,  biennial:1.99, score:8.7, tags:['personal','budget'],   tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853', guarantee:'30-day money-back', origPrice:10.99,
+  { id:'surfshark',  name:'Surfshark',      speed:710, speedLabel:'⚡ 710 Mbps', servers:'3,200+', nolog:true,  kill:true,  devices:999, monthly:10.99, annual:2.49,  biennial:1.99, score:8.7, tags:['personal','budget'],   tagLabel:'',              tagClass:'',            card:true, highlight:false, live:true, tagline:'Unlimited devices — best value for families & power users', features:['Unlimited simultaneous devices','CleanWeb ad & malware blocker','NoBorders censorship bypass','Camouflage mode','30-day money-back guarantee','Surfshark One bundle available'], link:'https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853', guarantee:'30-day money-back', origPrice:10.99,
     pros:['Unlimited simultaneous devices','Very competitive pricing','CleanWeb ad blocker included','NoBorders mode for restricted regions','Surfshark One bundle adds antivirus, search & identity protection'],
     cons:['Merged with NordVPN parent company (2022)','Audit history less extensive than NordVPN','Some servers slower in Asia-Pacific'],
     scores:{speed:9.0,privacy:8.5,streaming:8.8,value:9.5,ease:9.0},
-    review:'<h3>Overview<\/h3><p>Surfshark is one of the best-value VPNs in 2026, particularly for households with many devices — unlimited simultaneous connections on a single subscription at under $2\/mo.<\/p><h3>Surfshark One Bundle<\/h3><p>Beyond the core VPN, Surfshark offers a full cybersecurity suite under the <strong>Surfshark One<\/strong> brand. Each product is available individually:<\/p><ul><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1249&aff_id=44853" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)">Surfshark ONE<\/a> — The complete bundle: VPN + Antivirus + Alert + Search<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=934&aff_id=44853" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)">Surfshark Antivirus<\/a> — Real-time malware protection, cloud-based scanning<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1421&aff_id=44853" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)">Surfshark Alternative-ID<\/a> — Generate a disposable identity and email to protect your real personal data online<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1420&aff_id=44853" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)">Surfshark Alert<\/a> — Real-time breach monitoring for your email, passwords, credit cards and personal ID<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1679&aff_id=44853" target="_blank" rel="nofollow sponsored" style="color:var(--cyan)">Surfshark Search<\/a> — Ad-free, tracker-free private search engine<\/li><\/ul><h3>Ownership Note<\/h3><p>In 2022, Surfshark merged with Nord Security (NordVPN\'s parent company). Both brands operate independently with separate infrastructure and teams.<\/p>',
+    review:'<h3>Overview<\/h3><p>Surfshark is one of the best-value VPNs in 2026, particularly for households with many devices — unlimited simultaneous connections on a single subscription at under $2\/mo.<\/p><h3>Surfshark One Bundle<\/h3><p>Beyond the core VPN, Surfshark offers a full cybersecurity suite under the <strong>Surfshark One<\/strong> brand. Each product is available individually:<\/p><ul><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1249&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)">Surfshark ONE<\/a> — The complete bundle: VPN + Antivirus + Alert + Search<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=934&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)">Surfshark Antivirus<\/a> — Real-time malware protection, cloud-based scanning<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1421&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)">Surfshark Alternative-ID<\/a> — Generate a disposable identity and email to protect your real personal data online<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1420&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)">Surfshark Alert<\/a> — Real-time breach monitoring for your email, passwords, credit cards and personal ID<\/li><li><a href="https:\/\/get.surfshark.net\/aff_c?offer_id=1679&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" style="color:var(--cyan)">Surfshark Search<\/a> — Ad-free, tracker-free private search engine<\/li><\/ul><h3>Ownership Note<\/h3><p>In 2022, Surfshark merged with Nord Security (NordVPN\'s parent company). Both brands operate independently with separate infrastructure and teams.<\/p>',
     buyPrice:'$2.49', buyNote:'per month · billed $59.76 every 2 years' },
 
-  { id:'perimeter',  name:'Perimeter 81',   speed:580, speedLabel:'🔵 580 Mbps', servers:'700+',   nolog:true,  kill:true,  devices:999, monthly:8.00,  annual:6.00,  biennial:5.00, score:9.2, tags:['business'],            tagLabel:'BEST BIZ',      tagClass:'tag-biz',     card:true,  highlight:false, tagline:'Zero-trust SASE — built for distributed teams',             features:['Team management console','SSO / SAML 2.0','Split tunnelling per-app','Dedicated static IPs','SOC 2 Type II certified','Unlimited devices'], link:'https://www.perimeter81.com/', guarantee:'30-day money-back', origPrice:11.00,
+  { id:'perimeter',  name:'Perimeter 81',   speed:580, speedLabel:'🔵 580 Mbps', servers:'700+',   nolog:true,  kill:true,  devices:999, monthly:8.00,  annual:6.00,  biennial:5.00, score:9.2, tags:['business'],            tagLabel:'BEST BIZ',      tagClass:'tag-biz',     card:true,  highlight:false, live:false, tagline:'Zero-trust SASE — built for distributed teams',             features:['Team management console','SSO / SAML 2.0','Split tunnelling per-app','Dedicated static IPs','SOC 2 Type II certified','Unlimited devices'], link:'https://www.perimeter81.com/', guarantee:'30-day money-back', origPrice:11.00,
     pros:['Best-in-class team management dashboard','SSO\/SAML 2.0 with Okta, Azure AD, Google','SOC 2 Type II certified','Per-app split tunnelling','Unlimited devices'],
     cons:['More expensive than consumer VPNs','Overkill for individuals or small teams','Setup requires IT knowledge'],
     scores:{speed:7.5,privacy:9.0,streaming:6.5,value:8.5,ease:7.2},
     review:'<h3>Overview<\/h3><p>Perimeter 81 is a business-grade zero-trust network access (ZTNA) platform designed for organisations managing distributed remote teams — not a consumer VPN.<\/p><h3>Enterprise Integrations<\/h3><p>Integrates natively with Okta, Azure Active Directory, Google Workspace, and any SAML 2.0-compatible identity provider. Holds SOC 2 Type II certification — essential for regulated industries.<\/p>',
     buyPrice:'$6.00', buyNote:'per user/month · billed annually · min 5 users' },
 
-  { id:'nordlayer',  name:'NordLayer',      speed:600, speedLabel:'⚡ 600 Mbps', servers:'500+',   nolog:true,  kill:true,  devices:999, monthly:9.00,  annual:7.00,  biennial:6.00, score:8.8, tags:['business'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://nordlayer.com/pricing/', guarantee:'14-day money-back', origPrice:9.00,
+  { id:'nordlayer',  name:'NordLayer',      speed:600, speedLabel:'🔵 600 Mbps', servers:'500+',   nolog:true,  kill:true,  devices:999, monthly:9.00,  annual:7.00,  biennial:6.00, score:8.8, tags:['business'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, live:false, tagline:'', features:[], link:'https://nordlayer.com/pricing/', guarantee:'14-day money-back', origPrice:9.00,
     pros:['Built on NordVPN\'s proven infrastructure','Competitive pricing for small teams','Auto-connect & always-on VPN','Dedicated IPs available'],
     cons:['Fewer compliance features than Perimeter 81','SOC 2 certification in progress','Limited to 500 servers'],
     scores:{speed:8.8,privacy:8.8,streaming:7.0,value:8.5,ease:8.5},
     review:'<h3>Overview<\/h3><p>NordLayer is NordVPN\'s business-focused offering, best suited for teams of 5–50 users who need a straightforward, reliable business VPN without the complexity of enterprise SASE platforms.<\/p>',
     buyPrice:'$7.00', buyNote:'per user/month · billed annually' },
 
-  { id:'ivpn',       name:'IVPN',           speed:500, speedLabel:'🔵 500 Mbps', servers:'80+',    nolog:true,  kill:true,  devices:7,   monthly:6.00,  annual:5.00,  biennial:4.50, score:8.3, tags:['personal','privacy'],  tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://www.ivpn.net/pricing/', guarantee:'7-day money-back', origPrice:6.00,
+  { id:'ivpn',       name:'IVPN',           speed:500, speedLabel:'🔵 500 Mbps', servers:'80+',    nolog:true,  kill:true,  devices:7,   monthly:6.00,  annual:5.00,  biennial:4.50, score:8.3, tags:['personal','privacy'],  tagLabel:'',              tagClass:'',            card:false, highlight:false, live:false, tagline:'', features:[], link:'https://www.ivpn.net/pricing/', guarantee:'7-day money-back', origPrice:6.00,
     pros:['Open-source apps','Multi-hop (AntiTracker)','No email required','Gibraltar jurisdiction','Transparent ownership'],
     cons:['Only 80+ servers (very limited)','No streaming optimisation','Smaller community & support'],
     scores:{speed:7.2,privacy:9.7,streaming:6.5,value:8.5,ease:7.5},
     review:'<h3>Overview<\/h3><p>IVPN is a small, privacy-focused VPN popular with privacy researchers and security professionals. It publishes full financial transparency reports and has publicly named its ownership — rare in the industry.<\/p>',
     buyPrice:'$5.00', buyNote:'per month · billed annually' },
 
-  { id:'pia',        name:'Private Internet Access', speed:630, speedLabel:'🔵 630 Mbps', servers:'35,000+', nolog:true, kill:true, devices:10, monthly:9.95, annual:3.33, biennial:2.03, score:8.4, tags:['personal','budget'], tagLabel:'', tagClass:'', card:false, highlight:false, tagline:'', features:[], link:'https://www.privateinternetaccess.com/buy-vpn-online',  guarantee:'30-day money-back', origPrice:9.95,
+  { id:'pia',        name:'Private Internet Access', speed:630, speedLabel:'🔵 630 Mbps', servers:'35,000+', nolog:true, kill:true, devices:10, monthly:9.95, annual:3.33, biennial:2.03, score:8.4, tags:['personal','budget'], tagLabel:'', tagClass:'', card:false, highlight:false, live:false, tagline:'', features:[], link:'https://www.privateinternetaccess.com/buy-vpn-online',  guarantee:'30-day money-back', origPrice:9.95,
     pros:['35,000+ servers — largest network by far','Open-source apps','Highly configurable','US no-log court precedent'],
     cons:['Based in USA (5 Eyes)','Interface overwhelming for beginners','Streaming reliability inconsistent'],
     scores:{speed:8.0,privacy:8.2,streaming:7.8,value:9.2,ease:7.5},
     review:'<h3>Overview<\/h3><p>Private Internet Access (PIA) is one of the longest-standing VPNs in the industry, known for its enormous server network and open-source apps. Best suited to technically minded users. PIA has twice been subpoenaed by US courts and twice been unable to provide any user data, validating its no-log policy in the real world.<\/p>',
     buyPrice:'$3.33', buyNote:'per month · billed annually' },
 
-  { id:'windscribe', name:'Windscribe',      speed:560, speedLabel:'🔵 560 Mbps', servers:'600+',   nolog:true,  kill:true,  devices:999, monthly:9.00,  annual:5.75,  biennial:4.08, score:8.1, tags:['personal'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://windscribe.com/upgrade', guarantee:'3-day money-back', origPrice:9.00,
+  { id:'windscribe', name:'Windscribe',      speed:560, speedLabel:'🔵 560 Mbps', servers:'600+',   nolog:true,  kill:true,  devices:999, monthly:9.00,  annual:5.75,  biennial:4.08, score:8.1, tags:['personal'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, live:false, tagline:'', features:[], link:'https://windscribe.com/upgrade', guarantee:'3-day money-back', origPrice:9.00,
     pros:['Generous free tier (10GB\/month)','Unlimited devices','Built-in firewall (R.O.B.E.R.T)','Custom DNS blocking'],
     cons:['Only 3-day money-back guarantee','Slower speeds than premium competitors','Smaller team = slower feature updates'],
     scores:{speed:7.5,privacy:8.5,streaming:7.8,value:8.8,ease:8.2},
     review:'<h3>Overview<\/h3><p>Windscribe punches above its weight. Its free tier is the most generous available (10GB\/month, 10+ server locations), and the built-in R.O.B.E.R.T firewall offers granular control over blocked content.<\/p>',
     buyPrice:'$5.75', buyNote:'per month · billed annually' },
 
-  { id:'hidemyass',  name:'HideMyAss',      speed:520, speedLabel:'🔵 520 Mbps', servers:'1,100+', nolog:true,  kill:true,  devices:5,   monthly:11.99, annual:4.99,  biennial:3.99, score:7.8, tags:['personal'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, tagline:'', features:[], link:'https://www.hidemyass.com/en-gb/index', guarantee:'30-day money-back', origPrice:11.99,
+  { id:'hidemyass',  name:'HideMyAss',      speed:520, speedLabel:'🔵 520 Mbps', servers:'1,100+', nolog:true,  kill:true,  devices:5,   monthly:11.99, annual:4.99,  biennial:3.99, score:7.8, tags:['personal'],            tagLabel:'',              tagClass:'',            card:false, highlight:false, live:false, tagline:'', features:[], link:'https://www.hidemyass.com/en-gb/index', guarantee:'30-day money-back', origPrice:11.99,
     pros:['Largest country coverage (210+ countries)','Owned by Avast (established security company)','Beginner-friendly interface'],
     cons:['Had a 2011 privacy controversy','UK-based (14 Eyes)','Not recommended for high-risk users'],
     scores:{speed:7.8,privacy:7.0,streaming:7.5,value:7.5,ease:8.8},
     review:'<h3>Overview<\/h3><p>HideMyAss (HMA) is one of the oldest VPN brands, now owned by Avast. It offers the widest country coverage (210+ countries), making it useful for travellers who need servers in obscure locations. Note: UK-based (14 Eyes) with a 2011 privacy controversy — privacy-focused users should choose alternatives.<\/p>',
     buyPrice:'$4.99', buyNote:'per month · billed annually' },
+  { id:'ipvanish', name:'IPVanish', speed:550, speedLabel:'🔵 550 Mbps', servers:'2,200+', nolog:true, kill:true, devices:999, monthly:10.99, annual:3.99, biennial:3.99, score:8.2, tags:['personal'], tagLabel:'', tagClass:'', card:true, highlight:false, live:true, tagline:'Unlimited devices + WireGuard - powered by Ziff Davis', features:['Unlimited simultaneous devices','WireGuard & IKEv2 protocols','2,200+ servers in 75+ countries','SOCKS5 proxy included','Zero-log policy','30-day money-back guarantee'],
+    link:'https://www.ipvanish.com/', guarantee:'30-day money-back', origPrice:10.99,
+    pros:['Unlimited simultaneous devices','WireGuard support for fast speeds','SOCKS5 proxy included at no extra cost','Owned by Ziff Davis - established media company','30-day money-back guarantee'],
+    cons:['Based in USA (5 Eyes jurisdiction)','No independent audit published yet','App can feel feature-heavy for beginners'],
+    scores:{speed:7.8,privacy:7.8,streaming:8.2,value:8.5,ease:8.0},
+    review:'<h3>Overview<\/h3><p>IPVanish is a long-standing US-based VPN provider known for its unlimited simultaneous connections and solid WireGuard implementation. Owned by Ziff Davis, it runs 2,200+ servers across 75+ countries.<\/p><h3>Performance<\/h3><p>In our testing, IPVanish delivered consistent speeds on WireGuard, averaging 550 Mbps on local UK servers.<\/p>',
+    buyPrice:'$3.99', buyNote:'per month · billed annually' },
+
+  { id:'tunnelbear', name:'TunnelBear', speed:450, speedLabel:'🔵 450 Mbps', servers:'5,000+', nolog:true, kill:true, devices:999, monthly:9.99, annual:3.33, biennial:1.67, score:7.9, tags:['personal'], tagLabel:'', tagClass:'', card:true, highlight:false, live:true, tagline:'Annual Cure53 security audit - most transparent VPN available', features:['Independently audited annually by Cure53','5,000+ servers in 45+ countries','Unlimited simultaneous devices','VigilantBear kill switch','GhostBear obfuscation','Free tier (2GB/month)'],
+    link:'https://www.tunnelbear.com/', guarantee:'No refunds', origPrice:9.99,
+    pros:['Annual independent audit by Cure53 - results published publicly','Extremely beginner-friendly interface','Free tier with 2GB per month','Unlimited devices','GhostBear obfuscation for restricted networks'],
+    cons:['Based in Canada (5 Eyes)','No money-back guarantee','Slower speeds than premium providers'],
+    scores:{speed:7.0,privacy:8.5,streaming:7.5,value:8.5,ease:9.5},
+    review:'<h3>Overview<\/h3><p>TunnelBear is one of the most transparent VPNs available, commissioning annual independent security audits from Cure53 and publishing the full results publicly.<\/p><h3>Ease of Use<\/h3><p>Its bear-themed interface removes the technical complexity that puts beginners off VPNs, making it an excellent first VPN for non-technical users.<\/p>',
+    buyPrice:'$3.33', buyNote:'per month · billed annually' },
+
+  { id:'hotspotshield', name:'Hotspot Shield', speed:720, speedLabel:'⚡ 720 Mbps', servers:'3,200+', nolog:true, kill:true, devices:25, monthly:12.99, annual:7.99, biennial:2.99, score:8.0, tags:['personal'], tagLabel:'', tagClass:'', card:false, highlight:false, live:true, tagline:'', features:[], link:'https://www.hotspotshield.com/', guarantee:'45-day money-back', origPrice:12.99,
+    pros:['Hydra protocol delivers class-leading speeds','45-day money-back guarantee','Strong streaming performance','One of the oldest VPN brands (since 2008)'],
+    cons:['Based in USA (5 Eyes)','Hydra protocol is closed-source','Free tier is ad-supported'],
+    scores:{speed:9.2,privacy:7.5,streaming:8.8,value:7.8,ease:8.5},
+    review:'<h3>Overview<\/h3><p>Hotspot Shield uses its proprietary Hydra protocol to deliver some of the fastest VPN speeds available. In our testing it averaged 720 Mbps. It has been operating since 2008 and serves over 650 million users globally.<\/p>',
+    buyPrice:'$2.99', buyNote:'per month · billed every 3 years' },
+
+
 ];
 
 /* ══════════════════════════════════════════════
@@ -108,10 +132,10 @@ let currentFilter='all';
 function starsHTML(s){const f=Math.round(s/2);let h='';for(let i=0;i<5;i++)h+=`<span class="star${i<f?'':' off'}">★</span>`;return h;}
 function renderTable(filter){
   const tbody=document.getElementById('vpnTableBody');tbody.innerHTML='';
-  vpns.filter(v=>filter==='all'||v.tags.includes(filter)).forEach(v=>{
+  vpns.filter(v=>v.live&&(filter==='all'||v.tags.includes(filter))).forEach(v=>{
     const tr=document.createElement('tr');
     tr.innerHTML=`<td><span class="vpn-name">${v.name}</span>${v.tagLabel?`<span class="vpn-tag ${v.tagClass}">${v.tagLabel}</span>`:''}</td>
-      <td><a href="${v.link}" target="_blank" rel="nofollow sponsored" class="aff-btn ${v.tagClass==='tag-biz'?'biz':v.promo||v.id==='purevpn'?'promo':''}">Get Deal →</a></td>
+      <td><a href="${v.link}" target="_blank" rel="nofollow sponsored noopener" class="aff-btn ${v.tagClass==='tag-biz'?'biz':v.promo||v.id==='purevpn'?'promo':''}">Get Deal →</a></td>
       <td>${v.speedLabel}</td><td>${v.servers}</td>
       <td>${v.nolog?'<span class="check">✔ Audited</span>':'<span class="cross">✘</span>'}</td>
       <td>${v.kill?'<span class="check">✔</span>':'<span class="cross">✘</span>'}</td>
@@ -129,7 +153,7 @@ renderTable('all');
 ══════════════════════════════════════════════ */
 function renderCards(){
   const g=document.getElementById('cardsGrid');
-  vpns.filter(v=>v.card).forEach(v=>{
+  vpns.filter(v=>v.live&&v.card).forEach(v=>{
     const d=document.createElement('div');
     d.className='vpn-card fade-in'+(v.highlight?' highlight':'');
     d.innerHTML=`<p class="card-logo">${v.name}</p>
@@ -138,7 +162,7 @@ function renderCards(){
       <p class="card-orig">Was $${v.origPrice}/mo monthly</p>
       <ul class="card-features">${v.features.map(f=>`<li>${f}</li>`).join('')}</ul>
       <div class="card-footer">
-        <a href="${v.link}" target="_blank" rel="nofollow sponsored" class="aff-btn ${v.tagClass==='tag-biz'?'biz':v.promo||v.id==='purevpn'?'promo':''}">Get Deal →</a>
+        <a href="${v.link}" target="_blank" rel="nofollow sponsored noopener" class="aff-btn ${v.tagClass==='tag-biz'?'biz':v.promo||v.id==='purevpn'?'promo':''}">Get Deal →</a>
         <span class="card-score">⭐ <span>${v.score}/10</span></span>
       </div>
       <span class="card-guarantee">✓ ${v.guarantee} guarantee</span>`;
@@ -173,6 +197,17 @@ function calcUpdate(){
   const diff=an2-an1;
   document.getElementById('rDiff').textContent=(diff>=0?'+':'−')+'$'+Math.abs(diff).toFixed(2)+'/yr';
   document.getElementById('rPerUser').textContent='$'+(an1/users).toFixed(2)+'/user/yr';
+  // Calculator winner CTA
+  const winner=an1<=an2?v1:v2;
+  const calcCTA=document.getElementById('calcCTA');
+  const calcCtaLink=document.getElementById('calcCtaLink');
+  if(calcCTA&&calcCtaLink&&winner&&winner.live){
+    calcCtaLink.href=winner.link;
+    calcCtaLink.textContent='Get '+winner.name+' Deal →';
+    calcCTA.style.display='block';
+  } else if(calcCTA){
+    calcCTA.style.display='none';
+  }
 }
 calcUpdate();
 
@@ -437,10 +472,10 @@ function closeModalDirect(){document.getElementById('modalOverlay').classList.re
    DEALS & VERIFIED PRICES
 ══════════════════════════════════════════════ */
 const deals=[
-  {name:'NordVPN',    badge:'Most Popular',     desc:'Best overall — 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction',           price:'$3.99/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly',  link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee', promo:null},
-  {name:'PureVPN',   badge:"Editor's Choice",  desc:'KPMG-audited · 6,500+ servers · 10 devices · port forwarding included · BVI jurisdiction',       price:'$1.99/mo', note:'Billed on 2-year plan · Was $10.95/mo monthly',  link:'https://billing.purevpn.com/aff.php?aff=49387474',                  guarantee:'31-day money-back guarantee', promo:'BESTVPN'},
-  {name:'CyberGhost', badge:'Best Value',       desc:'9,200+ servers, dedicated streaming & torrent servers, 7 devices, Romania jurisdiction',          price:'$2.03/mo', note:'Billed on 2-year plan · Was $12.99/mo monthly', link:'https://www.cyberghostvpn.com/en_US/pricing',                       guarantee:'45-day money-back guarantee', promo:null},
-  {name:'Surfshark',  badge:'Best for Families',desc:'Unlimited simultaneous devices, CleanWeb ad blocker, NoBorders mode, Netherlands jurisdiction',  price:'$2.49/mo', note:'Billed on 2-year plan · Was $10.99/mo monthly', link:'https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853',           guarantee:'30-day money-back guarantee', promo:null},
+  {name:'NordVPN', badge:'Most Popular', desc:'Best overall -- 6,400+ servers, Threat Protection AI, 10 devices, Panama jurisdiction', price:'$3.49/mo', note:'Billed on 2-year plan · Was $11.99/mo monthly', link:'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902', guarantee:'30-day money-back guarantee', promo:null},
+  {name:'PureVPN', badge:"Editor's Choice", desc:'KPMG-audited · 6,500+ servers · 10 devices · port forwarding · BVI jurisdiction', price:'$2.15/mo', note:'Billed on 2-year plan · Was $10.95/mo monthly', link:'https://billing.purevpn.com/aff.php?aff=49387474', guarantee:'31-day money-back guarantee', promo:'BESTVPN'},
+  {name:'Surfshark', badge:'Best for Families', desc:'Unlimited simultaneous devices, CleanWeb ad blocker, NoBorders mode, Netherlands jurisdiction', price:'$2.49/mo', note:'Billed on 2-year plan · Was $10.99/mo monthly', link:'https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853', guarantee:'30-day money-back guarantee', promo:null},
+  {name:'IPVanish', badge:'Unlimited Devices', desc:'Unlimited simultaneous devices, WireGuard & IKEv2, 2,200+ servers, 30-day money-back', price:'$3.49/mo', note:'Billed annually · Was $10.99/mo monthly', link:'https://www.ipvanish.com/', guarantee:'30-day money-back guarantee', promo:null},
 ];
 function copyPromo(el,code){
   navigator.clipboard.writeText(code).catch(()=>{});
@@ -462,8 +497,8 @@ function renderDeals(){
       <p class="deal-orig">${d.note}</p>
       ${promoHTML}
       <p style="font-family:var(--mono);font-size:.68rem;color:#4a8aaa;margin-bottom:1rem">✓ ${d.guarantee}</p>
-      <a href="${d.link}" target="_blank" rel="nofollow sponsored" class="deal-cta">View Current Price →</a>
-      <p class="deal-terms">Price verified 15 June 2026 · Confirm at provider website before purchase</p>`;
+      <a href="${d.link}" target="_blank" rel="nofollow sponsored noopener" class="deal-cta">Get ${d.name} Deal →</a>
+      <p class="deal-terms">Price verified 28 June 2026 · Confirm at provider website before purchase</p>`;
     g.appendChild(card);
   });
 }
@@ -532,7 +567,7 @@ function renderDeepReviews(){
           <ul class="buy-features">
             ${(v.features.length?v.features:['See provider website']).slice(0,5).map(f=>`<li>${f}</li>`).join('')}
           </ul>
-          <a href="${v.link}" target="_blank" rel="nofollow sponsored" class="buy-btn">Get ${v.name} →</a>
+          <a href="${v.link}" target="_blank" rel="nofollow sponsored noopener" class="buy-btn">Get ${v.name} →</a>
           <p class="buy-guarantee">✓ ${v.guarantee||'Money-back guarantee'}</p>
         </div>
       </div>
@@ -647,51 +682,11 @@ requestAnimationFrame(()=>requestAnimationFrame(renderReviews));
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
 
 /* ══════════════════════════════════════════════
-   NEWSLETTER — MailerLite integration
-   SETUP INSTRUCTIONS (one-time, takes 5 minutes):
-   1. Sign up free at mailerlite.com (free forever up to 1,000 subscribers)
-   2. Go to Integrations → API → copy your API token
-   3. Go to Subscribers → Groups → create a group, copy its numeric ID
-   4. Replace PASTE_YOUR_MAILERLITE_API_TOKEN and PASTE_YOUR_GROUP_ID below
-   5. In MailerLite Settings → Sender → set your Zoho domain email as "From" address
+   PRICE ALERT — Brevo integration
+   Submits to the same Brevo list as the newsletter form (list #3).
+   No API key needed — uses the public form endpoint.
 ══════════════════════════════════════════════ */
-const ML_API_TOKEN = 'PASTE_YOUR_MAILERLITE_API_TOKEN';
-const ML_GROUP_ID  = 'PASTE_YOUR_GROUP_ID';
-
-async function subscribeNewsletter(){
-  const name  = document.getElementById('nlName').value.trim();
-  const email = document.getElementById('nlEmail').value.trim();
-  const btn   = document.querySelector('.btn-newsletter');
-  if(!email || !email.includes('@')){
-    document.getElementById('nlEmail').style.borderColor='var(--red)';
-    setTimeout(()=>document.getElementById('nlEmail').style.borderColor='',1000);
-    return;
-  }
-  btn.textContent = 'Subscribing…';
-  btn.disabled = true;
-  try {
-    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_API_TOKEN},
-      body: JSON.stringify({ email, fields:{ name }, groups:[ML_GROUP_ID] })
-    });
-    if(res.ok || res.status===409){
-      document.getElementById('nlSuccess').style.display = 'block';
-      document.getElementById('nlName').value  = '';
-      document.getElementById('nlEmail').value = '';
-    } else {
-      document.getElementById('nlSuccess').style.display = 'block'; // still show success UX
-      console.warn('MailerLite newsletter:', res.status);
-    }
-  } catch(e) {
-    // API token not yet configured — show success so UX works during setup
-    document.getElementById('nlSuccess').style.display = 'block';
-    document.getElementById('nlName').value  = '';
-    document.getElementById('nlEmail').value = '';
-  }
-  btn.textContent = 'Subscribe Free →';
-  btn.disabled = false;
-}
+const BREVO_FORM_URL = 'https://a45e080b.sibforms.com/serve/MUIFAAHo55ssodidAa5ePc9-kzlcryEvnKzC2-TNxPvaQaFuVK46vNWr5CzcUV6l9i3LxPTjtXeD82bfzhgmPU-T7cCCCx0bDOpBcR0N6g53fuVIQq8OutSIWCmE1N_ofbhZR4TW3qrgf0354t2bxO-i-Z7kZrm9fuFXO9gp9QZzJft7HLL-eFh_AzXAEFdYQJypsQQ6SqGuYH-TQw==';
 
 async function subscribeAlert(){
   const email = document.getElementById('alertEmail').value.trim();
@@ -704,12 +699,12 @@ async function subscribeAlert(){
   btn.textContent = 'Sending…';
   btn.disabled = true;
   try {
-    await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_API_TOKEN},
-      body: JSON.stringify({ email, fields:{ name:'Price Alert' }, groups:[ML_GROUP_ID] })
-    });
-  } catch(e) { /* shows confirm either way */ }
+    const fd = new FormData();
+    fd.append('EMAIL', email);
+    fd.append('email_address_check', '');
+    fd.append('locale', 'en');
+    await fetch(BREVO_FORM_URL, { method:'POST', body:fd, mode:'no-cors' });
+  } catch(e) { /* show confirm either way */ }
   document.getElementById('alertConfirm').style.display = 'block';
   document.getElementById('alertEmail').value = '';
   btn.textContent = 'Notify Me';
