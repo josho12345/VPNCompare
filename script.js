@@ -197,6 +197,21 @@ function calcUpdate(){
   const diff=an2-an1;
   document.getElementById('rDiff').textContent=(diff>=0?'+':'−')+'$'+Math.abs(diff).toFixed(2)+'/yr';
   document.getElementById('rPerUser').textContent='$'+(an1/users).toFixed(2)+'/user/yr';
+  // Update result labels with actual VPN names and colours
+  var labelA='#38bdf8', labelB='#d4af37';
+  var labels=[
+    ['rMonthly',  v1.name+' — Monthly',          labelA],
+    ['rMonthly2', v2.name+' — Monthly',          labelB],
+    ['rAnnual',   v1.name+' — Annual Total',      labelA],
+    ['rAnnual2',  v2.name+' — Annual Total',      labelB]
+  ];
+  labels.forEach(function(l){
+    var el=document.getElementById(l[0]);
+    if(el&&el.previousElementSibling){
+      el.previousElementSibling.textContent=l[1];
+      el.previousElementSibling.style.color=l[2];
+    }
+  });
   // Calculator winner CTA
   const winner=an1<=an2?v1:v2;
   const calcCTA=document.getElementById('calcCTA');
@@ -809,7 +824,7 @@ const legalPages={
   affiliate:{title:'Affiliate Disclosure',content:`
     <p style="font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-bottom:1.5rem">Last updated: June 2026 · bestvpncompareonline.com</p>
     <h3>Our Affiliate Relationships</h3>
-    <p>VPN Compare participates in affiliate programmes operated by the following VPN providers and affiliate networks: NordVPN, ExpressVPN, CyberGhost, Proton VPN, Mullvad, Surfshark, PureVPN, Perimeter 81, NordLayer, IVPN, and others. These programmes are managed via affiliate networks including Impact Radius, CJ Affiliate, and ShareASale.</p>
+    <p>VPN Compare currently participates in affiliate programmes with NordVPN, PureVPN, and Surfshark, managed via Impact Radius. We are in the process of establishing additional affiliate relationships with other providers. Where tracked affiliate links are not yet in place, links go directly to the provider's website with no commission tracking.</p>
     <h3>How It Works</h3>
     <p>When you click an affiliate link on this site and subsequently make a purchase, we may earn a commission. The commission is paid by the VPN provider, not by you — it does not increase the price you pay, and in many cases our links carry exclusive discount codes that reduce the price.</p>
     <h3>Editorial Independence</h3>
