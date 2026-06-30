@@ -36,10 +36,10 @@ const SITE_DATA = {
      1. DATES
   ────────────────────────────────────────────── */
   dates: {
-    lastChecked:    '28 June 2026',
+    lastChecked:    '30 June 2026',
     heroUpdated:    'June 2026',
-    tableUpdated:   '28 June 2026',
-    pricesVerified: '28 June 2026',
+    tableUpdated:   '30 June 2026',
+    pricesVerified: '30 June 2026',
     legalUpdated:   'June 2026',
   },
 
