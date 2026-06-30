@@ -17,24 +17,28 @@ const fs   = require('fs');
 const path = require('path');
 
 const DATA_FILE   = path.join(__dirname, 'site-data.js');
-const HTML_FILE   = path.join(__dirname, 'index.html');
+const HTML_FILE   = path.join(__dirname, 'vpn', 'index.html');
 const SCRIPT_FILE = path.join(__dirname, 'script.js');
+const NAV_FILE    = path.join(__dirname, 'nav.js');
 const BACKUP_DIR  = path.join(__dirname, 'backups');
 
 if (!fs.existsSync(DATA_FILE))   { console.error('site-data.js not found'); process.exit(1); }
-if (!fs.existsSync(HTML_FILE))   { console.error('index.html not found');   process.exit(1); }
+if (!fs.existsSync(HTML_FILE))   { console.error('vpn/index.html not found'); process.exit(1); }
 if (!fs.existsSync(SCRIPT_FILE)) { console.error('script.js not found');    process.exit(1); }
+if (!fs.existsSync(NAV_FILE))    { console.error('nav.js not found');      process.exit(1); }
 
 const SITE_DATA = require(DATA_FILE);
 
 if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR);
 const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-fs.copyFileSync(HTML_FILE,   path.join(BACKUP_DIR, `index.${stamp}.html`));
+fs.copyFileSync(HTML_FILE,   path.join(BACKUP_DIR, `vpn-index.${stamp}.html`));
 fs.copyFileSync(SCRIPT_FILE, path.join(BACKUP_DIR, `script.${stamp}.js`));
-console.log(`Backups saved -> backups/index.${stamp}.html + script.${stamp}.js`);
+fs.copyFileSync(NAV_FILE,    path.join(BACKUP_DIR, `nav.${stamp}.js`));
+console.log(`Backups saved -> backups/vpn-index.${stamp}.html + script.${stamp}.js + nav.${stamp}.js`);
 
 let html   = fs.readFileSync(HTML_FILE, 'utf8');
 let script = fs.readFileSync(SCRIPT_FILE, 'utf8');
+let nav    = fs.readFileSync(NAV_FILE, 'utf8');
 let changeLog = [];
 
 function patchHTML(label, regex, replacement) {
@@ -51,12 +55,19 @@ function patchScript(label, regex, replacement) {
     ? `  OK [script.js] ${label}`
     : `  -- [script.js] ${label} (no change)`);
 }
+function patchNav(label, regex, replacement) {
+  const before = nav;
+  nav = nav.replace(regex, replacement);
+  changeLog.push(nav !== before
+    ? `  OK [nav.js] ${label}`
+    : `  -- [nav.js] ${label} (no change)`);
+}
 
 // ── 1. DATES - index.html ───────────────────────────────────
 const D = SITE_DATA.dates;
 console.log('\nUpdating dates in index.html...');
 
-patchHTML('Announcement bar date',
+patchNav('Announcement bar date',
   /(Last checked )\d{1,2} \w+ \d{4}/, `$1${D.lastChecked}`);
 patchHTML('Hero badge date',
   /(Independent VPN Reviews — Updated )\w+ \d{4}/, `$1${D.heroUpdated}`);
@@ -195,6 +206,7 @@ if (SITE_DATA.live) {
 // ── WRITE OUTPUT ──────────────────────────────────────────────
 fs.writeFileSync(HTML_FILE, html, 'utf8');
 fs.writeFileSync(SCRIPT_FILE, script, 'utf8');
+fs.writeFileSync(NAV_FILE, nav, 'utf8');
 
 // ── REPORT ────────────────────────────────────────────────────
 const ok   = changeLog.filter(l => l.includes('  OK')).length;
@@ -204,4 +216,4 @@ console.log('CHANGE LOG:');
 changeLog.forEach(l => console.log(l));
 console.log('=====================================');
 console.log(`\nDone! ${ok} changes applied, ${none} already up to date.`);
-console.log('Next step: push index.html + script.js to GitHub.\n');
+console.log('Next step: push vpn/index.html + script.js + nav.js to GitHub.\n');
