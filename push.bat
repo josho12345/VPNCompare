@@ -61,7 +61,18 @@ if not defined unpushed (
   exit /b 0
 )
 echo Pushing to dev branch...
-git push origin Dev
+git push origin dev:Dev
+if errorlevel 1 (
+  echo.
+  echo ============================================
+  echo   PUSH FAILED -- see error above.
+  echo   Changes are committed locally but NOT on GitHub.
+  echo   Paste this output to Claude before doing anything else.
+  echo ============================================
+  echo.
+  pause
+  exit /b 1
+)
 echo.
 echo ============================================
 echo   Done! Pushed to DEV branch.

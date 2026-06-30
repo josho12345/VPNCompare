@@ -14,7 +14,7 @@
     ' All prices independently verified &middot; Last checked 29 June 2026 &nbsp;|&nbsp;' +
     ' <a href="https://bestvpncompareonline.com/vpn/#methodology">How we test VPNs &rarr;</a>';
 
-  // ── Nav ───────────────────────────────────────────────────────────────────
+  // ── Nav — flat structure matching original site, eSIM added as new top-level item ──
   var nav = document.createElement('nav');
   nav.innerHTML =
     '<a class="logo" href="https://bestvpncompareonline.com/">' +
@@ -27,30 +27,40 @@
         '<path d="M12.5 16.5 L15 19 L20 13" stroke="#cc5500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>' +
       '</svg>VPN <span>Compare</span>' +
     '</a>' +
-    '<a href="https://bestvpncompareonline.com/vpn/#quiz" class="nav-cta" style="margin-left:auto;margin-right:1rem">Find My VPN</a>' +
-    '<button class="hamburger" id="hamburger" aria-label="Menu" onclick="vcToggleMenu()">' +
+    '<ul>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#compare">Compare</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#quiz">Quiz</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#calculator">Calculator</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/reviews/">Reviews</a></li>' +
+      '<li class="nav-has-sub">' +
+        '<a href="https://bestvpncompareonline.com/esim/">eSIM</a>' +
+        '<ul class="nav-submenu">' +
+          '<li><a href="https://bestvpncompareonline.com/esim/">Compare eSIMs</a></li>' +
+          '<li><a href="https://bestvpncompareonline.com/esim/reviews/">eSIM Reviews</a></li>' +
+          '<li><a href="https://bestvpncompareonline.com/esim/articles/">eSIM Articles</a></li>' +
+          '<li><a href="https://bestvpncompareonline.com/esim/blog/">eSIM Blog</a></li>' +
+        '</ul>' +
+      '</li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#blog">Blog</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#faq">FAQ</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/#advertise" class="nav-sponsor">Advertise</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#quiz" class="nav-cta">Find My VPN</a></li>' +
+    '</ul>' +
+    '<button class="hamburger" id="hamburger" onclick="vcToggleMenu()" aria-label="Menu">' +
       '<span></span><span></span><span></span>' +
     '</button>';
 
-  // ── Mobile menu with expandable sub-menus ─────────────────────────────────
+  // ── Mobile menu — flat structure matching original, eSIM gets its own expandable group ──
   var mobileMenu = document.createElement('div');
   mobileMenu.className = 'mobile-menu';
   mobileMenu.id = 'mobileMenu';
   mobileMenu.innerHTML =
+    '<a href="https://bestvpncompareonline.com/vpn/#compare" onclick="vcCloseMenu()">&#128202; Compare VPNs</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()">&#127919; Take the Quiz</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#calculator" onclick="vcCloseMenu()">&#128176; Cost Calculator</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/reviews/" onclick="vcCloseMenu()">&#128203; VPN Reviews</a>' +
 
-    // VPN parent
-    '<div class="mobile-menu-parent" onclick="vcToggleSubMenu(this)">' +
-      '<span>&#128274; VPN</span>' +
-      '<span class="submenu-arrow">&#9660;</span>' +
-    '</div>' +
-    '<div class="mobile-submenu">' +
-      '<a href="https://bestvpncompareonline.com/vpn/" onclick="vcCloseMenu()">&#128202; Compare VPNs</a>' +
-      '<a href="https://bestvpncompareonline.com/vpn/reviews/" onclick="vcCloseMenu()">&#128203; VPN Reviews</a>' +
-      '<a href="https://bestvpncompareonline.com/vpn/articles/" onclick="vcCloseMenu()">&#9997; VPN Articles</a>' +
-      '<a href="https://bestvpncompareonline.com/vpn/blog/" onclick="vcCloseMenu()">&#128221; VPN Blog</a>' +
-    '</div>' +
-
-    // eSIM parent
+    // eSIM as its own expandable group, everything else stays flat
     '<div class="mobile-menu-parent" onclick="vcToggleSubMenu(this)">' +
       '<span>&#128241; eSIM</span>' +
       '<span class="submenu-arrow">&#9660;</span>' +
@@ -62,9 +72,11 @@
       '<a href="https://bestvpncompareonline.com/esim/blog/" onclick="vcCloseMenu()">&#128221; eSIM Blog</a>' +
     '</div>' +
 
-    // Standalone links
-    '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()" class="nav-cta">&#127919; Find My VPN &mdash; Free Quiz</a>' +
-    '<a href="https://bestvpncompareonline.com/#advertise" onclick="vcCloseMenu()" class="nav-sponsor">&#128188; Advertise</a>';
+    '<a href="https://bestvpncompareonline.com/vpn/#blog" onclick="vcCloseMenu()">&#9997; Blog &amp; Guides</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#faq" onclick="vcCloseMenu()">&#10067; FAQ</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#newsletter" onclick="vcCloseMenu()">&#128231; Newsletter</a>' +
+    '<a href="https://bestvpncompareonline.com/#advertise" onclick="vcCloseMenu()" class="nav-sponsor">&#128188; Advertise</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()" class="nav-cta">&#127919; Find My VPN &mdash; Free Quiz</a>';
 
   // ── Legal modal (required for openLegal() in script.js) ──────────────────
   var legalModal = document.createElement('div');
@@ -99,9 +111,25 @@
   body.insertBefore(nav, body.firstChild);
   body.insertBefore(announceBar, body.firstChild);
 
-  // ── Sub-menu styles (injected once) ───────────────────────────────────────
+  // ── Styles (injected once) ───────────────────────────────────────────────
   var style = document.createElement('style');
   style.textContent =
+    // Desktop nav-has-sub dropdown for eSIM
+    '.nav-has-sub{position:relative;}' +
+    '.nav-has-sub .nav-submenu{' +
+      'display:none;position:absolute;top:100%;left:0;background:#0a2540;' +
+      'border:1px solid rgba(255,255,255,.1);border-radius:8px;min-width:180px;' +
+      'box-shadow:0 12px 30px rgba(0,0,0,.4);padding:.4rem 0;z-index:100;list-style:none;margin:0;' +
+    '}' +
+    '.nav-has-sub:hover .nav-submenu{display:block;}' +
+    '.nav-submenu li{display:block;}' +
+    '.nav-submenu li a{' +
+      'display:block;padding:.6rem 1.2rem;font-size:.85rem;color:#93c5e8;' +
+      'white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.05);' +
+    '}' +
+    '.nav-submenu li:last-child a{border-bottom:none;}' +
+    '.nav-submenu li a:hover{background:rgba(255,255,255,.05);color:#38bdf8;}' +
+    // Mobile expandable group for eSIM (same as before)
     '.mobile-menu-parent{' +
       'display:flex;align-items:center;justify-content:space-between;' +
       'padding:.9rem 2rem;cursor:pointer;color:#e2e8f0;' +
@@ -145,12 +173,10 @@
     var submenu = parent.nextElementSibling;
     if (!submenu) return;
     var isOpen = submenu.classList.contains('open');
-    // close all other open submenus first
     var allSubmenus = document.querySelectorAll('.mobile-submenu.open');
     var allParents = document.querySelectorAll('.mobile-menu-parent.open');
     for (var i = 0; i < allSubmenus.length; i++) allSubmenus[i].classList.remove('open');
     for (var j = 0; j < allParents.length; j++) allParents[j].classList.remove('open');
-    // toggle this one
     if (!isOpen) {
       submenu.classList.add('open');
       parent.classList.add('open');
