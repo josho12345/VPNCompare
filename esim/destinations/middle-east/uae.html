@@ -54,8 +54,8 @@
 
 @keyframes esimPulse{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes gridScroll{to{background-position:0 44px}}
-.announce-bar{display:none}.logo{display:none!important}.logo-shield{display:none!important}nav{background:transparent!important;box-shadow:none!important;border-bottom:3px solid var(--esim-gold)!important;backdrop-filter:none!important;height:auto!important;min-height:0!important;padding:.2rem 0!important}.nav ul,.hamburger,.nav-cta,.nav-sponsor{display:none!important}
-.esim-section,.esim-section-alt{background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.08) 1px,transparent 1px);background-size:44px 44px}
+.announce-bar{display:none}.logo{display:none!important}.logo-shield{display:none!important}nav{background:#0e3460!important;box-shadow:none!important;border-bottom:3px solid #d4af37!important;backdrop-filter:none!important;min-height:0!important;padding:.3rem 0!important}.nav ul,.hamburger,.nav-cta,.nav-sponsor{display:none!important}body{background:#0e3460!important}
+.esim-section,.esim-section-alt{background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
 @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 .esim-hero{background:var(--esim-navy);padding:3.5rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
@@ -69,26 +69,26 @@
 .esim-hero-sub{color:var(--esim-muted);font-size:.92rem;max-width:500px;margin:0 auto 1.5rem;line-height:1.7;position:relative}
 
 /* ── SMART CARD ── */
-.card-wrap{padding:3rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.08) 1px,transparent 1px);background-size:44px 44px;display:flex;justify-content:center}
+.card-wrap{padding:3rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px;display:flex;justify-content:center}
 .smart-card{background:var(--esim-navy3);border:2px solid var(--esim-gold-border);border-radius:18px;width:100%;max-width:380px;overflow:hidden;animation:cardIn .5s ease both;box-shadow:0 12px 48px rgba(0,0,0,.4)}
 
 /* Card header strip */
 .card-header{background:linear-gradient(135deg,var(--esim-navy),#1a4a7a);padding:1.4rem 1.5rem 1.2rem;border-bottom:2px solid var(--esim-gold-border);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .card-header-left{display:flex;flex-direction:column;gap:.2rem}
-.card-country-icon{font-size:2.2rem;line-height:1}
-.card-flag{font-size:1.5rem;line-height:1}
+.card-country-icon{font-size:1.1rem;line-height:1}
+.card-flag{display:none}
 .card-country-name{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--esim-gold);line-height:1}
-.card-country-sub{font-family:var(--mono);font-size:.68rem;color:var(--esim-muted);letter-spacing:.5px}
+.card-country-sub{font-family:var(--mono);font-size:.82rem;color:var(--esim-muted);letter-spacing:.5px}
 .card-coverage{text-align:right}
 .card-coverage-score{font-family:var(--display);font-size:2.6rem;font-weight:700;color:var(--esim-green);line-height:1}
-.card-coverage-label{font-family:var(--mono);font-size:.62rem;color:var(--esim-muted);letter-spacing:.5px;text-align:right}
+.card-coverage-label{font-family:var(--mono);font-size:.78rem;color:var(--esim-muted);letter-spacing:.5px;text-align:right}
 .card-coverage-stars{color:var(--esim-green);font-size:1rem;letter-spacing:1px}
 
 /* Card body */
 .card-body{padding:1.25rem 1.5rem}
 .card-row{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;padding:.6rem 0;border-bottom:1px solid rgba(212,175,55,.12)}
 .card-row:last-child{border-bottom:none}
-.card-row-label{font-family:var(--mono);font-size:.68rem;color:var(--esim-muted);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;padding-top:.1rem}
+.card-row-label{font-family:var(--mono);font-size:.88rem;color:var(--esim-muted);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;padding-top:.1rem}
 .card-row-value{font-family:var(--display);font-size:.88rem;font-weight:700;color:var(--esim-text);text-align:right;line-height:1.3}
 .card-row-value.gold{color:var(--esim-gold)}
 .card-row-value.coral{color:var(--esim-coral)}
@@ -98,23 +98,23 @@
 
 /* Power tip */
 .card-tip{background:rgba(249,145,90,.08);border:1px solid var(--esim-coral-border);border-radius:10px;padding:.9rem 1rem;margin:1rem 1.5rem 0}
-.card-tip-label{font-family:var(--mono);font-size:.62rem;color:var(--esim-coral);letter-spacing:1px;margin-bottom:.3rem}
+.card-tip-label{font-family:var(--mono);font-size:.82rem;color:var(--esim-coral);letter-spacing:1px;margin-bottom:.3rem}
 .card-tip-text{font-size:.82rem;color:var(--esim-text);line-height:1.55}
 
 /* VPN warning */
 .card-vpn-warning{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);border-radius:10px;padding:.9rem 1rem;margin:.75rem 1.5rem 0}
-.card-vpn-label{font-family:var(--mono);font-size:.62rem;color:var(--esim-red);letter-spacing:1px;margin-bottom:.3rem}
+.card-vpn-label{font-family:var(--mono);font-size:.82rem;color:var(--esim-red);letter-spacing:1px;margin-bottom:.3rem}
 .card-vpn-text{font-size:.82rem;color:var(--esim-text);line-height:1.55}
 
 /* Card footer links */
 .card-links{padding:1rem 1.5rem 1.4rem;display:flex;gap:.6rem;flex-wrap:wrap;border-top:1px solid rgba(212,175,55,.12);margin-top:.75rem}
 .card-link{font-family:var(--mono);font-size:.68rem;color:var(--esim-gold);background:var(--esim-gold-dim);border:1px solid var(--esim-gold-border);padding:.3rem .8rem;border-radius:20px;text-decoration:none;letter-spacing:.5px;transition:background .2s}
 .card-link:hover{background:rgba(212,175,55,.25)}
-.card-verified{font-family:var(--mono);font-size:.62rem;color:var(--esim-muted);text-align:center;padding:.5rem 1.5rem .9rem;opacity:.7}
+.card-verified{font-family:var(--mono);font-size:.75rem;color:var(--esim-muted);text-align:center;padding:.5rem 1.5rem .9rem;opacity:.7}
 
 /* ── SHARED RESOURCES ── */
-.esim-section{padding:3rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.08) 1px,transparent 1px);background-size:44px 44px}
-.esim-section-alt{background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.08) 1px,transparent 1px);background-size:44px 44px}
+.esim-section{padding:3rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
+.esim-section-alt{background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
 .esim-section-label{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:3px;text-transform:uppercase;margin-bottom:.5rem;text-align:center}
 .esim-section h2{font-family:var(--display);font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:700;color:var(--esim-gold);text-align:center;margin-bottom:2rem}
 
@@ -153,7 +153,7 @@
     <a href="/esim/destinations/middle-east/">Middle East</a> &rsaquo;
     UAE
   </p>
-  <h1>Best eSIM for the <span>UAE</span> Best eSIM for the <span>UAE</span> &#128042;&#127964;#128748; Best eSIM for the <span>UAE</span> &#128042;&#127964;#128042;</h1>
+  <h1>Best eSIM for the <span>UAE</span></h1>
   <p class="esim-hero-sub">Dubai and Abu Dhabi have some of the fastest mobile networks on the planet. The eSIM setup is painless. The one thing you do need to know before you land — we have covered that too.</p>
 </section>
 
@@ -163,8 +163,7 @@
 
     <div class="card-header">
       <div class="card-header-left">
-        <span class="card-country-icon"><span class="card-country-icon">&#128042;</span>#128748;<span class="card-country-icon">&#128042;</span>#128042;</span>
-        <span class="card-flag">&#127964;</span>
+        <span class="card-country-icon">&#128748;</span>
         <p class="card-country-name">UAE</p>
         <p class="card-country-sub">United Arab Emirates</p>
       </div>
