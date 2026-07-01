@@ -66,9 +66,9 @@
 .esim-trust{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;position:relative}
 .esim-trust-pill{font-family:var(--mono);font-size:.7rem;color:var(--esim-gold);background:var(--esim-gold-dim);border:1px solid var(--esim-gold-border);padding:.3rem .9rem;border-radius:20px;letter-spacing:.5px}
 .esim-hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
-.esim-btn-primary{background:var(--esim-gold);color:var(--esim-navy);font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block}
+.esim-btn-primary{background:#d4af37;color:#0a2540;font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block}
 .esim-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.35)}
-.esim-btn-secondary{background:transparent;color:var(--esim-gold);font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;border:1px solid var(--esim-gold-border);transition:border-color .2s,background .2s;display:inline-block}
+.esim-btn-secondary{background:#d4af37;color:#0a2540;border:none;font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;border:1px solid var(--esim-gold-border);transition:border-color .2s,background .2s;display:inline-block}
 .esim-btn-secondary:hover{border-color:var(--esim-gold);background:var(--esim-gold-dim)}
 
 /* ── BANNER SLOT ── */
@@ -88,7 +88,7 @@
 .esim-section-intro{color:var(--esim-muted);font-size:.95rem;max-width:540px;margin:0 auto 2.5rem;line-height:1.75;text-align:center}
 
 .esim-regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem}
-.esim-region-card{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.75rem 1.25rem;text-align:center;cursor:pointer;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;display:block;position:relative;overflow:hidden}
+.esim-region-card{background:var(--esim-navy);border:2px solid rgba(212,175,55,.9);border-radius:14px;padding:1.75rem 1.25rem;text-align:center;cursor:pointer;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;display:block;position:relative;overflow:hidden}
 .esim-region-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--esim-coral-dim),transparent);opacity:0;transition:opacity .25s}
 .esim-region-card:hover{border-color:var(--esim-gold);transform:translateY(-4px);box-shadow:0 8px 32px rgba(212,175,55,.15)}
 .esim-region-card:hover::before{opacity:1}
@@ -116,7 +116,7 @@
 /* ── HOW IT WORKS ── */
 .esim-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;counter-reset:esim-step}
 .esim-step{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.5rem;position:relative;counter-increment:esim-step}
-.esim-step::before{content:counter(esim-step);position:absolute;top:-14px;left:1.25rem;font-family:var(--mono);font-size:.72rem;color:var(--esim-navy);background:var(--esim-gold);padding:.15rem .55rem;border-radius:20px;font-weight:700;letter-spacing:.5px}
+.esim-step::before{content:counter(esim-step);position:absolute;top:-15px;left:1.25rem;font-family:var(--display);font-size:.78rem;color:#000;background:#d4af37;width:22px;height:22px;border-radius:50%;font-weight:900;display:inline-flex;align-items:center;justify-content:center;padding:0;letter-spacing:0}
 .esim-step-icon{font-size:1.8rem;margin-bottom:.6rem;color:var(--esim-coral)}
 .esim-step-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--esim-gold);margin-bottom:.35rem}
 .esim-step-desc{font-size:.85rem;color:var(--esim-muted);line-height:1.6}
@@ -147,18 +147,18 @@ body{background-color:#0e3460!important;background-image:none!important}
 /* Ticket banner wrap */
 .esim-ticket-wrap{display:flex;justify-content:center;padding:4px 2.5%;background:#071a2e}
 @keyframes tickerScroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-.esim-ticket{width:95%;background:#0a2540;border:1px solid rgba(212,175,55,.5);border-radius:4px;overflow:hidden;position:relative;height:30px;
+.esim-ticket{width:95%;background:#0a2540;border:1px solid rgba(212,175,55,.5);border-radius:4px;overflow:hidden;position:relative;height:24px;
   background-image:radial-gradient(circle,#071a2e 5px,transparent 5px),radial-gradient(circle,#071a2e 5px,transparent 5px);
   background-position:-5px center,calc(100% + 5px) center;
   background-size:11px 18px;
   background-repeat:repeat-y}
-.esim-ticker-track{display:flex;align-items:center;height:100%;white-space:nowrap;animation:tickerScroll 22s linear infinite}
+.esim-ticker-track{display:flex;align-items:center;height:100%;white-space:nowrap;animation:tickerScroll 11s linear infinite}
 .esim-ticker-track:hover{animation-play-state:paused}
 .esim-ticker-item{display:inline-flex;align-items:center;gap:10px;padding:0 40px}
 .esim-ticker-shield{flex-shrink:0;vertical-align:middle}
-.esim-ticker-brand{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#38bdf8;letter-spacing:.5px}
-.esim-ticker-tag{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(147,197,232,.75);letter-spacing:.3px}
-.esim-ticker-cta{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;color:#d4af37;letter-spacing:.5px}
+.esim-ticker-brand{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#22c55e;letter-spacing:.5px}
+.esim-ticker-tag{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(34,197,94,.7);letter-spacing:.3px}
+.esim-ticker-cta{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;color:#fff;background:#38bdf8;padding:.1rem .55rem;border-radius:4px;letter-spacing:.5px}
 .esim-ticker-dot{color:rgba(212,175,55,.4);font-size:.7rem}
 .esim-ticker-available{background:rgba(212,175,55,.06)}
 .esim-ticker-avail-icon{color:#d4af37;font-size:.75rem}
@@ -166,7 +166,7 @@ body{background-color:#0e3460!important;background-image:none!important}
 .esim-ticker-avail-cta{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(212,175,55,.8);letter-spacing:.3px}
 
 /* eSIM logo bar */
-.esim-logo-bar{display:flex;align-items:center;justify-content:space-between;padding:.4rem 1.5rem;border-bottom:3px solid #d4af37;background:#0e3460}
+.esim-logo-bar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.5rem;border-bottom:3px solid #d4af37;background:#0e3460}
 .esim-logo-link{display:flex;align-items:center;gap:8px;text-decoration:none}
 .esim-logo-text{font-family:'Rajdhani',sans-serif;font-size:1.15rem;font-weight:700;color:#d4af37;letter-spacing:1px}
 .esim-logo-accent{color:#f9916a}
@@ -242,9 +242,9 @@ body{background-color:#0e3460!important;background-image:none!important}
         <line x1="43.2" y1="7" x2="44.8" y2="7" stroke="#22c55e" stroke-width=".65" stroke-linecap="round"/>
         <line x1="43.5" y1="4.5" x2="44.5" y2="4.5" stroke="#22c55e" stroke-width=".6" stroke-linecap="round"/>
         <circle cx="44" cy="1" r="1.2" fill="#22c55e"/>
-        <path d="M17 7.5 Q29 0 40 5" fill="none" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity=".9"/>
-        <path d="M17 11 Q28 2 40 7.5" fill="none" stroke="white" stroke-width=".85" stroke-linecap="round" opacity=".6"/>
-        <path d="M17 14.5 Q27 4 40 10" fill="none" stroke="white" stroke-width=".65" stroke-linecap="round" opacity=".35"/>
+        <path d="M19 7.5 Q29 0 42 5" fill="none" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity=".9"/>
+        <path d="M19 11 Q28 2 42 7.5" fill="none" stroke="white" stroke-width=".85" stroke-linecap="round" opacity=".6"/>
+        <path d="M19 14.5 Q27 4 42 10" fill="none" stroke="white" stroke-width=".65" stroke-linecap="round" opacity=".35"/>
       </svg>
       <span class="esim-logo-text">eSIM <span class="esim-logo-accent">Compare</span></span>
     </a>
@@ -282,7 +282,7 @@ body{background-color:#0e3460!important;background-image:none!important}
 <!-- BANNER SLOT 1 — self-promo VPN -->
 <div class="esim-banner">
   <div class="esim-banner-inner">
-    <span class="esim-banner-label">Sponsored &mdash; own placement</span>
+    
     <p class="esim-banner-copy">Already sorted your eSIM? Don&rsquo;t forget your <span>VPN</span> &mdash; your data needs protection wherever you land.</p>
     <a href="/vpn/" class="esim-banner-cta">Compare VPNs &rarr;</a>
   </div>
@@ -297,7 +297,7 @@ body{background-color:#0e3460!important;background-image:none!important}
     <div class="esim-regions">
 
       <a href="/esim/destinations/europe/" class="esim-region-card fade-in">
-        <span class="esim-region-icon">&#127963;</span>
+        <span class="esim-region-icon">&#127466;&#127482;</span>
         <p class="esim-region-name">Europe</p>
         <p class="esim-region-count">40+ countries</p>
         <p class="esim-region-status">Reviews coming soon</p>
@@ -311,21 +311,21 @@ body{background-color:#0e3460!important;background-image:none!important}
       </a>
 
       <a href="/esim/destinations/asia/" class="esim-region-card fade-in">
-        <span class="esim-region-icon">&#129314;</span>
+        <span class="esim-region-icon">&#128060;</span>
         <p class="esim-region-name">Asia</p>
         <p class="esim-region-count">35+ countries</p>
         <p class="esim-region-status">Reviews coming soon</p>
       </a>
 
       <a href="/esim/destinations/oceania/" class="esim-region-card fade-in">
-        <span class="esim-region-icon">&#127958;</span>
+        <span class="esim-region-icon">&#127965;&#127965;</span>
         <p class="esim-region-name">Oceania</p>
         <p class="esim-region-count">10+ countries</p>
         <p class="esim-region-status">Reviews coming soon</p>
       </a>
 
       <a href="/esim/destinations/middle-east/" class="esim-region-card fade-in">
-        <span class="esim-region-icon">&#128042;</span>
+        <span class="esim-region-icon">&#127964;</span>
         <p class="esim-region-name">Middle East</p>
         <p class="esim-region-count">15+ countries</p>
         <p class="esim-region-status">Reviews coming soon</p>
@@ -402,7 +402,7 @@ body{background-color:#0e3460!important;background-image:none!important}
 <!-- BANNER SLOT 2 — self-promo VPN Compare -->
 <div style="padding:2rem 0;background:var(--esim-navy2)">
   <div class="esim-banner2">
-    <p class="esim-banner2-label">Sponsored &mdash; own placement</p>
+    
     <p class="esim-banner2-head">While you&rsquo;re here &mdash; <span>VPN Compare</span> is live now</p>
     <p class="esim-banner2-sub">Independent VPN reviews, speed tests, and a personalised quiz. Find the right VPN in under 2 minutes.</p>
     <a href="/vpn/" class="esim-banner2-cta">Compare VPNs &rarr;</a>
