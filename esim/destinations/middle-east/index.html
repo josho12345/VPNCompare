@@ -37,7 +37,7 @@
   --esim-navy3:#0e3460;
   --esim-gold:#d4af37;
   --esim-gold-dim:rgba(212,175,55,.15);
-  --esim-gold-border:rgba(212,175,55,.3);
+  --esim-gold-border:rgba(212,175,55,.4);
   --esim-coral:#f9916a;
   --esim-coral-dim:rgba(249,145,90,.14);
   --esim-coral-border:rgba(249,145,90,.3);
@@ -47,7 +47,7 @@
 
 @keyframes esimPulse{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes gridScroll{to{background-position:0 44px}}
-.announce-bar{display:none}.logo{display:none!important}.logo-shield{display:none!important}nav{background:transparent!important;box-shadow:none!important;border-bottom:3px solid var(--esim-gold)!important;backdrop-filter:none!important;height:auto!important;min-height:0!important;padding:.2rem 0!important}.nav ul,.hamburger,.nav-cta,.nav-sponsor{display:none!important}
+.announce-bar{display:none}.logo{display:none!important}.logo-shield{display:none!important}nav{background:#0e3460!important;box-shadow:none!important;border-bottom:3px solid #d4af37!important;backdrop-filter:none!important;min-height:0!important;padding:.3rem 0!important}.nav ul,.hamburger,.nav-cta,.nav-sponsor{display:none!important}body{background-color:#0e3460!important;background-image:none!important}
 .esim-section{background-image:linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);background-size:44px 44px}
 
 .esim-hero{background:var(--esim-navy);padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
@@ -61,22 +61,22 @@
 .esim-hero h1 span{color:var(--esim-gold)}
 .esim-hero-sub{color:var(--esim-muted);font-size:.97rem;max-width:520px;margin:0 auto 2rem;line-height:1.75;position:relative}
 
-.esim-section{padding:3.5rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.08) 1px,transparent 1px);background-size:44px 44px}
+.esim-section{padding:3.5rem 2rem;background:#0e3460;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
 .esim-section-dark{background:var(--esim-navy3)}
 .esim-section-label{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:3px;text-transform:uppercase;margin-bottom:.6rem;text-align:center}
 .esim-section h2{font-family:var(--display);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;color:var(--esim-gold);text-align:center;margin-bottom:.5rem}
 .esim-section-intro{color:var(--esim-muted);font-size:.92rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;text-align:center}
 
 .country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
-.country-card{border-radius:12px;padding:1.25rem 1rem;text-align:center;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;display:block;position:relative}
+.country-card{border-radius:12px;padding:1rem;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;display:block;position:relative}
 .country-card.live{background:var(--esim-navy);border:1px solid var(--esim-gold-border);cursor:pointer}
 .country-card.live:hover{border-color:var(--esim-gold);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,.15)}
-.country-card.soon{background:var(--esim-navy);border:1px solid rgba(255,255,255,.06);cursor:default;opacity:.7}
-.country-icon{font-size:2rem;margin-bottom:.5rem;display:block}
-.country-flag{font-size:1.4rem;margin-bottom:.25rem;display:block}
+.country-card.soon{background:var(--esim-navy);border:1px solid rgba(212,175,55,.25);cursor:default;opacity:.7}
+.country-icon{font-size:1.1rem;display:block;margin-bottom:.5rem}
+.country-flag{display:none}
 .country-name{font-family:var(--display);font-size:.95rem;font-weight:700;color:var(--esim-gold);margin-bottom:.2rem}
 .country-card.soon .country-name{color:var(--esim-muted)}
-.country-status{font-family:var(--mono);font-size:.62rem;letter-spacing:.5px}
+.country-status{font-family:var(--mono);font-size:.68rem;letter-spacing:.5px}
 .country-status.live-tag{color:var(--esim-coral)}
 .country-status.soon-tag{color:rgba(147,197,232,.4)}
 .live-dot{display:inline-block;width:6px;height:6px;background:var(--esim-coral);border-radius:50%;margin-right:4px;vertical-align:middle;animation:esimPulse 2s ease-in-out infinite}
@@ -178,7 +178,7 @@
       </div>
 
       <div class="country-card soon">
-        <span class="country-icon">&#127798;</span>
+        <span class="country-icon">&#128332;</span>
         <span class="country-flag">&#127481;&#127479;</span>
         <p class="country-name">Turkey</p>
         <p class="country-status soon-tag">Coming soon</p>
