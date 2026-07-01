@@ -4,83 +4,323 @@
   function vcGetCookie(n){var m=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return m?m.pop():'';}
   if(vcGetCookie('vc_consent')==='accepted'){vcLoadGA4();}
 </script>
+<!-- VPN Compare · bestvpncompareonline.com · esim/index.html -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eSIM Comparison 2026 — Coming Soon | VPN Compare</title>
-<meta name="description" content="Independent eSIM comparisons coming soon. Stay tuned for expert reviews, coverage comparisons, and honest rankings of the best eSIM providers in 2026.">
-<meta name="robots" content="index, follow">
+<title>eSIM Comparison 2026 — Instant Connectivity, No SIM Swap | VPN Compare</title>
+<meta name="description" content="Independent eSIM comparisons by destination. Compare coverage, data plans, and pricing across 200+ countries. No SIM swap needed. Find the best eSIM for your trip in 2026.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="VPN Compare Editorial Team — bestvpncompareonline.com">
 <link rel="canonical" href="https://bestvpncompareonline.com/esim/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a2540' rx='6'/%3E%3Cpath d='M16 4 L27 8.5 L27 16 C27 21.5 22.2 26.2 16 28 C9.8 26.2 5 21.5 5 16 L5 8.5 Z' fill='%2338bdf8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f9916a'/%3E%3Cstop offset='1' stop-color='%23d4af37'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='%230a2540' rx='6'/%3E%3Cpath d='M16 4 L27 8.5 L27 16 C27 21.5 22.2 26.2 16 28 C9.8 26.2 5 21.5 5 16 L5 8.5 Z' fill='url(%23g)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bestvpncompareonline.com/esim/">
+<meta property="og:title" content="eSIM Comparison 2026 — Instant Connectivity, No SIM Swap">
+<meta property="og:description" content="Independent eSIM comparisons by destination. Compare coverage, data plans, and pricing across 200+ countries.">
+<meta property="og:site_name" content="VPN Compare — bestvpncompareonline.com">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"eSIM Comparison 2026","url":"https://bestvpncompareonline.com/esim/","description":"Independent eSIM comparisons by destination covering coverage, data plans, and pricing across 200+ countries in 2026.","publisher":{"@type":"Organization","name":"VPN Compare","url":"https://bestvpncompareonline.com/"}}
+</script>
+
 <link rel="stylesheet" href="/style.css">
+<style>
+/* ── eSIM THEME VARIABLES ── */
+:root{
+  --esim-navy:#0a2540;
+  --esim-navy2:#0c2e52;
+  --esim-navy3:#071a2e;
+  --esim-gold:#d4af37;
+  --esim-gold-dim:rgba(212,175,55,.15);
+  --esim-gold-border:rgba(212,175,55,.25);
+  --esim-coral:#f9916a;
+  --esim-coral-dim:rgba(249,145,90,.12);
+  --esim-coral-border:rgba(249,145,90,.25);
+  --esim-text:#e0f2fe;
+  --esim-muted:#7ab8d9;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes esimPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes esimFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes esimShimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes esimFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── ANNOUNCE BAR ── */
+.esim-announce{background:var(--esim-navy3);border-bottom:1px solid var(--esim-gold-border);color:var(--esim-gold);text-align:center;padding:.45rem 1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:1px}
+.esim-announce a{color:var(--esim-coral);text-decoration:none;font-weight:600}
+.esim-announce a:hover{text-decoration:underline}
+
+/* ── NAV OVERRIDE for eSIM ── */
+.esim-nav-bar{background:rgba(10,37,64,.97);border-bottom:3px solid var(--esim-gold);backdrop-filter:blur(12px)}
+
+/* ── HERO ── */
+.esim-hero{background:var(--esim-navy);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.esim-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px;animation:gridScroll 30s linear infinite}
+.esim-hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(249,145,90,.12),transparent 68%);border-radius:50%;pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%)}
+.esim-badge{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.2rem;opacity:.9;position:relative;background:var(--esim-coral-dim);border:1px solid var(--esim-coral-border);padding:.3rem 1rem;border-radius:20px;display:inline-block;animation:esimPulse 3s ease-in-out infinite}
+.esim-hero h1{font-family:var(--display);font-size:clamp(2.4rem,5.5vw,4.8rem);font-weight:700;line-height:1.05;letter-spacing:.5px;margin-bottom:.5rem;position:relative;color:var(--esim-text)}
+.esim-hero h1 .gold{color:var(--esim-gold);background:linear-gradient(90deg,#d4af37,#f9d89c,#d4af37);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:esimShimmer 4s linear infinite}
+.esim-tagline{font-family:var(--mono);font-size:.9rem;color:var(--esim-coral);margin-bottom:2rem;position:relative;letter-spacing:.5px}
+.esim-hero-sub{max-width:560px;color:var(--esim-muted);font-size:1rem;margin-bottom:2.5rem;line-height:1.75;position:relative}
+.esim-trust{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;position:relative}
+.esim-trust-pill{font-family:var(--mono);font-size:.7rem;color:var(--esim-gold);background:var(--esim-gold-dim);border:1px solid var(--esim-gold-border);padding:.3rem .9rem;border-radius:20px;letter-spacing:.5px}
+.esim-hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
+.esim-btn-primary{background:var(--esim-gold);color:var(--esim-navy);font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block}
+.esim-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.esim-btn-secondary{background:transparent;color:var(--esim-gold);font-family:var(--display);font-weight:700;font-size:.9rem;padding:.75rem 2rem;border-radius:var(--radius);letter-spacing:1px;text-transform:uppercase;text-decoration:none;border:1px solid var(--esim-gold-border);transition:border-color .2s,background .2s;display:inline-block}
+.esim-btn-secondary:hover{border-color:var(--esim-gold);background:var(--esim-gold-dim)}
+
+/* ── BANNER SLOT ── */
+.esim-banner{background:var(--esim-navy2);border-top:1px solid var(--esim-gold-border);border-bottom:1px solid var(--esim-gold-border);padding:1rem 2rem;text-align:center}
+.esim-banner-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.esim-banner-label{font-family:var(--mono);font-size:.62rem;color:var(--esim-muted);letter-spacing:2px;text-transform:uppercase;opacity:.6;white-space:nowrap}
+.esim-banner-copy{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--esim-gold);flex:1;text-align:center}
+.esim-banner-copy span{color:var(--esim-coral)}
+.esim-banner-cta{font-family:var(--mono);font-size:.75rem;color:var(--esim-navy);background:var(--esim-gold);padding:.35rem 1rem;border-radius:var(--radius);text-decoration:none;white-space:nowrap;letter-spacing:.5px;transition:transform .15s}
+.esim-banner-cta:hover{transform:scale(1.03)}
+
+/* ── REGIONS ── */
+.esim-section{padding:4rem 2rem;background:var(--esim-navy2);position:relative;overflow:hidden;z-index:0}
+.esim-section-dark{background:var(--esim-navy3)}
+.esim-section-label{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:3px;text-transform:uppercase;margin-bottom:.6rem;text-align:center}
+.esim-section h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--esim-gold);text-align:center;margin-bottom:.6rem}
+.esim-section-intro{color:var(--esim-muted);font-size:.95rem;max-width:540px;margin:0 auto 2.5rem;line-height:1.75;text-align:center}
+
+.esim-regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem}
+.esim-region-card{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.75rem 1.25rem;text-align:center;cursor:pointer;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;display:block;position:relative;overflow:hidden}
+.esim-region-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--esim-coral-dim),transparent);opacity:0;transition:opacity .25s}
+.esim-region-card:hover{border-color:var(--esim-gold);transform:translateY(-4px);box-shadow:0 8px 32px rgba(212,175,55,.15)}
+.esim-region-card:hover::before{opacity:1}
+.esim-region-icon{font-size:2.8rem;margin-bottom:.75rem;display:block;animation:esimFloat 4s ease-in-out infinite}
+.esim-region-card:nth-child(2) .esim-region-icon{animation-delay:.4s}
+.esim-region-card:nth-child(3) .esim-region-icon{animation-delay:.8s}
+.esim-region-card:nth-child(4) .esim-region-icon{animation-delay:1.2s}
+.esim-region-card:nth-child(5) .esim-region-icon{animation-delay:1.6s}
+.esim-region-name{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--esim-gold);margin-bottom:.25rem}
+.esim-region-count{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:.5px}
+.esim-region-status{font-family:var(--mono);font-size:.65rem;color:var(--esim-muted);margin-top:.4rem;letter-spacing:.5px}
+
+/* ── DEALS ── */
+.esim-deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.esim-deal-card{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.5rem;transition:border-color .2s,transform .2s}
+.esim-deal-card:hover{border-color:var(--esim-gold);transform:translateY(-3px)}
+.esim-deal-badge{font-family:var(--mono);font-size:.65rem;color:var(--esim-coral);background:var(--esim-coral-dim);border:1px solid var(--esim-coral-border);padding:.2rem .65rem;border-radius:20px;letter-spacing:.5px;display:inline-block;margin-bottom:.75rem}
+.esim-deal-name{font-family:var(--display);font-size:1.2rem;font-weight:700;color:var(--esim-gold);margin-bottom:.35rem}
+.esim-deal-desc{font-size:.85rem;color:var(--esim-muted);line-height:1.6;margin-bottom:1.25rem}
+.esim-deal-cta{display:inline-block;background:var(--esim-gold);color:var(--esim-navy);font-family:var(--display);font-weight:700;font-size:.82rem;padding:.5rem 1.4rem;border-radius:var(--radius);text-decoration:none;letter-spacing:.5px;transition:transform .15s,box-shadow .15s}
+.esim-deal-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,175,55,.3)}
+.esim-deal-cta.soon{background:var(--esim-navy2);color:var(--esim-muted);border:1px solid var(--esim-gold-border);cursor:default}
+.esim-deal-cta.soon:hover{transform:none;box-shadow:none}
+
+/* ── HOW IT WORKS ── */
+.esim-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;counter-reset:esim-step}
+.esim-step{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.5rem;position:relative;counter-increment:esim-step}
+.esim-step::before{content:counter(esim-step);position:absolute;top:-14px;left:1.25rem;font-family:var(--mono);font-size:.72rem;color:var(--esim-navy);background:var(--esim-gold);padding:.15rem .55rem;border-radius:20px;font-weight:700;letter-spacing:.5px}
+.esim-step-icon{font-size:1.8rem;margin-bottom:.6rem;color:var(--esim-coral)}
+.esim-step-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--esim-gold);margin-bottom:.35rem}
+.esim-step-desc{font-size:.85rem;color:var(--esim-muted);line-height:1.6}
+
+/* ── SECOND BANNER SLOT ── */
+.esim-banner2{background:linear-gradient(135deg,var(--esim-navy3),var(--esim-navy2));border:1px solid var(--esim-gold-border);border-radius:14px;padding:1.5rem 2rem;text-align:center;margin:0 2rem}
+.esim-banner2-label{font-family:var(--mono);font-size:.62rem;color:var(--esim-muted);letter-spacing:2px;margin-bottom:.5rem;opacity:.6}
+.esim-banner2-head{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--esim-gold);margin-bottom:.4rem}
+.esim-banner2-head span{color:var(--esim-coral)}
+.esim-banner2-sub{font-size:.88rem;color:var(--esim-muted);margin-bottom:1rem}
+.esim-banner2-cta{display:inline-block;background:var(--esim-gold);color:var(--esim-navy);font-family:var(--display);font-weight:700;font-size:.85rem;padding:.55rem 1.6rem;border-radius:var(--radius);text-decoration:none;letter-spacing:.5px;transition:transform .15s}
+.esim-banner2-cta:hover{transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+.esim-footer-section{padding:3rem 2rem 1.5rem;background:var(--esim-navy3);border-top:2px solid var(--esim-gold-border)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .esim-banner-inner{flex-direction:column;text-align:center}
+  .esim-banner-label{display:none}
+}
+</style>
 </head>
 <body>
+
+<!-- ANNOUNCE BAR -->
+<div class="esim-announce">
+  &#9889; eSIM reviews launching 2026 &mdash; <a href="/vpn/">Compare VPNs now</a> while you wait &mdash; your data deserves both
+</div>
+
 <script src="/nav.js"></script>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <p class="hero-badge">&#128241; eSIM Comparison — Coming Soon</p>
-  <h1>Independent <span class="c">eSIM</span><br><span class="m">Reviews</span> Are Coming</h1>
-  <p class="hero-sub">We are building our independent eSIM comparison section. Covering coverage, data plans, pricing, and value across 200+ destinations. Sign up below to be notified when we launch.</p>
-  <div class="hero-trust">
-    <span class="trust-pill">&#10003; 200+ Destinations</span>
-    <span class="trust-pill">&#10003; Independent Testing</span>
-    <span class="trust-pill">&#10003; No Sponsored Rankings</span>
-    <span class="trust-pill">&#10003; Launching 2026</span>
+<!-- HERO -->
+<section class="esim-hero">
+  <div class="esim-hero-grid"></div>
+  <div class="esim-hero-glow"></div>
+  <span class="esim-badge">&#128241; eSIM Comparison &mdash; 2026</span>
+  <h1>Instant connectivity.<br><span class="gold">No SIM swap.</span></h1>
+  <p class="esim-tagline">// Land. Connect. Go. &mdash; No queues at the airport kiosk. No tiny ejector pin.</p>
+  <p class="esim-hero-sub">Independent eSIM comparisons by destination. Real coverage data, honest pricing, and no sponsored rankings &mdash; so you actually know what you are getting before you board.</p>
+  <div class="esim-trust">
+    <span class="esim-trust-pill">&#10003; 200+ destinations</span>
+    <span class="esim-trust-pill">&#10003; Independent testing</span>
+    <span class="esim-trust-pill">&#10003; No sponsored rankings</span>
+    <span class="esim-trust-pill">&#10003; Launching 2026</span>
   </div>
-  <div class="hero-btns">
-    <a href="/vpn/" class="btn-primary">&#128274; Compare VPNs Instead</a>
-    <a href="/vpn/#newsletter" class="btn-secondary">&#128231; Notify Me When Live</a>
+  <div class="esim-hero-btns">
+    <a href="#regions" class="esim-btn-primary">Find My Destination &rarr;</a>
+    <a href="#deals" class="esim-btn-secondary">Current Deals</a>
   </div>
 </section>
 
-<section style="padding:4rem 0;text-align:center">
+<!-- BANNER SLOT 1 — self-promo VPN -->
+<div class="esim-banner">
+  <div class="esim-banner-inner">
+    <span class="esim-banner-label">Sponsored &mdash; own placement</span>
+    <p class="esim-banner-copy">Already sorted your eSIM? Don&rsquo;t forget your <span>VPN</span> &mdash; your data needs protection wherever you land.</p>
+    <a href="/vpn/" class="esim-banner-cta">Compare VPNs &rarr;</a>
+  </div>
+</div>
+
+<!-- REGIONS -->
+<section class="esim-section" id="regions">
   <div class="container">
-    <p class="section-label">// What to Expect</p>
-    <h2>What Our <span class="accent">eSIM Section</span> Will Cover</h2>
-    <p class="section-intro">The same independent testing standards we apply to VPNs — applied to eSIMs.</p>
-    <div class="method-grid">
-      <div class="method-card fade-in">
-        <div class="method-icon">&#127758;</div>
-        <p class="method-title">Coverage Testing</p>
-        <p class="method-desc">Real-world coverage tests across popular travel destinations including Europe, Asia, USA, and the Middle East.</p>
+    <p class="esim-section-label">// Pick your destination</p>
+    <h2>Where Are You <span style="color:var(--esim-coral)">Headed?</span></h2>
+    <p class="esim-section-intro">Select a region to compare eSIM coverage, data plans, and pricing for every country in that area. Because &ldquo;it should work&rdquo; is not good enough when you are 6,000 miles from home.</p>
+    <div class="esim-regions">
+
+      <a href="/esim/destinations/europe/" class="esim-region-card fade-in">
+        <span class="esim-region-icon">&#127462;&#127482;</span>
+        <p class="esim-region-name">Europe</p>
+        <p class="esim-region-count">40+ countries</p>
+        <p class="esim-region-status">Reviews coming soon</p>
+      </a>
+
+      <a href="/esim/destinations/americas/" class="esim-region-card fade-in">
+        <span class="esim-region-icon">&#127482;&#127480;</span>
+        <p class="esim-region-name">Americas</p>
+        <p class="esim-region-count">30+ countries</p>
+        <p class="esim-region-status">Reviews coming soon</p>
+      </a>
+
+      <a href="/esim/destinations/asia/" class="esim-region-card fade-in">
+        <span class="esim-region-icon">&#127482;&#128;</span>
+        <p class="esim-region-name">Asia</p>
+        <p class="esim-region-count">35+ countries</p>
+        <p class="esim-region-status">Reviews coming soon</p>
+      </a>
+
+      <a href="/esim/destinations/oceania/" class="esim-region-card fade-in">
+        <span class="esim-region-icon">&#127462;&#127482;</span>
+        <p class="esim-region-name">Oceania</p>
+        <p class="esim-region-count">10+ countries</p>
+        <p class="esim-region-status">Reviews coming soon</p>
+      </a>
+
+      <a href="/esim/destinations/middle-east/" class="esim-region-card fade-in">
+        <span class="esim-region-icon">&#127462;&#127466;</span>
+        <p class="esim-region-name">Middle East</p>
+        <p class="esim-region-count">15+ countries</p>
+        <p class="esim-region-status">Reviews coming soon</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW eSIM WORKS -->
+<section class="esim-section esim-section-dark">
+  <div class="container">
+    <p class="esim-section-label">// How it works</p>
+    <h2>Three Steps.<br><span style="color:var(--esim-coral)">Zero Plastic.</span></h2>
+    <p class="esim-section-intro">An eSIM is a digital SIM built into your phone. No card. No swapping. No pretending you remember which tiny tray your original SIM is in.</p>
+    <div class="esim-steps">
+      <div class="esim-step fade-in">
+        <div class="esim-step-icon">&#128241;</div>
+        <p class="esim-step-title">Choose your plan</p>
+        <p class="esim-step-desc">Pick a data plan for your destination from our independent comparison. Filter by price, coverage, and speed.</p>
       </div>
-      <div class="method-card fade-in">
-        <div class="method-icon">&#128176;</div>
-        <p class="method-title">Price Comparison</p>
-        <p class="method-desc">Side-by-side data plan pricing across all major eSIM providers so you always know you are getting the best rate.</p>
+      <div class="esim-step fade-in">
+        <div class="esim-step-icon">&#128247;</div>
+        <p class="esim-step-title">Scan and activate</p>
+        <p class="esim-step-desc">Scan a QR code with your phone. The eSIM installs instantly. Works on all modern iPhones and Android devices.</p>
       </div>
-      <div class="method-card fade-in">
-        <div class="method-icon">&#9889;</div>
-        <p class="method-title">Speed Tests</p>
-        <p class="method-desc">Independent speed testing in key destinations so you know what connection quality to expect before you travel.</p>
+      <div class="esim-step fade-in">
+        <div class="esim-step-icon">&#9989;</div>
+        <p class="esim-step-title">Land and connect</p>
+        <p class="esim-step-desc">Switch to your eSIM the moment you land. Full data connectivity before you reach baggage claim.</p>
       </div>
-      <div class="method-card fade-in">
-        <div class="method-icon">&#128203;</div>
-        <p class="method-title">Honest Reviews</p>
-        <p class="method-desc">Full independent reviews of every major eSIM provider. No sponsored rankings. No hidden bias. Ever.</p>
+      <div class="esim-step fade-in">
+        <div class="esim-step-icon">&#128274;</div>
+        <p class="esim-step-title">Add a VPN</p>
+        <p class="esim-step-desc">eSIM gives you connectivity. A VPN gives you security. Public WiFi abroad is a playground for snoopers &mdash; don&rsquo;t be the tourist who finds out the hard way.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- DEALS -->
+<section class="esim-section" id="deals">
+  <div class="container">
+    <p class="esim-section-label">// Travel security bundle</p>
+    <h2>eSIM + <span style="color:var(--esim-coral)">Security</span> Deals</h2>
+    <p class="esim-section-intro">Connectivity sorted. Security sorted. Everything you need for travelling without looking like an easy target.</p>
+    <div class="esim-deals-grid">
+
+      <div class="esim-deal-card fade-in">
+        <span class="esim-deal-badge">&#128241; eSIM &mdash; Coming Soon</span>
+        <p class="esim-deal-name">Saily eSIM</p>
+        <p class="esim-deal-desc">200+ destinations, instant activation, flexible data plans. Built by Nord Security &mdash; the same people behind NordVPN. Full review and pricing launching soon.</p>
+        <a href="#regions" class="esim-deal-cta soon">Launching Soon</a>
+      </div>
+
+      <div class="esim-deal-card fade-in">
+        <span class="esim-deal-badge">&#128100; Travel Identity &mdash; Live</span>
+        <p class="esim-deal-name">Surfshark Alternative ID</p>
+        <p class="esim-deal-desc">Generate a disposable identity and email for every app and service you sign up to abroad. Your real details stay private wherever you travel.</p>
+        <a href="https://get.surfshark.net/aff_c?offer_id=1421&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" class="esim-deal-cta">Get Deal &rarr;</a>
+      </div>
+
+      <div class="esim-deal-card fade-in">
+        <span class="esim-deal-badge">&#128274; Travel VPN &mdash; Live</span>
+        <p class="esim-deal-name">NordVPN</p>
+        <p class="esim-deal-desc">The essential travel companion for your eSIM. Encrypt your connection on hotel WiFi, airport hotspots, and anywhere else you would rather not think about.</p>
+        <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=141394&url_id=902" target="_blank" rel="nofollow sponsored noopener" class="esim-deal-cta">Get Deal &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANNER SLOT 2 — self-promo VPN Compare -->
+<div style="padding:2rem 0;background:var(--esim-navy2)">
+  <div class="esim-banner2">
+    <p class="esim-banner2-label">Sponsored &mdash; own placement</p>
+    <p class="esim-banner2-head">While you&rsquo;re here &mdash; <span>VPN Compare</span> is live now</p>
+    <p class="esim-banner2-sub">Independent VPN reviews, speed tests, and a personalised quiz. Find the right VPN in under 2 minutes.</p>
+    <a href="/vpn/" class="esim-banner2-cta">Compare VPNs &rarr;</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
       <div class="footer-links-row">
         <a href="/">Home</a>
         <a href="/vpn/">VPN Comparison</a>
-        <a href="/vpn/articles/">VPN Articles</a>
+        <a href="/esim/destinations/">Destinations</a>
+        <a href="/esim/reviews/">eSIM Reviews</a>
         <a href="javascript:void(0)" onclick="openLegal('privacy')">Privacy Policy</a>
+        <a href="javascript:void(0)" onclick="openLegal('affiliate')">Affiliate Disclosure</a>
         <a href="javascript:void(0)" onclick="openLegal('contact')">Contact</a>
       </div>
       <div class="footer-copyright">
-        <p>&copy; 2026 VPN Compare&trade; &mdash; bestvpncompareonline.com</p>
+        <p>&copy; 2026 VPN Compare&trade; &mdash; bestvpncompareonline.com &middot; All Rights Reserved.</p>
+        <p style="font-size:.72rem;color:#4a8aaa;margin-top:.4rem">Affiliate disclosure: Surfshark Alternative ID and NordVPN links on this page are affiliate links. VPN Compare may earn a commission at no additional cost to you. Saily links will become affiliate links upon programme approval. This does not influence our editorial independence or rankings.</p>
       </div>
     </div>
   </div>
