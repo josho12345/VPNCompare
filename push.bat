@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 :: ============================================================
 :: VPN Compare DEV — Push Changes
 :: bestvpncompareonline.com (Dev branch only)
