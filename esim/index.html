@@ -146,17 +146,24 @@ body{background-color:#0e3460!important;background-image:none!important}
 
 /* Ticket banner wrap */
 .esim-ticket-wrap{display:flex;justify-content:center;padding:4px 2.5%;background:#071a2e}
-.esim-ticket{width:95%;background:#0a2540;border:1px solid rgba(212,175,55,.5);border-radius:4px;display:flex;align-items:center;justify-content:space-between;padding:5px 16px 5px 12px;text-decoration:none;transition:border-color .2s;position:relative;
+@keyframes tickerScroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.esim-ticket{width:95%;background:#0a2540;border:1px solid rgba(212,175,55,.5);border-radius:4px;overflow:hidden;position:relative;height:30px;
   background-image:radial-gradient(circle,#071a2e 5px,transparent 5px),radial-gradient(circle,#071a2e 5px,transparent 5px);
   background-position:-5px center,calc(100% + 5px) center;
   background-size:11px 18px;
   background-repeat:repeat-y}
-.esim-ticket:hover{border-color:rgba(212,175,55,.85)}
-.esim-ticket-left{display:flex;align-items:center;gap:10px}
-.esim-ticket-copy{display:flex;flex-direction:column;gap:1px}
-.esim-ticket-brand{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#38bdf8;letter-spacing:.5px}
-.esim-ticket-tag{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(147,197,232,.7);letter-spacing:.3px}
-.esim-ticket-cta{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;color:#d4af37;white-space:nowrap;letter-spacing:.5px}
+.esim-ticker-track{display:flex;align-items:center;height:100%;white-space:nowrap;animation:tickerScroll 22s linear infinite}
+.esim-ticker-track:hover{animation-play-state:paused}
+.esim-ticker-item{display:inline-flex;align-items:center;gap:10px;padding:0 40px}
+.esim-ticker-shield{flex-shrink:0;vertical-align:middle}
+.esim-ticker-brand{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#38bdf8;letter-spacing:.5px}
+.esim-ticker-tag{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(147,197,232,.75);letter-spacing:.3px}
+.esim-ticker-cta{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;color:#d4af37;letter-spacing:.5px}
+.esim-ticker-dot{color:rgba(212,175,55,.4);font-size:.7rem}
+.esim-ticker-available{background:rgba(212,175,55,.06)}
+.esim-ticker-avail-icon{color:#d4af37;font-size:.75rem}
+.esim-ticker-avail-text{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#d4af37;letter-spacing:.5px}
+.esim-ticker-avail-cta{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(212,175,55,.8);letter-spacing:.3px}
 
 /* eSIM logo bar */
 .esim-logo-bar{display:flex;align-items:center;justify-content:space-between;padding:.4rem 1.5rem;border-bottom:3px solid #d4af37;background:#0e3460}
@@ -186,22 +193,34 @@ body{background-color:#0e3460!important;background-image:none!important}
 
   <!-- ADVERTISER TICKET SLOT — 95% width, ticket-styled -->
   <div class="esim-ticket-wrap">
-    <a href="/vpn/" class="esim-ticket" title="VPN Compare — Independent VPN Reviews 2026">
-      <div class="esim-ticket-left">
-        <!-- VPN Compare shield -->
-        <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" style="flex-shrink:0">
-          <rect width="32" height="32" fill="#0a2540" rx="5"/>
-          <defs><linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0369a1"/></linearGradient></defs>
-          <path d="M16 4L27 8.5L27 16C27 21.5 22.2 26.2 16 28C9.8 26.2 5 21.5 5 16L5 8.5Z" fill="url(#sh)"/>
-          <path d="M13 16.5L15.2 18.8L19.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-        <div class="esim-ticket-copy">
-          <span class="esim-ticket-brand">VPN Compare</span>
-          <span class="esim-ticket-tag">Independent VPN reviews &mdash; no sponsored rankings</span>
-        </div>
+    <div class="esim-ticket">
+      <div class="esim-ticker-track">
+        <!-- ADVERTISER SLOT — swap esim-ticker-item blocks to change sponsor content -->
+        <a href="/vpn/" class="esim-ticker-item" style="text-decoration:none">
+          <svg class="esim-ticker-shield" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#0a2540" rx="5"/><defs><linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0369a1"/></linearGradient></defs><path d="M16 4L27 8.5L27 16C27 21.5 22.2 26.2 16 28C9.8 26.2 5 21.5 5 16L5 8.5Z" fill="url(#sh)"/><path d="M13 16.5L15.2 18.8L19.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <span class="esim-ticker-brand">VPN Compare</span>
+          <span class="esim-ticker-tag">Independent VPN reviews &mdash; no sponsored rankings</span>
+          <span class="esim-ticker-dot">&bull;</span>
+          <span class="esim-ticker-cta">Compare VPNs &rarr;</span>
+        </a>
+        <a href="/vpn/" class="esim-ticker-item" style="text-decoration:none">
+          <svg class="esim-ticker-shield" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#0a2540" rx="5"/><defs><linearGradient id="sh2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0369a1"/></linearGradient></defs><path d="M16 4L27 8.5L27 16C27 21.5 22.2 26.2 16 28C9.8 26.2 5 21.5 5 16L5 8.5Z" fill="url(#sh2)"/><path d="M13 16.5L15.2 18.8L19.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <span class="esim-ticker-brand">VPN Compare</span>
+          <span class="esim-ticker-tag">Speed tests &middot; expert reviews &middot; no paid rankings</span>
+          <span class="esim-ticker-dot">&bull;</span>
+          <span class="esim-ticker-cta">Find Your VPN &rarr;</span>
+        </a>
+        <!-- AVAILABILITY MESSAGE — appears once every 2 VPN scrolls -->
+        <a href="mailto:advertise@bestvpncompareonline.com" class="esim-ticker-item esim-ticker-available" style="text-decoration:none">
+          <span class="esim-ticker-avail-icon">&#9733;</span>
+          <span class="esim-ticker-avail-text">This space is available for advertising</span>
+          <span class="esim-ticker-dot">&bull;</span>
+          <span class="esim-ticker-avail-cta">advertise@bestvpncompareonline.com</span>
+          <span class="esim-ticker-avail-icon">&#9733;</span>
+        </a>
+        <!-- END ADVERTISER SLOT -->
       </div>
-      <span class="esim-ticket-cta">Compare VPNs &rarr;</span>
-    </a>
+    </div>
   </div>
 
   <!-- eSIM LOGO BAR with gold line separator -->
