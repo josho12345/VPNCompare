@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 :: ============================================================
 :: VPN Compare DEV — Push Changes
 :: bestvpncompareonline.com (Dev branch only)
@@ -80,4 +80,5 @@ echo   Check Dev GitHub Pages URL to view changes.
 echo   PRODUCTION (main) was NOT touched.
 echo ============================================
 echo.
+
 pause
