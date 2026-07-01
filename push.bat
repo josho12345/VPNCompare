@@ -10,7 +10,9 @@
 :: ============================================================
 cd /d C:\_PROJECTS\VPNCompare_DEV
 echo.
-echo ============================================
+echo 
+pause
+============================================
 echo   VPN Compare DEV -- Push Changes
 echo   (Dev branch only -- production untouched)
 echo ============================================
