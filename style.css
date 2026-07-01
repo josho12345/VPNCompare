@@ -201,7 +201,7 @@ select.calc-input{cursor:pointer}
 /* FEATURED CARDS */
 #featured{position:relative;overflow:hidden;z-index:0;background:repeating-linear-gradient(180deg,#f48fb1 0px,#e11d48 690px,#f48fb1 1380px)}
 #featured .section-label{color:rgba(255,240,240,.85)}
-#featured h2{color:#c0143c}
+#featured h2{color:rgba(255,240,240,.85)}
 #featured h2 .accent{color:#c0143c}
 #featured .section-intro{color:rgba(255,240,240,.85)}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
