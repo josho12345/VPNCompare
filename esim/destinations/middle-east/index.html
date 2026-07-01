@@ -47,7 +47,7 @@
 
 @keyframes esimPulse{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes gridScroll{to{background-position:0 44px}}
-.announce-bar{display:none}.logo{display:none!important}.logo-shield{display:none!important}nav{background:#0e3460!important;box-shadow:none!important;border-bottom:3px solid #d4af37!important;backdrop-filter:none!important;min-height:0!important;padding:.3rem 0!important}.nav ul,.hamburger,.nav-cta,.nav-sponsor{display:none!important}body{background-color:#0e3460!important;background-image:none!important}
+
 .esim-section{background-image:linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);background-size:44px 44px}
 
 .esim-hero{background:var(--esim-navy);padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
@@ -83,9 +83,105 @@
 
 .esim-note{background:var(--esim-navy);border:1px solid var(--esim-gold-border);border-radius:12px;padding:1.25rem 1.5rem;margin:2rem 0 0;font-family:var(--mono);font-size:.78rem;color:var(--esim-muted);line-height:1.7}
 .esim-note strong{color:var(--esim-gold)}
+/* ── eSIM HEADER SYSTEM ── */
+nav{display:none!important}
+body{background-color:#0e3460!important;background-image:none!important}
+
+.esim-header{position:sticky;top:0;z-index:200;background:#0e3460}
+
+/* Ticket banner wrap */
+.esim-ticket-wrap{display:flex;justify-content:center;padding:4px 2.5%;background:#071a2e}
+.esim-ticket{width:95%;background:#0a2540;border:1px solid rgba(212,175,55,.5);border-radius:4px;display:flex;align-items:center;justify-content:space-between;padding:5px 16px 5px 12px;text-decoration:none;transition:border-color .2s;position:relative;
+  background-image:radial-gradient(circle,#071a2e 5px,transparent 5px),radial-gradient(circle,#071a2e 5px,transparent 5px);
+  background-position:-5px center,calc(100% + 5px) center;
+  background-size:11px 18px;
+  background-repeat:repeat-y}
+.esim-ticket:hover{border-color:rgba(212,175,55,.85)}
+.esim-ticket-left{display:flex;align-items:center;gap:10px}
+.esim-ticket-copy{display:flex;flex-direction:column;gap:1px}
+.esim-ticket-brand{font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:700;color:#38bdf8;letter-spacing:.5px}
+.esim-ticket-tag{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(147,197,232,.7);letter-spacing:.3px}
+.esim-ticket-cta{font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;color:#d4af37;white-space:nowrap;letter-spacing:.5px}
+
+/* eSIM logo bar */
+.esim-logo-bar{display:flex;align-items:center;justify-content:space-between;padding:.4rem 1.5rem;border-bottom:3px solid #d4af37;background:#0e3460}
+.esim-logo-link{display:flex;align-items:center;gap:8px;text-decoration:none}
+.esim-logo-text{font-family:'Rajdhani',sans-serif;font-size:1.15rem;font-weight:700;color:#d4af37;letter-spacing:1px}
+.esim-logo-accent{color:#f9916a}
+.esim-nav-links{display:flex;gap:1.2rem;align-items:center}
+.esim-nav-links a{font-family:'Share Tech Mono',monospace;font-size:.72rem;color:rgba(212,175,55,.75);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.esim-nav-links a:hover{color:#d4af37}
+
+@media(max-width:600px){
+  .esim-ticket-tag{display:none}
+  .esim-nav-links{gap:.8rem}
+  .esim-nav-links a{font-size:.65rem}
+}
+
 </style>
 </head>
 <body>
+<!-- ═══════════════════════════════════════════════════
+     eSIM HEADER — ticket banner + logo bar
+     ADVERTISER SLOT: replace .esim-ticket content only
+     Logo bar and sticky wrapper are permanent fixtures
+════════════════════════════════════════════════════ -->
+<div class="esim-header" id="esim-header">
+
+  <!-- ADVERTISER TICKET SLOT — 95% width, ticket-styled -->
+  <div class="esim-ticket-wrap">
+    <a href="/vpn/" class="esim-ticket" title="VPN Compare — Independent VPN Reviews 2026">
+      <div class="esim-ticket-left">
+        <!-- VPN Compare shield -->
+        <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" style="flex-shrink:0">
+          <rect width="32" height="32" fill="#0a2540" rx="5"/>
+          <defs><linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0369a1"/></linearGradient></defs>
+          <path d="M16 4L27 8.5L27 16C27 21.5 22.2 26.2 16 28C9.8 26.2 5 21.5 5 16L5 8.5Z" fill="url(#sh)"/>
+          <path d="M13 16.5L15.2 18.8L19.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="esim-ticket-copy">
+          <span class="esim-ticket-brand">VPN Compare</span>
+          <span class="esim-ticket-tag">Independent VPN reviews &mdash; no sponsored rankings</span>
+        </div>
+      </div>
+      <span class="esim-ticket-cta">Compare VPNs &rarr;</span>
+    </a>
+  </div>
+
+  <!-- eSIM LOGO BAR with gold line separator -->
+  <div class="esim-logo-bar">
+    <a href="/esim/" class="esim-logo-link">
+      <!-- eSIM Compare logo: gold phone + antenna tower + signal arcs -->
+      <svg width="66" height="28" viewBox="0 0 66 28" aria-hidden="true">
+        <rect x="1" y="4" width="13" height="21" rx="2.5" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <rect x="2.8" y="7" width="9.4" height="13" rx="1" fill="#d4af37" opacity=".15"/>
+        <circle cx="7.5" cy="22.5" r="1" fill="#d4af37" opacity=".6"/>
+        <rect x="14.4" y="9" width="1.5" height="4" rx=".7" fill="#d4af37"/>
+        <line x1="44" y1="1" x2="44" y2="27" stroke="#22c55e" stroke-width="1.1" stroke-linecap="round"/>
+        <line x1="41" y1="25" x2="47" y2="25" stroke="#22c55e" stroke-width="1" stroke-linecap="round"/>
+        <line x1="41.5" y1="22" x2="46.5" y2="22" stroke="#22c55e" stroke-width=".9" stroke-linecap="round"/>
+        <line x1="42" y1="19" x2="46" y2="19" stroke="#22c55e" stroke-width=".85" stroke-linecap="round"/>
+        <line x1="42.3" y1="16" x2="45.7" y2="16" stroke="#22c55e" stroke-width=".8" stroke-linecap="round"/>
+        <line x1="42.6" y1="13" x2="45.4" y2="13" stroke="#22c55e" stroke-width=".75" stroke-linecap="round"/>
+        <line x1="42.9" y1="10" x2="45.1" y2="10" stroke="#22c55e" stroke-width=".7" stroke-linecap="round"/>
+        <line x1="43.2" y1="7" x2="44.8" y2="7" stroke="#22c55e" stroke-width=".65" stroke-linecap="round"/>
+        <line x1="43.5" y1="4.5" x2="44.5" y2="4.5" stroke="#22c55e" stroke-width=".6" stroke-linecap="round"/>
+        <circle cx="44" cy="1" r="1.2" fill="#22c55e"/>
+        <path d="M17 7.5 Q29 0 40 5" fill="none" stroke="white" stroke-width="1.1" stroke-linecap="round" opacity=".9"/>
+        <path d="M17 11 Q28 2 40 7.5" fill="none" stroke="white" stroke-width=".85" stroke-linecap="round" opacity=".6"/>
+        <path d="M17 14.5 Q27 4 40 10" fill="none" stroke="white" stroke-width=".65" stroke-linecap="round" opacity=".35"/>
+      </svg>
+      <span class="esim-logo-text">eSIM <span class="esim-logo-accent">Compare</span></span>
+    </a>
+    <div class="esim-nav-links">
+      <a href="/esim/destinations/">Destinations</a>
+      <a href="/esim/#deals">Deals</a>
+      <a href="/">&#8592; Home</a>
+    </div>
+  </div>
+
+</div>
+
 <script src="/nav.js"></script>
 
 <!-- HERO -->
