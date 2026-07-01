@@ -199,7 +199,11 @@ select.calc-input{cursor:pointer}
 .vs-badge{font-family:var(--display);font-weight:700;color:var(--muted);font-size:1rem;padding-bottom:.65rem}
 
 /* FEATURED CARDS */
-#featured{position:relative;overflow:hidden;z-index:0;background:linear-gradient(180deg,#fff3f4 0%,#fcdfe2 100%)}
+#featured{position:relative;overflow:hidden;z-index:0;background:linear-gradient(180deg,#fda4af 0%,#e11d48 55%,#881337 100%)}
+#featured .section-label{color:#fda4af}
+#featured h2{color:#fff0f0}
+#featured h2 .accent{color:#fda4af}
+#featured .section-intro{color:rgba(255,240,240,.85)}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
 .vpn-card{background:#fff;border:2px solid rgba(212,175,55,.7);border-radius:var(--radius2);padding:1.8rem;position:relative;overflow:hidden;transition:border-color .25s,transform .2s,box-shadow .25s;box-shadow:var(--shadow)}
 .vpn-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:var(--shadow2)}
