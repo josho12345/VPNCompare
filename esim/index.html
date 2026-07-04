@@ -33,7 +33,11 @@
     color:#dce8f5;
     margin:0;
   }
-  .esim-page a{color:inherit;}
+  /* Removed a blanket ".esim-page a{color:inherit}" rule here -- same root
+     cause as the hub page bug: nav.js injects its own links straight into
+     body, and a body-scoped "a" rule reaches them too. Currently masked on
+     this page because the VPN nav is hidden entirely further down, but
+     leaving a known-bad rule in place isn't good practice, so it's gone. */
 
   /* ---- ticket ticker ---- */
   .esim-ticker-wrap{
