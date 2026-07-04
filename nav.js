@@ -28,6 +28,7 @@
       '</svg>VPN <span>Compare</span>' +
     '</a>' +
     '<ul>' +
+      '<li><a href="https://bestvpncompareonline.com/">Home</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#compare">Compare</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#quiz">Quiz</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#calculator">Calculator</a></li>' +
@@ -55,6 +56,7 @@
   mobileMenu.className = 'mobile-menu';
   mobileMenu.id = 'mobileMenu';
   mobileMenu.innerHTML =
+    '<a href="https://bestvpncompareonline.com/" onclick="vcCloseMenu()">&#127968; Home</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#compare" onclick="vcCloseMenu()">&#128202; Compare VPNs</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()">&#127919; Take the Quiz</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#calculator" onclick="vcCloseMenu()">&#128176; Cost Calculator</a>' +

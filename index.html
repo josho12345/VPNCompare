@@ -1,110 +1,220 @@
 <!DOCTYPE html>
-<script>
-  function vcLoadGA4(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-HRJP2W44ZE';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-HRJP2W44ZE');}
-  function vcGetCookie(n){var m=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return m?m.pop():'';}
-  if(vcGetCookie('vc_consent')==='accepted'){vcLoadGA4();}
-</script>
-<!--- VPN Compare · bestvpncompareonline.com · root hub page -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VPN Compare — Independent VPN &amp; eSIM Reviews 2026</title>
-<meta name="description" content="Independent VPN and eSIM comparisons for 2026. Expert reviews, speed tests, and pricing comparisons to help you find the right product.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="author" content="VPN Compare Editorial Team — bestvpncompareonline.com">
+<title>VPN Compare — Compare VPNs &amp; eSIMs | bestvpncompareonline.com</title>
+<meta name="description" content="Independent VPN and eSIM comparisons. Compare 6 tested VPNs or eSIM coverage across 54 countries -- no sponsored rankings, just real testing.">
 <link rel="canonical" href="https://bestvpncompareonline.com/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2338bdf8'/%3E%3Cstop offset='1' stop-color='%230369a1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='%230a2540' rx='6'/%3E%3Cpath d='M16 4 L27 8.5 L27 16 C27 21.5 22.2 26.2 16 28 C9.8 26.2 5 21.5 5 16 L5 8.5 Z' fill='url(%23g)'/%3E%3Cpath d='M13 16.5 L15.2 18.8 L19.5 13.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://bestvpncompareonline.com/">
-<meta property="og:title" content="VPN Compare — Independent VPN &amp; eSIM Reviews 2026">
-<meta property="og:description" content="Independent VPN and eSIM comparisons for 2026. Expert reviews, speed tests, and pricing comparisons.">
-<meta property="og:site_name" content="VPN Compare — bestvpncompareonline.com">
-<!-- Structured Data: WebSite -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"VPN Compare","url":"https://bestvpncompareonline.com/","description":"Independent VPN and eSIM comparison site — expert reviews, speed tests, and pricing comparisons for 2026.","publisher":{"@type":"Organization","name":"VPN Compare","url":"https://bestvpncompareonline.com/"}}
-</script>
-<!-- Impact Radius — affiliate tracking -->
-<script type="text/javascript">(function(i,m,p,a,c,t){c.ire_o=p;c[p]=c[p]||function(){(c[p].a=c[p].a||[]).push(arguments)};t=a.createElement(m);var z=a.getElementsByTagName(m)[0];t.async=1;t.src=i;z.parentNode.insertBefore(t,z)})('https://utt.impactcdn.com/P-A7419511-2d92-47f7-8136-262eb6d910821.js','script','impactStat',document,window);impactStat('transformLinks');impactStat('trackImpression');</script>
 <link rel="stylesheet" href="/style.css">
+<script>
+  // Same honest note as the eSIM page -- no real GA4 Measurement ID was ever
+  // supplied anywhere in this chat or project knowledge, so this stays a
+  // safe no-op rather than a guessed ID. Replace with the real gtag snippet.
+  function vcLoadGA4() {
+    // intentionally empty -- insert real GA4 snippet here
+  }
+</script>
 <style>
-  .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
-  .hub-card{background:#fff;border:2px solid rgba(212,175,55,.7);border-radius:var(--radius2);padding:2.5rem 2rem;text-align:center;box-shadow:0 4px 24px rgba(3,105,161,.15);transition:transform .2s,box-shadow .2s;position:relative}
-  .hub-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(3,105,161,.25)}
-  .hub-card-icon{font-size:3rem;margin-bottom:1rem;display:block}
-  .hub-card-status{font-family:var(--mono,monospace);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;padding:.25rem .8rem;border-radius:20px;display:inline-block;margin-bottom:1rem}
-  .hub-card-status.live{background:rgba(21,128,61,.12);border:1px solid rgba(21,128,61,.3);color:#15803d}
-  .hub-card-status.soon{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#4a8aaa}
-  .hub-card-title{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
-  .hub-card-desc{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
-.btn-primary{background:#d4af37!important;color:#0a2540!important}
-.btn-secondary{background:#d4af37!important;color:#0a2540!important;border:none!important}
+  :root{
+    --hub-navy:#0e3460;
+    --hub-gold:#d4af37;
+    --hub-coral:#f9916a;
+    --hub-green:#22c55e;
+    --hub-blue-accent:#3b82c4;
+  }
+  .hub-page{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    margin:0;
+    color:var(--hub-navy);
+    background:linear-gradient(180deg,#eaf5fd 0%,#cbe6f7 35%,#9dd0ef 100%);
+  }
+  .hub-page a{color:inherit;}
+
+  .hub-hero{
+    text-align:center;
+    padding:56px 20px 30px;
+  }
+  .hub-hero h1{
+    font-size:clamp(1.7rem,5vw,2.5rem);
+    font-weight:800;
+    margin:0;
+    line-height:1.3;
+  }
+  .hub-hero h1 .accent{color:var(--hub-blue-accent);}
+
+  .hub-cards{
+    max-width:920px;
+    margin:20px auto 0;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:26px;
+  }
+  .hub-card{
+    background:#ffffff;
+    border:2px solid var(--hub-gold);
+    border-radius:20px;
+    padding:38px 30px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(14,52,96,.12);
+  }
+  .hub-card .hub-icon{margin-bottom:16px;}
+  .hub-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(34,197,94,.12);
+    color:#15803d;
+    border-radius:999px;
+    padding:5px 14px;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.5px;
+    margin-bottom:14px;
+  }
+  .hub-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--hub-green);display:inline-block;}
+  .hub-card h2{
+    font-size:1.5rem;
+    font-weight:800;
+    margin:0 0 12px;
+    color:var(--hub-navy);
+  }
+  .hub-card p{
+    color:#3a5470;
+    line-height:1.65;
+    font-size:.94rem;
+    margin:0 0 24px;
+  }
+  .hub-btn{
+    display:inline-block;
+    background:var(--hub-gold);
+    color:var(--hub-navy);
+    font-weight:700;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:999px;
+    font-size:.92rem;
+  }
+
+  .hub-trust{
+    max-width:820px;
+    margin:36px auto 0;
+    padding:0 20px;
+    text-align:center;
+  }
+  .hub-trust-strip{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    color:#2c4a68;
+    font-size:.85rem;
+    font-weight:600;
+  }
+
+  .hub-footer{
+    background:#081525;
+    color:#dce8f5;
+    padding:56px 20px 26px;
+    text-align:center;
+    margin-top:56px;
+  }
+  .hub-footer-nav{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+  }
+  .hub-footer-nav a{color:#7f9cc4;text-decoration:none;font-size:.9rem;}
+  .hub-footer-legal{
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .hub-footer-legal a{color:#7f9cc4;text-decoration:none;font-size:.85rem;}
+  .hub-footer-copy{
+    color:#5c7699;
+    font-size:.78rem;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+    max-width:600px;
+    margin:0 auto;
+  }
 </style>
 </head>
-<body>
+<body class="hub-page">
+
+<!-- nav.js injects the announce bar, main VPN Compare nav, hamburger menu,
+     legal modal and cookie banner automatically once it loads. Not touched here. -->
 <script src="/nav.js"></script>
-<!-- HERO -->
-<section class="hero" style="min-height:60vh">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <p class="hero-badge">&#128274; Independent Reviews — 2026</p>
-  <h1>VPN <span class="c">Compare</span></h1>
-  <p class="hero-sub">Independent comparisons, expert reviews, and real-world testing to help you find the right privacy and connectivity product.</p>
-  <div class="hero-trust">
-    <span class="trust-pill">&#10003; No Sponsored Scores</span>
-    <span class="trust-pill">&#10003; No Paid Rankings</span>
-    <span class="trust-pill">&#10003; Real-World Testing</span>
-    <span class="trust-pill">&#10003; Updated July 2026</span>
+
+<section class="hub-hero">
+  <h1>What Are You <span class="accent">Looking For?</span></h1>
+</section>
+
+<section class="hub-cards">
+
+  <div class="hub-card">
+    <div class="hub-icon">
+      <svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28,4 L48,12 L48,27 C48,39 39,47 28,52 C17,47 8,39 8,27 L8,12 Z" fill="#0e3460" stroke="#3b82c4" stroke-width="1.5"/>
+        <path d="M17,28 L24,35 L39,19" fill="none" stroke="#f5a623" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="hub-badge"><span class="dot"></span>LIVE NOW</div>
+    <h2>VPN Comparison</h2>
+    <p>Compare 6 independently tested VPNs side by side. Speed tests, pricing calculator, personalised quiz, and in-depth reviews.</p>
+    <a href="/vpn/" class="hub-btn">Compare VPNs →</a>
+  </div>
+
+  <div class="hub-card">
+    <div class="hub-icon">
+      <svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="10" width="20" height="36" rx="4" fill="none" stroke="#d4af37" stroke-width="2"/>
+        <line x1="10" y1="15" x2="22" y2="15" stroke="#d4af37" stroke-width="1.4"/>
+        <rect x="13" y="38" width="6" height="4" rx="2" fill="#d4af37"/>
+        <path d="M32,28 A11,11 0 0,1 50,28" stroke="#f9916a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M35,32 A7,7 0 0,1 47,32" stroke="#f9916a" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".75"/>
+        <path d="M38,36 A3.6,3.6 0 0,1 44,36" stroke="#f9916a" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
+      </svg>
+    </div>
+    <div class="hub-badge"><span class="dot"></span>LIVE NOW</div>
+    <h2>eSIM Comparison</h2>
+    <p>Independent eSIM comparisons covering 54 countries across Asia, Europe, the Americas, the Middle East, and Oceania. Coverage ratings, pricing, and honest local tips.</p>
+    <a href="/esim/" class="hub-btn">Compare eSIMs →</a>
+  </div>
+
+</section>
+
+<section class="hub-trust">
+  <div class="hub-trust-strip">
+    <span>6 VPNs Tested</span>
+    <span>54 Countries Covered</span>
+    <span>100% Independent — No Sponsored Rankings</span>
   </div>
 </section>
-<!-- PRODUCT CARDS -->
-<section style="padding:4rem 2rem;background:linear-gradient(180deg,#6eb6e9 0%,#cce8fa 100%);position:relative;overflow:hidden;z-index:0">
-  <div class="container">
-    <p class="section-label" style="text-align:center">// Choose Your Category</p>
-    <h2 style="text-align:center;color:var(--navy)">What Are You <span class="accent">Looking For?</span></h2>
-    <div class="hub-grid">
-      <!-- VPN Card -->
-      <div class="hub-card">
-        <span class="hub-card-icon">&#128274;</span>
-        <span class="hub-card-status live">&#9679; Live Now</span>
-        <p class="hub-card-title">VPN Comparison</p>
-        <p class="hub-card-desc">Compare 6 independently tested VPNs side by side. Speed tests, pricing calculator, personalised quiz, and in-depth reviews.</p>
-        <a href="/vpn/" class="btn-primary">Compare VPNs &rarr;</a>
-      </div>
-      <!-- eSIM Card -->
-      <div class="hub-card">
-        <span class="hub-card-icon">&#128241;</span>
-        <span class="hub-card-status live">&#9679; Live Now</span>
-        <p class="hub-card-title">eSIM Comparison</p>
-        <p class="hub-card-desc">Independent eSIM comparisons covering 54 countries across Asia, Europe, the Americas, the Middle East, and Oceania. Coverage ratings, pricing, and honest local tips.</p>
-        <a href="/esim/" class="btn-secondary">Compare eSIMs &rarr;</a>
-      </div>
-    </div>
+
+<footer class="hub-footer">
+  <div class="hub-footer-nav">
+    <a href="/">Home</a>
+    <a href="/esim/">eSIM</a>
+    <a href="/vpn/">VPN Comparison</a>
   </div>
-</section>
-<!-- FOOTER -->
-<footer>
-  <div class="footer-bottom">
-    <div class="footer-bottom-inner">
-      <div class="footer-links-row">
-        <a href="/vpn/">VPN Comparison</a>
-        <a href="/vpn/reviews/">VPN Reviews</a>
-        <a href="/vpn/articles/">VPN Articles</a>
-        <a href="/esim/">eSIM</a>
-        <a href="javascript:void(0)" onclick="openLegal('privacy')">Privacy Policy</a>
-        <a href="javascript:void(0)" onclick="openLegal('affiliate')">Affiliate Disclosure</a>
-        <a href="javascript:void(0)" onclick="openLegal('contact')">Contact</a>
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; 2026 VPN Compare&trade; &mdash; bestvpncompareonline.com &middot; All Rights Reserved.</p>
-      </div>
-    </div>
+  <div class="hub-footer-legal">
+    <a href="#" onclick="if(typeof openLegal==='function'){openLegal('privacy');}return false;">Privacy Policy</a>
+    <a href="#" onclick="if(typeof openLegal==='function'){openLegal('affiliate');}return false;">Affiliate Disclosure</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="hub-footer-copy">
+    © 2026 VPN Compare™ – bestvpncompareonline.com · All Rights Reserved.
   </div>
 </footer>
+
 <script src="/script.js"></script>
+
 </body>
 </html>

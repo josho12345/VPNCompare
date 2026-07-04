@@ -88,8 +88,11 @@
     gap:10px;
   }
   .esim-logo-link{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .esim-logo-text{font-weight:800;font-size:1.3rem;color:#eef4fb;}
-  .esim-logo-accent{color:var(--esim-gold);}
+  .esim-logo-text{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-weight:800;font-size:1.3rem;color:#eef4fb;
+  }
+  .esim-logo-accent{color:var(--esim-coral);}
   .esim-header-nav{display:flex;gap:26px;align-items:center;}
   .esim-header-nav a{
     text-decoration:none;
@@ -116,10 +119,12 @@
     margin-bottom:14px;
   }
   .esim-hero h1{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
     color:#f4f8fc;
     font-size:clamp(1.7rem,5vw,2.7rem);
     font-weight:800;
-    line-height:1.25;
+    line-height:1.3;
+    letter-spacing:.3px;
     margin:0 0 18px;
   }
   .esim-hero h1 .gold{color:var(--esim-gold);}
@@ -154,7 +159,10 @@
     padding:60px 20px;
   }
   .esim-section-head{max-width:640px;margin:0 auto 36px;text-align:center;}
-  .esim-section-head h2{color:#f4f8fc;font-size:1.6rem;margin:6px 0 0;}
+  .esim-section-head h2{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color:#f4f8fc;font-size:1.6rem;font-weight:700;letter-spacing:.3px;margin:6px 0 0;
+  }
   .esim-section-head h2 .gold{color:var(--esim-gold);}
   .esim-why-grid{
     max-width:1100px;
@@ -170,7 +178,10 @@
     padding:26px 22px;
   }
   .esim-why-card .icon{font-size:1.7rem;margin-bottom:12px;}
-  .esim-why-card h3{color:var(--esim-gold);font-size:1.02rem;margin:0 0 8px;}
+  .esim-why-card h3{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color:var(--esim-gold);font-size:1.02rem;font-weight:700;margin:0 0 8px;
+  }
   .esim-why-card p{color:#b9cbe0;font-size:.86rem;line-height:1.6;margin:0;}
 
   /* ---- region teaser ---- */
@@ -197,7 +208,12 @@
     transition:border-color .2s, background .2s;
   }
   .esim-region-row:hover{border-color:var(--esim-gold);background:rgba(212,175,55,.08);}
-  .esim-region-name{color:var(--esim-gold);font-weight:700;font-size:1.05rem;}
+  .esim-region-left{display:flex;align-items:center;gap:16px;}
+  .esim-region-icon{flex:0 0 auto;width:36px;height:36px;display:flex;align-items:center;justify-content:center;}
+  .esim-region-name{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color:var(--esim-gold);font-weight:700;font-size:1.05rem;
+  }
   .esim-region-meta{color:var(--esim-coral);font-size:.8rem;margin-top:4px;}
   .esim-region-arrow{color:var(--esim-gold);font-size:1.3rem;}
 
@@ -215,7 +231,10 @@
     border-radius:16px;
     padding:40px 30px;
   }
-  .esim-deals-box h2{color:var(--esim-gold);margin:0 0 12px;font-size:1.3rem;}
+  .esim-deals-box h2{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color:var(--esim-gold);margin:0 0 12px;font-size:1.3rem;font-weight:700;
+  }
   .esim-deals-box p{color:#b9cbe0;line-height:1.7;font-size:.92rem;margin:0 0 22px;}
 
   /* ---- final CTA ---- */
@@ -225,7 +244,10 @@
     text-align:center;
     border-top:2px solid var(--esim-gold);
   }
-  .esim-cta-banner h2{color:#f4f8fc;font-size:1.5rem;margin:0 0 22px;}
+  .esim-cta-banner h2{
+    font-family:'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color:#f4f8fc;font-size:1.5rem;font-weight:700;margin:0 0 22px;
+  }
 
   /* ---- footer ---- */
   .esim-footer{
@@ -293,19 +315,12 @@
         <rect x="2" y="3" width="10" height="22" rx="2" fill="none" stroke="#d4af37" stroke-width="1.6"/>
         <line x1="4" y1="6.5" x2="10" y2="6.5" stroke="#d4af37" stroke-width="1"/>
         <rect x="5.5" y="19.5" width="3" height="2" rx="1" fill="#d4af37"/>
-        <path d="M20,14 A6,6 0 0,1 32,14" stroke="#ffffff" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <path d="M17,14 A9,9 0 0,1 35,14" stroke="#ffffff" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.7"/>
-        <path d="M14,14 A12,12 0 0,1 38,14" stroke="#ffffff" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.45"/>
-        <line x1="46" y1="3" x2="46" y2="26" stroke="#22c55e" stroke-width="1.6"/>
-        <line x1="39" y1="25" x2="53" y2="25" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="39.8" y1="22.375" x2="52.2" y2="22.375" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="40.6" y1="19.75" x2="51.4" y2="19.75" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="41.4" y1="17.125" x2="50.6" y2="17.125" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="42.2" y1="14.5" x2="49.8" y2="14.5" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="43" y1="11.875" x2="49" y2="11.875" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="43.8" y1="9.25" x2="48.2" y2="9.25" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="44.6" y1="6.625" x2="47.4" y2="6.625" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="45.2" y1="4" x2="46.8" y2="4" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M18,14 A9,9 0 0,1 36,14" stroke="#ffffff" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <line x1="46" y1="4" x2="46" y2="26" stroke="#22c55e" stroke-width="1.2"/>
+        <line x1="42.5" y1="24" x2="49.5" y2="24" stroke="#22c55e" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="43.3" y1="18" x2="48.7" y2="18" stroke="#22c55e" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="44.1" y1="12" x2="47.9" y2="12" stroke="#22c55e" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="45" y1="6" x2="47" y2="6" stroke="#22c55e" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
       <span class="esim-logo-text">eSIM <span class="esim-logo-accent">Compare</span></span>
     </a>
@@ -320,8 +335,8 @@
 <main>
   <section class="esim-hero">
     <div class="esim-eyebrow">// Travel Data, Simplified</div>
-    <h1>Stop Paying Your Carrier's <span class="gold">Roaming Tax</span></h1>
-    <p>Compare eSIM coverage, data costs and activation across 54 countries, so you know exactly what you're buying before you land — not after the bill arrives.</p>
+    <h1>Skip the Roaming Fees. <span class="gold">Know Before You Go.</span></h1>
+    <p>Compare eSIM coverage, data costs and activation across 54 countries — know exactly what you're buying before you land, not after the bill arrives.</p>
     <div class="esim-cta-row">
       <a href="/esim/destinations/" class="esim-btn-primary">Find My Destination →</a>
       <a href="#deals" class="esim-btn-secondary">See Today's Deals</a>
@@ -364,37 +379,104 @@
     </div>
     <div class="esim-region-list">
       <a class="esim-region-row" href="/esim/destinations/asia/">
-        <div>
-          <div class="esim-region-name">Asia</div>
-          <div class="esim-region-meta">10 countries covered</div>
+        <div class="esim-region-left">
+          <div class="esim-region-icon">
+            <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="5" fill="#111827"/>
+              <circle cx="24" cy="8" r="5" fill="#111827"/>
+              <circle cx="16" cy="18" r="10.5" fill="#ffffff"/>
+              <ellipse cx="10.8" cy="17" rx="3.1" ry="4" fill="#111827"/>
+              <ellipse cx="21.2" cy="17" rx="3.1" ry="4" fill="#111827"/>
+              <circle cx="10.8" cy="17.6" r=".9" fill="#ffffff"/>
+              <circle cx="21.2" cy="17.6" r=".9" fill="#ffffff"/>
+              <ellipse cx="16" cy="21.5" rx="1.4" ry="1" fill="#f4a6a6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="esim-region-name">Asia</div>
+            <div class="esim-region-meta">10 countries covered</div>
+          </div>
         </div>
         <div class="esim-region-arrow">→</div>
       </a>
       <a class="esim-region-row" href="/esim/destinations/europe/">
-        <div>
-          <div class="esim-region-name">Europe</div>
-          <div class="esim-region-meta">16 countries covered</div>
+        <div class="esim-region-left">
+          <div class="esim-region-icon">
+            <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" fill="#0e3460" stroke="#d4af37" stroke-width="1"/>
+              <g fill="#d4af37">
+                <path transform="translate(16,16) rotate(0) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(45) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(90) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(135) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(180) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(225) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(270) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+                <path transform="translate(16,16) rotate(315) translate(0,-10.5)" d="M0,-2 L0.6,-0.3 L2.3,-0.3 L0.9,0.7 L1.4,2.3 L0,1.3 L-1.4,2.3 L-0.9,0.7 L-2.3,-0.3 L-0.6,-0.3 Z"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="esim-region-name">Europe</div>
+            <div class="esim-region-meta">16 countries covered</div>
+          </div>
         </div>
         <div class="esim-region-arrow">→</div>
       </a>
       <a class="esim-region-row" href="/esim/destinations/middle-east/">
-        <div>
-          <div class="esim-region-name">Middle East</div>
-          <div class="esim-region-meta">11 countries covered</div>
+        <div class="esim-region-left">
+          <div class="esim-region-icon">
+            <!-- Reconstructed from a screenshot showing a dark/gold split disc for
+                 this region -- not confirmed in writing anywhere, worth checking
+                 against the live deployed icon. -->
+            <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" fill="none" stroke="#d4af37" stroke-width="1"/>
+              <path d="M16,1 A15,15 0 0,0 16,31 Z" fill="#161522"/>
+              <path d="M16,1 A15,15 0 0,1 16,31 Z" fill="#d99a3f"/>
+            </svg>
+          </div>
+          <div>
+            <div class="esim-region-name">Middle East</div>
+            <div class="esim-region-meta">11 countries covered</div>
+          </div>
         </div>
         <div class="esim-region-arrow">→</div>
       </a>
       <a class="esim-region-row" href="/esim/destinations/oceania/">
-        <div>
-          <div class="esim-region-name">Oceania</div>
-          <div class="esim-region-meta">7 countries covered</div>
+        <div class="esim-region-left">
+          <div class="esim-region-icon">
+            <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16,30 C15,22 17,15 18,9" stroke="#8b5a2b" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M18,9 C12,6 8,8 5,12" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M18,9 C13,4 9,3 5,4" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M18,9 C18,3 16,1 14,0" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M18,9 C22,4 26,3 30,4" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M18,9 C24,6 28,8 31,12" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="esim-region-name">Oceania</div>
+            <div class="esim-region-meta">7 countries covered</div>
+          </div>
         </div>
         <div class="esim-region-arrow">→</div>
       </a>
       <a class="esim-region-row" href="/esim/destinations/americas/">
-        <div>
-          <div class="esim-region-name">Americas</div>
-          <div class="esim-region-meta">10 countries covered</div>
+        <div class="esim-region-left">
+          <div class="esim-region-icon">
+            <!-- PLACEHOLDER -- no icon for this region is confirmed anywhere in
+                 project notes or screenshots. Compass rose used as a stand-in.
+                 Replace once the real one is known. -->
+            <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="13" fill="none" stroke="#d4af37" stroke-width="1.3"/>
+              <path d="M16,4 L19,16 L16,28 L13,16 Z" fill="#d4af37"/>
+              <path d="M4,16 L16,13 L28,16 L16,19 Z" fill="#d4af37" opacity="0.7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="esim-region-name">Americas</div>
+            <div class="esim-region-meta">10 countries covered</div>
+          </div>
         </div>
         <div class="esim-region-arrow">→</div>
       </a>
@@ -433,27 +515,37 @@
 
 <script src="/script.js"></script>
 <script>
-  // Purge script for the nav.js announce bar bleeding in above the ticket
-  // banner (bug fixed in vpnc13 with a MutationObserver + staggered setTimeout
-  // checks). The exact original CSS selector nav.js uses for that bar was
-  // never recorded in project notes, so this targets it by its known visible
-  // text ("independently verified") instead of a class name. VERIFY this
-  // still matches nav.js's actual output before relying on it.
+  // nav.js is still loaded (above) because it also provides the cookie
+  // consent banner, the legal modal, and the vcConsent/vcToggleMenu functions
+  // that this page and script.js depend on -- none of that is touched.
+  //
+  // What IS hidden here, per the new direction: the eSIM section should not
+  // show the full "VPN Compare" nav bar (logo + Compare/Quiz/Calculator/
+  // Reviews/eSIM/Blog/FAQ/Advertise menu + hamburger), only the scrolling
+  // ticket ticker above should carry the VPN Compare self-promo, for now.
+  //
+  // Now that the real nav.js source has been provided, these selectors are
+  // exact rather than guessed: the announce bar is literally
+  // class="announce-bar", and the full nav is an unnamed <nav> element
+  // inserted as a direct child of body -- "body > nav" reliably matches only
+  // that element, since this page's own header nav lives inside a <header>,
+  // not directly under body.
+  //
+  // nav.js's DOM injection is fully synchronous (no async/fetch involved),
+  // so this runs immediately after it and does not need the MutationObserver
+  // + staggered setTimeout workaround the vpnc13 notes described for a
+  // different, less certain diagnosis. A lightweight observer is kept only
+  // as a defensive backup in case nav.js's timing ever changes.
   (function(){
-    function purgeAnnounceBar(){
-      var all = document.querySelectorAll('body > *');
-      all.forEach(function(el){
-        if (el.classList && el.classList.contains('esim-ticker-wrap')) return;
-        if (el.tagName === 'HEADER' && el.classList.contains('esim-header')) return;
-        if (el.textContent && el.textContent.indexOf('independently verified') !== -1) {
-          el.style.display = 'none';
-        }
-      });
+    function hideVpnCompareChrome(){
+      var announceBar = document.querySelector('.announce-bar');
+      if (announceBar) announceBar.style.display = 'none';
+      var vpnNav = document.querySelector('body > nav');
+      if (vpnNav) vpnNav.style.display = 'none';
     }
-    var observer = new MutationObserver(purgeAnnounceBar);
-    observer.observe(document.body, { childList: true, subtree: true });
-    setTimeout(purgeAnnounceBar, 300);
-    setTimeout(purgeAnnounceBar, 1000);
+    hideVpnCompareChrome();
+    var observer = new MutationObserver(hideVpnCompareChrome);
+    observer.observe(document.body, { childList: true });
   })();
 </script>
 
