@@ -131,7 +131,9 @@ const vpns = [
 let currentFilter='all';
 function starsHTML(s){const f=Math.round(s/2);let h='';for(let i=0;i<5;i++)h+=`<span class="star${i<f?'':' off'}">★</span>`;return h;}
 function renderTable(filter){
-  const tbody=document.getElementById('vpnTableBody');tbody.innerHTML='';
+  const tbody=document.getElementById('vpnTableBody');
+  if(!tbody)return;
+  tbody.innerHTML='';
   vpns.filter(v=>v.live&&(filter==='all'||v.tags.includes(filter))).forEach(v=>{
     const tr=document.createElement('tr');
     tr.innerHTML=`<td><span class="vpn-name">${v.name}</span>${v.tagLabel?`<span class="vpn-tag ${v.tagClass}">${v.tagLabel}</span>`:''}</td>
@@ -146,13 +148,14 @@ function renderTable(filter){
   });
 }
 function filterTable(f,btn){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderTable(f);}
-renderTable('all');
+if(document.getElementById('vpnTableBody'))renderTable('all');
 
 /* ══════════════════════════════════════════════
    CARDS
 ══════════════════════════════════════════════ */
 function renderCards(){
   const g=document.getElementById('cardsGrid');
+  if(!g)return;
   vpns.filter(v=>v.live&&v.card).forEach(v=>{
     const d=document.createElement('div');
     d.className='vpn-card fade-in'+(v.highlight?' highlight':'');
@@ -169,19 +172,24 @@ function renderCards(){
     g.appendChild(d);
   });
 }
-renderCards();
+if(document.getElementById('cardsGrid'))renderCards();
 
 /* ══════════════════════════════════════════════
    CALCULATOR
 ══════════════════════════════════════════════ */
 const sel1=document.getElementById('calcVPN'),sel2=document.getElementById('calcVPN2');
-vpns.forEach((v,i)=>{
-  [sel1,sel2].forEach(sel=>{const o=document.createElement('option');o.value=v.id;o.textContent=v.name;sel.appendChild(o);});
-  if(i===1)sel2.lastChild.selected=true;
-});
-document.getElementById('calcType').addEventListener('change',function(){document.getElementById('teamRow').style.display=this.value==='business'?'block':'none';calcUpdate();});
+if(sel1&&sel2){
+  vpns.forEach((v,i)=>{
+    [sel1,sel2].forEach(sel=>{const o=document.createElement('option');o.value=v.id;o.textContent=v.name;sel.appendChild(o);});
+    if(i===1)sel2.lastChild.selected=true;
+  });
+}
+const calcTypeEl=document.getElementById('calcType');
+if(calcTypeEl)calcTypeEl.addEventListener('change',function(){document.getElementById('teamRow').style.display=this.value==='business'?'block':'none';calcUpdate();});
 function calcUpdate(){
-  const type=document.getElementById('calcType').value;
+  const typeEl=document.getElementById('calcType');
+  if(!typeEl)return;
+  const type=typeEl.value;
   const users=type==='business'?parseInt(document.getElementById('calcTeam').value)||1:1;
   const plan=document.getElementById('calcPlan').value;
   const v1=vpns.find(x=>x.id===document.getElementById('calcVPN').value);
@@ -224,7 +232,7 @@ function calcUpdate(){
     calcCTA.style.display='none';
   }
 }
-calcUpdate();
+if(document.getElementById('calcType'))calcUpdate();
 
 /* ══════════════════════════════════════════════
    QUIZ — weighted scoring engine
@@ -239,8 +247,10 @@ const questions=[
 ];
 let qIdx=0,answers=[];
 function quizRender(){
+  const qEl=document.getElementById('quizQ');
+  if(!qEl)return;
   const q=questions[qIdx];
-  document.getElementById('quizQ').textContent=q.q;
+  qEl.textContent=q.q;
   const pct=Math.round(((qIdx+1)/questions.length)*100);
   document.getElementById('quizStep').textContent=`Question ${qIdx+1} of ${questions.length}`;
   document.getElementById('quizPct').textContent=pct+'%';
@@ -307,7 +317,7 @@ function quizShowResult(){
   document.getElementById('quizBody').style.display='none';
   document.getElementById('quizResult').classList.add('visible');
 }
-quizRender();
+if(document.getElementById('quizQ'))quizRender();
 
 /* ══════════════════════════════════════════════
    REVIEWS
@@ -501,6 +511,7 @@ function copyPromo(el,code){
 }
 function renderDeals(){
   const g=document.getElementById('dealsGrid');
+  if(!g)return;
   deals.forEach(d=>{
     const card=document.createElement('div');card.className='deal-card fade-in';
     const promoHTML=d.promo?`<div class="promo-badge" onclick="copyPromo(this,'${d.promo}')" title="Click to copy">🎟 Use code: <span class="promo-code">${d.promo}</span><span class="promo-copy"> · click to copy</span><span class="promo-copied" style="display:none;color:var(--green)"> · copied!</span></div>`:'';
@@ -517,7 +528,7 @@ function renderDeals(){
     g.appendChild(card);
   });
 }
-renderDeals();
+if(document.getElementById('dealsGrid'))renderDeals();
 // Note: subscribeAlert is defined in the newsletter section above
 
 /* ══════════════════════════════════════════════
@@ -527,6 +538,7 @@ const reviewVPNs=['nordvpn','express','cyberghost','proton','mullvad','perimeter
 function renderDeepReviews(){
   const tabs=document.getElementById('reviewTabs');
   const panels=document.getElementById('reviewPanels');
+  if(!tabs||!panels)return;
   reviewVPNs.forEach((id,i)=>{
     const v=vpns.find(x=>x.id===id);if(!v||!v.review)return;
     const tab=document.createElement('button');
@@ -594,7 +606,7 @@ function renderDeepReviews(){
     document.querySelectorAll('#rp-nordvpn .score-bar-fill').forEach(bar=>{bar.style.width=bar.dataset.w;});
   },300);
 }
-renderDeepReviews();
+if(document.getElementById('reviewTabs'))renderDeepReviews();
 
 /* ══════════════════════════════════════════════
    COUNTRY GUIDES
@@ -633,9 +645,11 @@ const countryData={
 };
 function showCountry(code,btn,userTriggered){
   if(userTriggered===undefined)userTriggered=true;
+  const panelsEl=document.getElementById('countryPanels');
+  if(!panelsEl)return;
   document.querySelectorAll('.country-tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('countryPanels').innerHTML='';
+  if(btn)btn.classList.add('active');
+  panelsEl.innerHTML='';
   const d=countryData[code];if(!d)return;
   const panel=document.createElement('div');panel.className='country-panel active';
   panel.innerHTML=`<div class="country-layout">
@@ -659,11 +673,11 @@ function showCountry(code,btn,userTriggered){
       </div>`).join('')}
     </div>
   </div>`;
-  document.getElementById('countryPanels').appendChild(panel);
+  panelsEl.appendChild(panel);
   // scroll the newly-active country guide into view so the change is actually visible
   if(userTriggered)panel.scrollIntoView({behavior:'smooth',block:'start'});
 }
-showCountry('uk',document.querySelector('.country-tab'),false);
+if(document.getElementById('countryPanels'))showCountry('uk',document.querySelector('.country-tab'),false);
 
 /* ══════════════════════════════════════════════
    FAQ
@@ -684,6 +698,7 @@ const faqs=[
 ];
 function renderFAQ(){
   const list=document.getElementById('faqList');
+  if(!list)return;
   faqs.forEach(f=>{
     const item=document.createElement('div');item.className='faq-item';
     item.innerHTML=`<div class="faq-q" onclick="toggleFAQ(this)"><span>${f.q}</span><span class="faq-icon">+</span></div>
@@ -691,7 +706,7 @@ function renderFAQ(){
     list.appendChild(item);
   });
 }
-renderFAQ();
+if(document.getElementById('faqList'))renderFAQ();
 // Render reviews after paint so card dimensions are accurate
 requestAnimationFrame(()=>requestAnimationFrame(renderReviews));
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
@@ -732,19 +747,23 @@ async function subscribeAlert(){
 function toggleMenu(){
   const h=document.getElementById('hamburger');
   const m=document.getElementById('mobileMenu');
+  if(!h||!m)return;
   h.classList.toggle('open');
   m.classList.toggle('open');
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 function closeMenu(){
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileMenu').classList.remove('open');
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobileMenu');
+  if(h)h.classList.remove('open');
+  if(m)m.classList.remove('open');
   document.body.style.overflow='';
 }
 // close menu on outside click
 document.addEventListener('click',e=>{
   const m=document.getElementById('mobileMenu');
   const h=document.getElementById('hamburger');
+  if(!m||!h)return;
   if(m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target))closeMenu();
 });
 
