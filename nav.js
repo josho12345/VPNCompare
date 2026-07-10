@@ -44,7 +44,7 @@
       '</li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#blog">Blog</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#faq">FAQ</a></li>' +
-      '<li><a href="https://bestvpncompareonline.com/#advertise" class="nav-sponsor">Advertise</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/#advertise" class="nav-sponsor">Advertise</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#quiz" class="nav-cta">Find My VPN</a></li>' +
     '</ul>' +
     '<button class="hamburger" id="hamburger" onclick="vcToggleMenu()" aria-label="Menu">' +
@@ -77,7 +77,7 @@
     '<a href="https://bestvpncompareonline.com/vpn/#blog" onclick="vcCloseMenu()">&#9997; Blog &amp; Guides</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#faq" onclick="vcCloseMenu()">&#10067; FAQ</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#newsletter" onclick="vcCloseMenu()">&#128231; Newsletter</a>' +
-    '<a href="https://bestvpncompareonline.com/#advertise" onclick="vcCloseMenu()" class="nav-sponsor">&#128188; Advertise</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/#advertise" onclick="vcCloseMenu()" class="nav-sponsor">&#128188; Advertise</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()" class="nav-cta">&#127919; Find My VPN &mdash; Free Quiz</a>';
 
   // ── Legal modal (required for openLegal() in script.js) ──────────────────
