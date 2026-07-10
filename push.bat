@@ -1,6 +1,6 @@
 @echo off
 :: ============================================================
-:: VPN Compare â€” Push Changes
+:: VPN Compare — Push Changes
 :: bestvpncompareonline.com
 :: ============================================================
 :: GOLDEN RULE: Edit and save your files in
