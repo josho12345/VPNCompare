@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <script>
   function vcLoadGA4(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-HRJP2W44ZE';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-HRJP2W44ZE');}
   function vcGetCookie(n){var m=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return m?m.pop():'';}
@@ -118,7 +118,23 @@ body{background-color:#0e3460!important;background-image:none!important}
 .esim-nav-links a{font-family:'Share Tech Mono',monospace;font-size:.72rem;color:rgba(212,175,55,.75);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
 .esim-nav-links a:hover{color:#d4af37}
 @media(max-width:600px){.esim-ticket-tag{display:none}.esim-nav-links{gap:.8rem}.esim-nav-links a{font-size:.65rem}}
-</style>
+.esim-cmp{padding:1.1rem 1.5rem 1.3rem;border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);background:rgba(212,175,55,.025)}
+.esim-cmp-label{font-family:var(--mono);font-size:.7rem;color:var(--esim-coral);letter-spacing:1px;margin-bottom:.35rem}
+.esim-cmp-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--esim-text);margin-bottom:.9rem;line-height:1.3}
+.esim-cmp-title em{color:var(--esim-gold);font-style:normal}
+.esim-cmp-table-wrap{background:rgba(212,175,55,.06);border-radius:10px;padding:.3rem .2rem;margin-bottom:1rem}
+.esim-cmp-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.esim-cmp-table th{font-family:var(--mono);font-size:.62rem;letter-spacing:.3px;color:var(--esim-muted);text-align:center;padding:0 .2rem .5rem;font-weight:400}
+.esim-cmp-table th.esim-cmp-colA{color:var(--esim-gold);font-weight:700;font-size:.66rem}
+.esim-cmp-badge{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.3px;color:var(--esim-green);font-weight:400;margin-top:.15rem}
+.esim-cmp-table td{padding:.45rem .15rem;font-size:.66rem;text-align:center;border-bottom:1px solid rgba(212,175,55,.08);vertical-align:middle;line-height:1.25;overflow-wrap:break-word;word-break:break-word;hyphens:auto}
+.esim-cmp-table td.esim-cmp-rowlabel{text-align:left;color:var(--esim-muted);font-size:.68rem;padding-left:0}
+.esim-cmp-table td.esim-cmp-colA{color:var(--esim-text);font-weight:600}
+.esim-cmp-good{color:var(--esim-green)!important}
+.esim-cmp-bad{color:var(--esim-coral)!important}
+.esim-cmp-cta{display:block;text-align:center;background:var(--esim-gold);color:var(--esim-navy);font-family:var(--display);font-weight:700;font-size:.88rem;padding:.7rem;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.esim-cmp-cta:hover{opacity:.88}
+.esim-cmp-note{text-align:center;font-family:var(--mono);font-size:.62rem;color:var(--esim-muted);margin-top:.55rem}</style>
 </head>
 <body>
 <div class="esim-header" id="esim-header">
@@ -225,7 +241,7 @@ body{background-color:#0e3460!important;background-image:none!important}
         <p class="card-coverage-label">Coverage score</p>
       </div>
     </div>
-    <div class="card-body">
+    <div class="esim-cmp"><p class="esim-cmp-label">// Why get an eSIM</p><p class="esim-cmp-title">Saily <em>vs.</em> roaming on your home SIM</p><div class="esim-cmp-table-wrap"><table class="esim-cmp-table"><tr><th></th><th class="esim-cmp-colA">Saily<span class="esim-cmp-badge">RECOMMENDED</span></th><th>Roaming</th></tr><tr><td class="esim-cmp-rowlabel">Setup</td><td class="esim-cmp-colA esim-cmp-good">2 min, pre-trip</td><td class="esim-cmp-bad">Automatic</td></tr><tr><td class="esim-cmp-rowlabel">Cost</td><td class="esim-cmp-colA esim-cmp-good">Flat, upfront</td><td class="esim-cmp-bad">Per-day, uncapped</td></tr><tr><td class="esim-cmp-rowlabel">Speed</td><td class="esim-cmp-colA esim-cmp-good">Full local speed</td><td class="esim-cmp-bad">Often throttled</td></tr><tr><td class="esim-cmp-rowlabel">Local number</td><td class="esim-cmp-colA">No (data-only)</td><td class="esim-cmp-good">Keeps your number</td></tr></table></div><a href="https://go.saily.site/aff_c?offer_id=101&aff_id=15212" target="_blank" rel="nofollow sponsored noopener" class="esim-cmp-cta">Get Saily for Vietnam &rarr;</a><p class="esim-cmp-note"><!--SAILY_NOTE_START-->Prepaid eSIM data plan &middot; affiliate link<!--SAILY_NOTE_END--></p></div><div class="card-body">
       <div class="card-row">
         <span class="card-row-label">Networks</span>
         <span class="card-row-value gold">Viettel &amp; Mobifone<small>Both support eSIM tourist plans</small></span>
