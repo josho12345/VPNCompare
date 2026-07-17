@@ -30,7 +30,7 @@
 :root{--esim-navy:#0e3460;--esim-navy2:#1e4d7a;--esim-navy3:#1e4d7a;--esim-gold:#d4af37;--esim-gold-dim:rgba(212,175,55,.15);--esim-gold-border:rgba(212,175,55,.8);--esim-coral:#f9916a;--esim-coral-dim:rgba(249,145,90,.14);--esim-coral-border:rgba(249,145,90,.3);--esim-text:#e0f2fe;--esim-muted:#93c5e8;--esim-green:#22c55e;}
 @keyframes esimPulse{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes gridScroll{to{background-position:0 44px}}
-.esim-hero{background:var(--esim-navy);padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
+.esim-hero{background:var(--esim-navy);padding:2.2rem 2rem 1rem;text-align:center;position:relative;overflow:hidden}
 .esim-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.1) 1px,transparent 1px);background-size:44px 44px;animation:gridScroll 30s linear infinite}
 .esim-hero-glow{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(249,145,90,.1),transparent 68%);border-radius:50%;pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%)}
 .esim-breadcrumb{font-family:var(--mono);font-size:.72rem;color:var(--esim-muted);margin-bottom:1rem;position:relative}
@@ -39,11 +39,11 @@
 .esim-badge{font-family:var(--mono);font-size:.82rem;color:var(--esim-coral);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;position:relative;background:var(--esim-coral-dim);border:2px solid var(--esim-coral-border);padding:.35rem 1.2rem;border-radius:20px;display:inline-block;animation:esimPulse 2.5s ease-in-out infinite}
 .esim-hero h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:700;color:var(--esim-text);margin-bottom:.5rem;position:relative}
 .esim-hero h1 span{color:var(--esim-gold)}
-.esim-hero-sub{color:var(--esim-muted);font-size:.97rem;max-width:520px;margin:0 auto 2rem;line-height:1.75;position:relative}
-.esim-section{padding:3.5rem 2rem;background:#1e4d7a;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
+.esim-hero-sub{color:var(--esim-muted);font-size:.97rem;max-width:520px;margin:0 auto 0;line-height:1.75;position:relative}
+.esim-section{padding:1.6rem 2rem 3.5rem;background:#1e4d7a;background-image:linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);background-size:44px 44px}
 .esim-section-label{font-family:var(--mono);font-size:.72rem;color:var(--esim-coral);letter-spacing:3px;text-transform:uppercase;margin-bottom:.6rem;text-align:center}
 .esim-section h2{font-family:var(--display);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;color:var(--esim-gold);text-align:center;margin-bottom:.5rem}
-.esim-section-intro{color:var(--esim-muted);font-size:.92rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;text-align:center}
+.esim-section-intro{color:var(--esim-muted);font-size:.92rem;max-width:520px;margin:0 auto 1.2rem;line-height:1.75;text-align:center}
 .region-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
 .region-card{background:var(--esim-navy);border:2.5px solid rgba(212,175,55,.96);border-radius:14px;padding:1.5rem;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
 .region-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(212,175,55,.25)}
