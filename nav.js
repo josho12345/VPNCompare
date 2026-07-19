@@ -11,7 +11,9 @@
   announceBar.className = 'announce-bar';
   announceBar.innerHTML =
     '<svg style="display:inline-block;width:12px;height:12px;vertical-align:middle;margin-right:4px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2 L28 7 L28 16 C28 22.5 22.8 27.5 16 29.5 C9.2 27.5 4 22.5 4 16 L4 7 Z" fill="#38bdf8"/><path d="M12.5 16.5 L15 19 L20 13" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>' +
-    ' All prices independently verified &middot; Last checked 29 June 2026 &nbsp;|&nbsp;' +
+    ' All prices independently verified &middot; Last checked ' +
+    (function(){var m=['January','February','March','April','May','June','July','August','September','October','November','December'];var t=new Date();return t.getDate()+' '+m[t.getMonth()]+' '+t.getFullYear();})() +
+    ' &nbsp;|&nbsp;' +
     ' <a href="https://bestvpncompareonline.com/vpn/#methodology">How we test VPNs &rarr;</a>';
 
   // ── Nav — flat structure matching original site, eSIM added as new top-level item ──
