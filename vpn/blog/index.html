@@ -32,15 +32,16 @@
 
 <link rel="stylesheet" href="/style.css">
 <style>
+  .container{padding-left:1.2rem;padding-right:1.2rem}
   .blog-empty{max-width:640px;margin:3rem auto;text-align:center;padding:0 1.5rem}
-  .blog-empty-icon{font-size:3.5rem;margin-bottom:1rem;display:block}
-  .blog-empty-title{font-family:var(--heading,'Rajdhani',sans-serif);font-size:1.6rem;font-weight:700;color:#e2e8f0;margin:0 0 .75rem}
-  .blog-empty-desc{font-size:.95rem;color:#93c5e8;line-height:1.8;margin:0 0 1.5rem}
+  .blog-empty-icon{margin-bottom:1rem;display:block}
+  .blog-empty-title{font-family:var(--display,'Rajdhani',sans-serif);font-size:1.6rem;font-weight:700;color:var(--navy);margin:0 0 .75rem}
+  .blog-empty-desc{font-size:.95rem;color:var(--text);line-height:1.8;margin:0 0 1.5rem}
   .blog-what-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:2rem 0}
-  .blog-what-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.2rem;text-align:center}
-  .blog-what-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
-  .blog-what-title{font-family:var(--mono,monospace);font-size:.8rem;letter-spacing:.5px;color:#93c5e8;margin:0 0 .4rem}
-  .blog-what-desc{font-size:.82rem;color:#4a8aaa;line-height:1.5;margin:0}
+  .blog-what-card{background:#fff;border:2px solid rgba(212,175,55,.6);border-radius:10px;padding:1.2rem;text-align:center;box-shadow:var(--shadow)}
+  .blog-what-icon{margin-bottom:.5rem;display:block;line-height:1}
+  .blog-what-title{font-family:var(--mono,monospace);font-size:.8rem;letter-spacing:.5px;color:var(--cyan);margin:0 0 .4rem}
+  .blog-what-desc{font-size:.82rem;color:var(--muted);line-height:1.5;margin:0}
 </style>
 </head>
 <body>
@@ -54,7 +55,7 @@
     <a href="/" style="color:#4a8aaa;text-decoration:none">Home</a> &rsaquo;
     <a href="/vpn/" style="color:#4a8aaa;text-decoration:none">VPN</a> &rsaquo; Blog
   </p>
-  <p class="hero-badge">&#128221; VPN Blog — Launching Soon</p>
+  <p class="hero-badge">VPN Blog — Launching Soon</p>
   <h1>VPN <span class="c">Blog</span> &amp; <span class="m">News</span></h1>
   <p class="hero-sub">Independent VPN industry news, editorial opinion, and privacy commentary from the VPN Compare team. No press releases reprinted verbatim. No sponsored posts. Just honest editorial.</p>
   <div class="hero-trust">
@@ -70,10 +71,10 @@
   <div class="container">
 
     <div class="blog-empty">
-      <span class="blog-empty-icon">&#128221;</span>
+      <span class="blog-empty-icon"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M7.5 8h6M7.5 11.5h6M7.5 15h3.5"/><path d="M20.5 8.5l-5.5 5.5-.8 2.8 2.8-.8 5.5-5.5a1.4 1.4 0 0 0-2-2z"/></g></svg></span>
       <p class="blog-empty-title">First Posts Coming Soon</p>
       <p class="blog-empty-desc">The VPN Compare blog is being set up. Our first posts will cover VPN industry news, privacy legislation updates, and editorial opinion from our testing team. Subscribe to be notified when we publish.</p>
-      <a href="/vpn/#newsletter" class="btn-primary">&#128231; Notify Me When Live</a>
+      <a href="/vpn/#newsletter" class="btn-primary"><svg width="13" height="13" style="vertical-align:-2px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3.5 7.5L12 13.5l8.5-6"/></g></svg> Notify Me When Live</a>
     </div>
 
     <div style="height:1px;background:rgba(255,255,255,.07);margin:3rem 0"></div>
@@ -84,22 +85,22 @@
 
     <div class="blog-what-grid">
       <div class="blog-what-card fade-in">
-        <span class="blog-what-icon">&#128240;</span>
+        <span class="blog-what-icon"><svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="15" height="15" rx="2"/><path d="M18 8h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2"/><path d="M6.5 9h8M6.5 12.5h8M6.5 16h5"/></g></svg></span>
         <p class="blog-what-title">Industry News</p>
         <p class="blog-what-desc">VPN provider announcements, audits, incidents, and market developments — reported independently without the PR spin.</p>
       </div>
       <div class="blog-what-card fade-in">
-        <span class="blog-what-icon">&#9878;</span>
+        <span class="blog-what-icon"><svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 20h8"/><path d="M12 6H6M12 6h6"/><path d="M6 6l-2.5 6h5L6 6zM3.5 12a2.5 2.5 0 0 0 5 0"/><path d="M18 6l-2.5 6h5L18 6zM15.5 12a2.5 2.5 0 0 0 5 0"/></g></svg></span>
         <p class="blog-what-title">Privacy Legislation</p>
         <p class="blog-what-desc">New laws and regulations affecting internet privacy in the UK, EU, USA, and globally — explained in plain English for ordinary users.</p>
       </div>
       <div class="blog-what-card fade-in">
-        <span class="blog-what-icon">&#128202;</span>
+        <span class="blog-what-icon"><svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/></g></svg></span>
         <p class="blog-what-title">Price Alerts</p>
         <p class="blog-what-desc">When a VPN significantly changes its pricing or launches a genuine limited-time deal, we will report it here with context.</p>
       </div>
       <div class="blog-what-card fade-in">
-        <span class="blog-what-icon">&#128221;</span>
+        <span class="blog-what-icon"><svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M7.5 8h6M7.5 11.5h6M7.5 15h3.5"/><path d="M20.5 8.5l-5.5 5.5-.8 2.8 2.8-.8 5.5-5.5a1.4 1.4 0 0 0-2-2z"/></g></svg></span>
         <p class="blog-what-title">Editorial Opinion</p>
         <p class="blog-what-desc">Commentary on the VPN industry from our editorial team — what the big stories mean for users, and what the industry is getting right or wrong.</p>
       </div>
@@ -108,8 +109,8 @@
     <div style="text-align:center;margin-top:2.5rem">
       <p style="font-family:var(--mono,monospace);font-size:.82rem;color:#4a8aaa;margin-bottom:1.2rem">While you wait — our in-depth VPN guides are already live in the articles section.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="/vpn/articles/" class="btn-primary">&#9997; Read VPN Articles</a>
-        <a href="/vpn/reviews/" class="btn-secondary">&#128203; VPN Reviews</a>
+        <a href="/vpn/articles/" class="btn-primary">Read VPN Articles</a>
+        <a href="/vpn/reviews/" class="btn-secondary">VPN Reviews</a>
       </div>
     </div>
 
