@@ -1,5 +1,14 @@
 {
-  "autoUpdated": [],
+  "autoUpdated": [
+    {
+      "id": "express",
+      "name": "ExpressVPN",
+      "field": "biennial",
+      "oldPrice": 4.99,
+      "newPrice": 3,
+      "currency": "$"
+    }
+  ],
   "needsReview": [],
   "skipped": [],
   "autoUpdateEnabled": true
