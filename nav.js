@@ -35,6 +35,7 @@
       '<li><a href="https://bestvpncompareonline.com/vpn/#quiz">Quiz</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/#calculator">Calculator</a></li>' +
       '<li><a href="https://bestvpncompareonline.com/vpn/reviews/">Reviews</a></li>' +
+      '<li><a href="https://bestvpncompareonline.com/vpn/articles/">Articles</a></li>' +
       '<li class="nav-has-sub">' +
         '<a href="https://bestvpncompareonline.com/esim/">eSIM</a>' +
         '<ul class="nav-submenu">' +
@@ -63,6 +64,7 @@
     '<a href="https://bestvpncompareonline.com/vpn/#quiz" onclick="vcCloseMenu()">&#127919; Take the Quiz</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/#calculator" onclick="vcCloseMenu()">&#128176; Cost Calculator</a>' +
     '<a href="https://bestvpncompareonline.com/vpn/reviews/" onclick="vcCloseMenu()">&#128203; VPN Reviews</a>' +
+    '<a href="https://bestvpncompareonline.com/vpn/articles/" onclick="vcCloseMenu()">&#128220; VPN Articles</a>' +
 
     // eSIM as its own expandable group, everything else stays flat
     '<div class="mobile-menu-parent" onclick="vcToggleSubMenu(this)">' +
