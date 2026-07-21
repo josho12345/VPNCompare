@@ -68,6 +68,7 @@ const SITE_DATA = {
     ipvanish:      { monthly: 10.99, annual: 3.99,  biennial: 3.99, origPrice: 10.99, buyPrice: '$3.99',  buyNote: 'per month · billed annually' },
     tunnelbear:    { monthly: 9.99,  annual: 3.33,  biennial: 1.67, origPrice: 9.99,  buyPrice: '$3.33',  buyNote: 'per month · billed annually' },
     hotspotshield: { monthly: 12.99, annual: 7.99,  biennial: 2.99, origPrice: 12.99, buyPrice: '$2.99',  buyNote: 'per month · billed every 3 years' },
+    hideme:        { monthly: 11.99, annual: 4.99,  biennial: 2.69, origPrice: 11.99, buyPrice: 'PENDING',  buyNote: 'PENDING -- awaiting tracked link from Andrei (eVenture)' },  // PENDING: real market pricing, not yet tested by us
   },
 
   /* ──────────────────────────────────────────────
@@ -92,6 +93,7 @@ const SITE_DATA = {
     ipvanish:      8.2,
     tunnelbear:    7.9,
     hotspotshield: 8.0,
+    hideme:        null, // PENDING: not yet tested by us -- do not display a score until real testing done
   },
 
   /* ──────────────────────────────────────────────
@@ -117,6 +119,7 @@ const SITE_DATA = {
     ipvanish:      550,
     tunnelbear:    450,
     hotspotshield: 720,
+    hideme:        null, // PENDING: not yet tested by us
   },
 
   /* ──────────────────────────────────────────────
@@ -198,6 +201,7 @@ const SITE_DATA = {
     pia:           false,
     windscribe:    false,
     hidemyass:     false,
+    hideme:        false, // NEW: application accepted 21 Jul 2026, manager Andrei Rusu, awaiting tracked link + our own testing before going live
   },
 
   /* ──────────────────────────────────────────────
@@ -222,6 +226,7 @@ const SITE_DATA = {
     ipvanish:      false,
     tunnelbear:    false,
     hotspotshield: false,
+    hideme:        false,
   },
 
   /* ──────────────────────────────────────────────
