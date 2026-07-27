@@ -1,15 +1,19 @@
 {
-  "autoUpdated": [
+  "autoUpdated": [],
+  "needsReview": [
     {
-      "id": "express",
-      "name": "ExpressVPN",
-      "field": "biennial",
-      "oldPrice": 4.99,
-      "newPrice": 3,
-      "currency": "$"
+      "id": "cyberghost",
+      "name": "CyberGhost",
+      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
+      "currentStored": 2.03
+    },
+    {
+      "id": "pia",
+      "name": "Private Internet Access",
+      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
+      "currentStored": 2.03
     }
   ],
-  "needsReview": [],
   "skipped": [],
   "autoUpdateEnabled": true
 }
