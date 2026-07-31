@@ -72,14 +72,14 @@
     <a href="/" style="color:#4a8aaa;text-decoration:none">Home</a> &rsaquo;
     <a href="/vpn/" style="color:#4a8aaa;text-decoration:none">VPN</a> &rsaquo; Reviews
   </p>
-  <p class="hero-badge">&#128203; Independent VPN Reviews — Updated June 2026</p>
+  <p class="hero-badge">&#128203; Independent VPN Reviews — Updated <span id="dateHero"></span></p>
   <h1>VPN <span class="c">Reviews</span> 2026</h1>
   <p class="hero-sub">Every VPN reviewed below has been independently tested by our editorial team. We run 50+ speed tests per VPN, audit security claims, test streaming unblocking, and verify pricing. No sponsored scores. No paid rankings.</p>
   <div class="hero-trust">
     <span class="trust-pill">&#10003; 6 VPNs Independently Reviewed</span>
     <span class="trust-pill">&#10003; 300+ Speed Tests Total</span>
     <span class="trust-pill">&#10003; Scores Never Influenced by Sponsors</span>
-    <span class="trust-pill">&#10003; Updated June 2026</span>
+    <span class="trust-pill">&#10003; Updated <span id="datePill"></span></span>
   </div>
 </section>
 
@@ -106,7 +106,7 @@
     <div class="reviews-grid">
 
       <!-- NordVPN -->
-      <div class="review-card fade-in">
+      <div class="review-card">
         <span class="review-card-tag soon">Full Review Coming Soon</span>
         <div class="review-card-header">
           <h2 class="review-card-name">NordVPN</h2>
@@ -128,7 +128,7 @@
       </div>
 
       <!-- PureVPN -->
-      <div class="review-card fade-in">
+      <div class="review-card">
         <span class="review-card-tag soon">Full Review Coming Soon</span>
         <div class="review-card-header">
           <h2 class="review-card-name">PureVPN</h2>
@@ -150,7 +150,7 @@
       </div>
 
       <!-- Surfshark — has full review -->
-      <div class="review-card has-review fade-in">
+      <div class="review-card has-review">
         <span class="review-card-tag live">&#10003; Full Review Live</span>
         <div class="review-card-header">
           <h2 class="review-card-name">Surfshark</h2>
@@ -172,7 +172,7 @@
       </div>
 
       <!-- IPVanish -->
-      <div class="review-card fade-in">
+      <div class="review-card">
         <span class="review-card-tag soon">Full Review Coming Soon</span>
         <div class="review-card-header">
           <h2 class="review-card-name">IPVanish</h2>
@@ -194,7 +194,7 @@
       </div>
 
       <!-- TunnelBear -->
-      <div class="review-card fade-in">
+      <div class="review-card">
         <span class="review-card-tag soon">Full Review Coming Soon</span>
         <div class="review-card-header">
           <h2 class="review-card-name">TunnelBear</h2>
@@ -216,7 +216,7 @@
       </div>
 
       <!-- Hotspot Shield -->
-      <div class="review-card fade-in">
+      <div class="review-card">
         <span class="review-card-tag soon">Full Review Coming Soon</span>
         <div class="review-card-header">
           <h2 class="review-card-name">Hotspot Shield</h2>
@@ -239,7 +239,7 @@
 
     </div>
 
-    <p style="font-family:var(--mono,monospace);font-size:.72rem;color:#4a8aaa;margin-top:1.5rem;line-height:1.8">&#9888; Affiliate disclosure: VPN Compare has direct affiliate relationships with NordVPN, PureVPN, and Surfshark. Links to IPVanish, TunnelBear, and Hotspot Shield are not currently affiliated — CJ Affiliate applications are pending. All scores are determined independently. Prices verified 29 June 2026 — always confirm current pricing on the provider's official website.</p>
+    <p style="font-family:var(--mono,monospace);font-size:.72rem;color:#4a8aaa;margin-top:1.5rem;line-height:1.8">&#9888; Affiliate disclosure: VPN Compare has direct affiliate relationships with NordVPN, PureVPN, and Surfshark. Links to IPVanish, TunnelBear, and Hotspot Shield are not currently affiliated — CJ Affiliate applications are pending. All scores are determined independently. Prices verified <span id="dateDisclosure"></span> — always confirm current pricing on the provider's official website.</p>
   </div>
 </section>
 
@@ -276,6 +276,17 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var t=new Date();
+  var today=t.getDate()+' '+m[t.getMonth()]+' '+t.getFullYear();
+  ['dateHero','datePill','dateDisclosure'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.textContent=today;
+  });
+})();
+</script>
 <script src="/script.js"></script>
 </body>
 </html>
