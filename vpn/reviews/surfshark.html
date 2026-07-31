@@ -133,7 +133,7 @@
     <div class="review-meta-row">
       <span class="review-tag">&#128203; Independent Review</span>
       <span class="review-tag">&#128241; Best for Families</span>
-      <span class="review-date">Updated 29 June 2026</span>
+      <span class="review-date">Updated <span id="dateTop"></span></span>
     </div>
     <h1 class="review-h1">Surfshark Review 2026 — Independent Test Results</h1>
     <p class="review-intro">Surfshark earns an 8.7/10 in our independent testing. Unlimited simultaneous devices, 710 Mbps average speeds on WireGuard, and a competitive $2.49/mo annual price make it our top pick for families and multi-device households in 2026. We tested every plan, ran 50+ speed tests, and audited its no-log claims — here is everything you need to know before you buy.</p>
@@ -268,7 +268,7 @@
 <!-- STREAMING -->
 <div class="review-section">
   <h2 class="review-h2">&#127916; Streaming &amp; Unblocking</h2>
-  <p class="review-p">Surfshark unblocked every streaming service we tested. We test from 5 country locations against each major platform — results are accurate as of June 2026.</p>
+  <p class="review-p">Surfshark unblocked every streaming service we tested. We test from 5 country locations against each major platform — results are accurate as of <span id="dateStream"></span>.</p>
   <div class="stat-row">
     <div class="stat-pill"><span class="stat-pill-val">&#10003;</span><span class="stat-pill-label">Netflix UK</span></div>
     <div class="stat-pill"><span class="stat-pill-val">&#10003;</span><span class="stat-pill-label">Netflix US</span></div>
@@ -282,8 +282,8 @@
 
 <!-- PRICING -->
 <div class="review-section">
-  <h2 class="review-h2">&#128176; Surfshark Pricing — June 2026</h2>
-  <p class="review-p">All plans include unlimited simultaneous devices and a 30-day money-back guarantee. Prices below are verified as of 29 June 2026.</p>
+  <h2 class="review-h2">&#128176; Surfshark Pricing — <span id="datePricing"></span></h2>
+  <p class="review-p">All plans include unlimited simultaneous devices and a 30-day money-back guarantee. Prices below are verified as of <span id="dateVerified"></span>.</p>
   <div class="pricing-grid">
     <div class="price-card">
       <p class="price-card-plan">Monthly</p>
@@ -308,7 +308,7 @@
   <div class="cta-strip">
     <div>
       <p class="cta-strip-text">&#128274; Get Surfshark from $2.49/mo — 30-day money-back guarantee</p>
-      <p class="cta-strip-sub">Prices verified 29 June 2026 &middot; Unlimited devices &middot; All plans include full feature set</p>
+      <p class="cta-strip-sub">Prices verified <span id="dateCta"></span> &middot; Unlimited devices &middot; All plans include full feature set</p>
     </div>
     <a href="https://get.surfshark.net/aff_c?offer_id=1249&aff_id=44853" target="_blank" rel="nofollow sponsored noopener" class="btn-primary" style="white-space:nowrap">Get Surfshark &rarr;</a>
   </div>
@@ -381,7 +381,7 @@
   </div>
   <div class="faq-item">
     <p class="faq-q">How much does Surfshark cost in 2026?</p>
-    <p class="faq-a">Surfshark costs $10.99/mo on a monthly plan, $2.49/mo billed annually, or $1.99/mo on a 2-year plan. All plans include unlimited simultaneous devices and a 30-day money-back guarantee. Prices verified 29 June 2026.</p>
+    <p class="faq-a">Surfshark costs $10.99/mo on a monthly plan, $2.49/mo billed annually, or $1.99/mo on a 2-year plan. All plans include unlimited simultaneous devices and a 30-day money-back guarantee. Prices verified <span id="dateFaq1"></span>.</p>
   </div>
   <div class="faq-item">
     <p class="faq-q">What is Surfshark One?</p>
@@ -397,7 +397,7 @@
   </div>
   <div class="faq-item">
     <p class="faq-q">Does Surfshark work with Netflix?</p>
-    <p class="faq-a">Yes. Surfshark successfully unblocked Netflix UK, Netflix US, BBC iPlayer, Disney+, Amazon Prime, and HBO Max in our June 2026 streaming tests. Results are accurate as of the date of this review but may change as streaming services update their VPN detection.</p>
+    <p class="faq-a">Yes. Surfshark successfully unblocked Netflix UK, Netflix US, BBC iPlayer, Disney+, Amazon Prime, and HBO Max in our <span id="dateFaq2"></span> streaming tests. Results are accurate as of the date of this review but may change as streaming services update their VPN detection.</p>
   </div>
 </div>
 
@@ -425,6 +425,19 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var t=new Date();
+  var full=t.getDate()+' '+m[t.getMonth()]+' '+t.getFullYear();
+  var monthYear=m[t.getMonth()]+' '+t.getFullYear();
+  var map={dateTop:full,dateStream:monthYear,datePricing:monthYear,dateVerified:full,dateCta:full,dateFaq1:full,dateFaq2:monthYear};
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.textContent=map[id];
+  });
+})();
+</script>
 <script src="/script.js"></script>
 </body>
 </html>
