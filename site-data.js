@@ -68,7 +68,7 @@ const SITE_DATA = {
     ipvanish:      { monthly: 10.99, annual: 3.99,  biennial: 3.99, origPrice: 10.99, buyPrice: '$3.99',  buyNote: 'per month · billed annually' },
     tunnelbear:    { monthly: 9.99,  annual: 3.33,  biennial: 1.67, origPrice: 9.99,  buyPrice: '$3.33',  buyNote: 'per month · billed annually' },
     hotspotshield: { monthly: 12.99, annual: 7.99,  biennial: 2.99, origPrice: 12.99, buyPrice: '$2.99',  buyNote: 'per month · billed every 3 years' },
-    hideme:        { monthly: 11.99, annual: 4.99,  biennial: 2.69, origPrice: 11.99, buyPrice: 'PENDING',  buyNote: 'PENDING -- awaiting tracked link from Andrei (eVenture)' },  // PENDING: real market pricing, not yet tested by us
+    hideme:        { monthly: 11.99, annual: 4.99,  biennial: 2.69, origPrice: 11.99, buyPrice: '$2.69',  buyNote: 'per month · billed every 26 months' },  // Tracked link live (21 Jul 2026); score/speed still PENDING our own testing
   },
 
   /* ──────────────────────────────────────────────
