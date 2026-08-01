@@ -54,7 +54,7 @@
     <a href="/vpn/" style="color:#4a8aaa;text-decoration:none">VPN</a> &rsaquo;
     <a href="/vpn/articles/" style="color:#4a8aaa;text-decoration:none">Articles</a> &rsaquo; Netflix UK
   </p>
-  <p class="hero-badge">Buying Guide &mdash; Updated 30 June 2026</p>
+  <p class="hero-badge">Buying Guide &mdash; Updated <span id="dBadge"></span></p>
   <h1>Best VPN for <span class="c">Netflix UK</span> in <span class="m">2026</span></h1>
   <p class="hero-sub">We tested NordVPN, Surfshark, and PureVPN specifically against the Netflix UK library. Here is what actually worked, real speed numbers, and current pricing.</p>
 </section>
@@ -139,6 +139,15 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var t=new Date();
+  var full=t.getDate()+' '+m[t.getMonth()]+' '+t.getFullYear();
+  var el=document.getElementById('dBadge');
+  if(el)el.textContent=full;
+})();
+</script>
 <script src="/script.js"></script>
 </body>
 </html>
