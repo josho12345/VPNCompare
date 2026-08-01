@@ -29,7 +29,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15
 
 /* NAV */
 nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-content:space-between;padding:6px 2rem;height:var(--nav-h);background:rgba(10,37,64,.96);backdrop-filter:blur(12px);border-bottom:3px solid #d4af37;box-shadow:0 2px 20px rgba(3,105,161,.3)}
-.logo{font-family:var(--display);font-size:1.5rem;font-weight:700;color:#38bdf8;letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:.4rem}
+.logo{font-family:var(--display);font-size:1.575rem;font-weight:700;color:#38bdf8;letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:.4rem}
 .logo span{color:#7dd3fc}
 .logo-shield{font-size:1.2rem}
 nav ul{list-style:none;display:flex;gap:1.4rem;align-items:center}
