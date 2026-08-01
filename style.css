@@ -23,7 +23,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.65;overflow-x:hidden;background-image:linear-gradient(rgba(3,105,161,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(3,105,161,.045) 1px,transparent 1px);background-size:44px 44px}
 
 /* ANNOUNCEMENT BAR */
-.announce-bar{background:var(--navy);color:#7dd3fc;text-align:center;padding:.35rem 1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:1px;position:relative;z-index:200}
+.announce-bar{background:var(--navy);color:#7dd3fc;text-align:center;padding:.15rem 1rem;font-family:var(--mono);font-size:.72rem;line-height:1.1;letter-spacing:1px;position:relative;z-index:200}
 .announce-bar a{color:#38bdf8;text-decoration:none;font-weight:600}
 .announce-bar a:hover{text-decoration:underline}
 
