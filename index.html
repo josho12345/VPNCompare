@@ -65,15 +65,25 @@
   .hub-cards{
     max-width:920px;
     margin:0 auto;
-    padding:36px 20px 0;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:26px;
+    padding:36px 20px 50px;
     background-image:
       linear-gradient(rgba(14,52,96,.92),rgba(14,52,96,.92)),
       repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 48px),
       repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 48px);
-    padding-bottom:50px;
+  }
+  .hub-cards-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hub-card{
+    width:100%;
+    max-width:420px;
+    margin:0 0 26px;
+  }
+  @media(min-width:700px){
+    .hub-cards-row{ display:flex; flex-wrap:wrap; gap:26px; }
+    .hub-card{ flex:1 1 280px; margin:0; }
   }
   .hub-card{
     background:rgba(255,255,255,.05);
@@ -190,6 +200,7 @@
 </section>
 
 <section class="hub-cards">
+  <div class="hub-cards-row">
 
   <div class="hub-card">
     <div class="hub-icon">
@@ -214,6 +225,7 @@
     <a href="/esim/" class="hub-btn">Compare eSIMs →</a>
   </div>
 
+  </div>
 </section>
 
 <section class="hub-trust">
