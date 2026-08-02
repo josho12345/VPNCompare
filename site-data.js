@@ -65,7 +65,7 @@ const SITE_DATA = {
     windscribe:    { monthly: 9.00,  annual: 5.75,  biennial: 4.08, origPrice: 9.00,  buyPrice: '$5.75',  buyNote: 'per month · billed annually' },
     hidemyass:     { monthly: 11.99, annual: 4.99,  biennial: 3.99, origPrice: 11.99, buyPrice: '$4.99',  buyNote: 'per month · billed annually' },
     // New additions
-    ipvanish:      { monthly: 10.99, annual: 3.99,  biennial: 3.99, origPrice: 10.99, buyPrice: '$3.99',  buyNote: 'per month · billed annually' },
+    ipvanish:      { monthly: 10.99, annual: 3.49,  biennial: 3.49, origPrice: 10.99, buyPrice: '$3.49',  buyNote: 'per month · billed annually' },
     tunnelbear:    { monthly: 9.99,  annual: 3.33,  biennial: 1.67, origPrice: 9.99,  buyPrice: '$3.33',  buyNote: 'per month · billed annually' },
     hotspotshield: { monthly: 12.99, annual: 7.99,  biennial: 2.99, origPrice: 12.99, buyPrice: '$2.99',  buyNote: 'per month · billed every 3 years' },
     hideme:        { monthly: 11.99, annual: 4.99,  biennial: 2.69, origPrice: 11.99, buyPrice: '$2.69',  buyNote: 'per month · billed every 26 months' },  // LIVE 31 Jul 2026
@@ -93,7 +93,7 @@ const SITE_DATA = {
     ipvanish:      8.2,
     tunnelbear:    7.9,
     hotspotshield: 8.0,
-    hideme:        7.7, // owner-assessed, 31 Jul 2026 -- reflects real 196 Mbps speed test vs faster live rivals
+    hideme:        7.7, // owner-assessed 31 Jul 2026 -- ORIGINAL RATIONALE NO LONGER APPLIES (was based on a 196 Mbps reading since retired). Pending owner review.
   },
 
   /* ──────────────────────────────────────────────
@@ -119,7 +119,7 @@ const SITE_DATA = {
     ipvanish:      550,
     tunnelbear:    450,
     hotspotshield: 720,
-    hideme:        196, // real speed test, owner, 31 Jul 2026
+    hideme:        536, // 10-run average, owner, 2 Aug 2026 -- high-variance session (340-700), see note below
   },
 
   /* ──────────────────────────────────────────────

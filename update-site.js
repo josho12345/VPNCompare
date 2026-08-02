@@ -93,27 +93,40 @@ console.log('\nUpdating VPN prices in script.js...');
 
 const P = SITE_DATA.prices;
 for (const [id, p] of Object.entries(P)) {
-  const before = script;
+  let step;
 
+  step = script;
   script = script.replace(
     new RegExp(`(id:'${id}'[^}]+?monthly:)([0-9.]+)(,\\s*annual:)([0-9.]+)(,\\s*biennial:)([0-9.]+)`),
-    `$1${p.monthly.toFixed(2)}$3${p.annual.toFixed(2)}$5${p.biennial.toFixed(2)}`
+    (m, a, b, c, d, e) => a + p.monthly.toFixed(2) + c + p.annual.toFixed(2) + e + p.biennial.toFixed(2)
   );
+  changeLog.push(script !== step
+    ? `  OK [script.js] ${id} monthly/annual/biennial`
+    : `  -- [script.js] ${id} monthly/annual/biennial (no change)`);
 
+  step = script;
   script = script.replace(
     new RegExp(`(id:'${id}'[^}]+?origPrice:)([0-9.]+)`),
-    `$1${p.origPrice.toFixed(2)}`
+    (m, a) => a + p.origPrice.toFixed(2)
   );
+  changeLog.push(script !== step
+    ? `  OK [script.js] ${id} origPrice`
+    : `  -- [script.js] ${id} origPrice (no change)`);
 
+  step = script;
   script = script.replace(
-    new RegExp(`(id:'${id}'[^}]+?buyPrice:')([^']+)(', buyNote:')([^']+)(')`),
-    `$1${p.buyPrice}$3${p.buyNote}$5`
+    new RegExp(`(id:'${id}'(?:(?!id:')[\\s\\S])*?buyPrice:')([^']+)(', buyNote:')([^']+)(')`),
+    (m, a, b, c, d, e) => a + p.buyPrice + c + p.buyNote + e
   );
-
-  changeLog.push(script !== before
-    ? `  OK [script.js] ${id} prices`
-    : `  -- [script.js] ${id} prices (no change)`);
+  if (script !== step) {
+    changeLog.push(`  OK [script.js] ${id} buyPrice/buyNote`);
+  } else if (!new RegExp(`id:'${id}'(?:(?!id:')[\\s\\S])*?buyPrice:'`).test(script)) {
+    changeLog.push(`  !! [script.js] ${id} buyPrice/buyNote FIELD MISSING from this vendor entry`);
+  } else {
+    changeLog.push(`  -- [script.js] ${id} buyPrice/buyNote (no change)`);
+  }
 }
+
 
 // ── 4. VPN SCORES - script.js ────────────────────────────────
 console.log('\nUpdating VPN scores in script.js...');
