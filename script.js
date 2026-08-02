@@ -123,7 +123,7 @@ const vpns = [
     buyPrice:'$2.99', buyNote:'per month · billed every 3 years' },
 
 
-  { id:'hideme', name:'hide.me', speed:536, speedLabel:'🔵 536 Mbps', servers:'2,600+', nolog:true, kill:true, devices:10, monthly:11.99, annual:4.99, biennial:2.69, score:7.7, tags:['personal','privacy'], tagLabel:'', tagClass:'', card:false, highlight:false, live:true, tagline:'', features:['Independently audited no-logs (Securitum, 2024)','Malaysia jurisdiction -- outside 5/9/14-eyes','Multihop double-server routing','Dynamic port forwarding','10 simultaneous devices','Free tier available (no card required)'], link:'https://hide.me/?friend=6a5f330047e0e', guarantee:'30-day money-back', origPrice:11.99, buyPrice:'$2.69', buyNote:'per month · billed every 26 months' },
+  { id:'hideme', name:'hide.me', speed:536, speedLabel:'🔵 536 Mbps', servers:'2,600+', nolog:true, kill:true, devices:10, monthly:11.99, annual:4.99, biennial:2.69, score:8.0, tags:['personal','privacy'], tagLabel:'', tagClass:'', card:false, highlight:false, live:true, tagline:'', features:['Independently audited no-logs (Securitum, 2024)','Malaysia jurisdiction -- outside 5/9/14-eyes','Multihop double-server routing','Dynamic port forwarding','10 simultaneous devices','Free tier available (no card required)'], link:'https://hide.me/?friend=6a5f330047e0e', guarantee:'30-day money-back', origPrice:11.99, buyPrice:'$2.69', buyNote:'per month · billed every 26 months' },
 ];
 
 /* ══════════════════════════════════════════════

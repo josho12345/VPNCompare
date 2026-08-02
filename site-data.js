@@ -93,7 +93,7 @@ const SITE_DATA = {
     ipvanish:      8.2,
     tunnelbear:    7.9,
     hotspotshield: 8.0,
-    hideme:        7.7, // owner-assessed 31 Jul 2026 -- ORIGINAL RATIONALE NO LONGER APPLIES (was based on a 196 Mbps reading since retired). Pending owner review.
+    hideme:        8.0, // owner-assessed 2 Aug 2026 -- re-scored after speed re-test (536 Mbps 10-run avg, replacing a retired 196 Mbps reading). Ranks above TunnelBear (7.9) on measured speed 536 vs 450 plus independent no-logs audit and non-14-eyes jurisdiction.
   },
 
   /* ──────────────────────────────────────────────
