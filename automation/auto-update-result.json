@@ -1,19 +1,12 @@
 {
   "autoUpdated": [],
-  "needsReview": [
+  "needsReview": [],
+  "skipped": [
     {
-      "id": "cyberghost",
-      "name": "CyberGhost",
-      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
-      "currentStored": 2.03
-    },
-    {
-      "id": "pia",
-      "name": "Private Internet Access",
-      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
-      "currentStored": 2.03
+      "id": "express",
+      "name": "ExpressVPN",
+      "reason": "Target price $3 unchanged -- other tokens on page changed (promo/layout)"
     }
   ],
-  "skipped": [],
   "autoUpdateEnabled": true
 }
