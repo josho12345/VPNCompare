@@ -22,10 +22,15 @@ jobs:
       - name: Run update-site.js
         run: node update-site.js
 
-      - name: Commit updated script.js
+      # update-site.js writes THREE files: script.js, vpn/index.html and nav.js.
+      # Staging only script.js silently discarded the other two.
+      - name: Verify patched JavaScript still parses
+        run: node --check script.js
+
+      - name: Commit updated site files
         run: |
           git config user.name "VPN Compare Bot"
           git config user.email "bot@bestvpncompareonline.com"
-          git add script.js
-          git diff --staged --quiet || git commit -m "Update script.js from site-data.js: $(date '+%d %B %Y')"
+          git add script.js vpn/index.html nav.js
+          git diff --staged --quiet || git commit -m "Update site from site-data.js: $(date '+%d %B %Y')"
           git push
