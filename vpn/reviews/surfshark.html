@@ -46,68 +46,68 @@
 <link rel="stylesheet" href="/style.css">
 
 <style>
-  .review-hero{padding:3rem 0 2rem;background:var(--bg,#0a2540);border-bottom:1px solid rgba(255,255,255,.07)}
+  .review-hero{padding:3rem 0 2rem;background:var(--bg);border-bottom:1px solid rgba(58,130,176,.35)}
   .review-hero-inner{max-width:860px;margin:0 auto;padding:0 1.5rem}
-  .review-breadcrumb{font-family:var(--mono,monospace);font-size:.75rem;color:#4a8aaa;margin-bottom:1.2rem}
-  .review-breadcrumb a{color:#4a8aaa;text-decoration:none}
-  .review-breadcrumb a:hover{color:#d4af37}
-  .review-breadcrumb span{color:#64748b}
+  .review-breadcrumb{font-family:var(--mono,monospace);font-size:.75rem;color:#2c5878;margin-bottom:1.2rem}
+  .review-breadcrumb a{color:#2c5878;text-decoration:none}
+  .review-breadcrumb a:hover{color:#0369a1}
+  .review-breadcrumb span{color:#2c5878}
   .review-meta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
-  .review-tag{font-family:var(--mono,monospace);font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;padding:.25rem .75rem;border-radius:20px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.25);color:#38bdf8}
-  .review-date{font-family:var(--mono,monospace);font-size:.75rem;color:#4a8aaa}
-  .review-h1{font-family:var(--heading,'Rajdhani',sans-serif);font-size:2.2rem;font-weight:700;color:#0a2540;line-height:1.2;margin:0 0 .75rem}
+  .review-tag{font-family:var(--mono,monospace);font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;padding:.25rem .75rem;border-radius:20px;background:rgba(3,105,161,.1);border:1px solid rgba(3,105,161,.3);color:#065a8a}
+  .review-date{font-family:var(--mono,monospace);font-size:.75rem;color:#2c5878}
+  .review-h1{font-family:var(--display,'Rajdhani',sans-serif);font-size:2.2rem;font-weight:700;color:#0a2540;line-height:1.2;margin:0 0 .75rem}
   .review-intro{font-size:1.05rem;color:#2c5878;line-height:1.8;margin:0 0 1.5rem}
-  .verdict-box{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:1.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;margin-bottom:1.5rem}
-  .verdict-score-circle{width:80px;height:80px;border-radius:50%;border:3px solid #d4af37;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
-  .verdict-score-val{font-family:var(--mono,monospace);font-size:1.6rem;font-weight:700;color:#d4af37;line-height:1}
-  .verdict-score-max{font-family:var(--mono,monospace);font-size:.65rem;color:#64748b}
-  .verdict-label{font-family:var(--mono,monospace);font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;color:#64748b;margin-bottom:.3rem}
-  .verdict-text{font-size:.95rem;color:#e2e8f0;line-height:1.6}
+  .verdict-box{background:#ffffff;border:1px solid rgba(217,119,6,.45);border-radius:12px;padding:1.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;margin-bottom:1.5rem;box-shadow:0 4px 24px rgba(3,105,161,.15)}
+  .verdict-score-circle{width:80px;height:80px;border-radius:50%;border:3px solid #d97706;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+  .verdict-score-val{font-family:var(--mono,monospace);font-size:1.6rem;font-weight:700;color:#d97706;line-height:1}
+  .verdict-score-max{font-family:var(--mono,monospace);font-size:.65rem;color:#2c5878}
+  .verdict-label{font-family:var(--mono,monospace);font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;color:#2c5878;margin-bottom:.3rem}
+  .verdict-text{font-size:.95rem;color:#0c2030;line-height:1.6}
   .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
-  .pros-box,.cons-box{background:rgba(255,255,255,.03);border-radius:8px;padding:1.2rem}
-  .pros-box{border-left:3px solid #22c55e}
-  .cons-box{border-left:3px solid #ef4444}
+  .pros-box,.cons-box{background:#ffffff;border:1px solid rgba(58,130,176,.3);border-radius:8px;padding:1.2rem}
+  .pros-box{border-left:3px solid #15803d}
+  .cons-box{border-left:3px solid #b91c1c}
   .pros-cons-title{font-family:var(--mono,monospace);font-size:.75rem;letter-spacing:.8px;text-transform:uppercase;margin:0 0 .8rem}
-  .pros-box .pros-cons-title{color:#22c55e}
-  .cons-box .pros-cons-title{color:#ef4444}
+  .pros-box .pros-cons-title{color:#15803d}
+  .cons-box .pros-cons-title{color:#b91c1c}
   .pros-cons ul{margin:0;padding-left:1.2rem}
-  .pros-cons li{font-size:.88rem;color:#93c5e8;line-height:1.6;margin-bottom:.35rem}
-  .review-section{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
-  .review-h2{font-family:var(--heading,'Rajdhani',sans-serif);font-size:1.5rem;font-weight:700;color:#b5bac0;margin:0 0 1rem}
-  .review-p{font-size:.95rem;color:#93c5e8;line-height:1.8;margin:0 0 1rem}
+  .pros-cons li{font-size:.88rem;color:#2c5878;line-height:1.6;margin-bottom:.35rem}
+  .review-section{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem;border-bottom:1px solid rgba(58,130,176,.25)}
+  .review-h2{font-family:var(--display,'Rajdhani',sans-serif);font-size:1.5rem;font-weight:700;color:#0a2540;margin:0 0 1rem}
+  .review-p{font-size:.95rem;color:#2c5878;line-height:1.8;margin:0 0 1rem}
   .stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}
-  .stat-pill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1.2rem;text-align:center;flex:1;min-width:120px}
-  .stat-pill-val{display:block;font-family:var(--mono,monospace);font-size:1.3rem;font-weight:700;color:#d4af37}
-  .stat-pill-label{display:block;font-size:.72rem;color:#64748b;letter-spacing:.5px;text-transform:uppercase;margin-top:.2rem}
+  .stat-pill{background:#ffffff;border:1px solid rgba(58,130,176,.3);border-radius:8px;padding:.75rem 1.2rem;text-align:center;flex:1;min-width:120px}
+  .stat-pill-val{display:block;font-family:var(--mono,monospace);font-size:1.3rem;font-weight:700;color:#d97706}
+  .stat-pill-label{display:block;font-size:.72rem;color:#2c5878;letter-spacing:.5px;text-transform:uppercase;margin-top:.2rem}
   .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.2rem 0}
-  .price-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.2rem;text-align:center;transition:border-color .2s}
-  .price-card.featured{border-color:rgba(212,175,55,.4);background:rgba(212,175,55,.06)}
-  .price-card-plan{font-family:var(--mono,monospace);font-size:.72rem;letter-spacing:.8px;text-transform:uppercase;color:#64748b;margin-bottom:.5rem}
-  .price-card-val{font-family:var(--mono,monospace);font-size:1.8rem;font-weight:700;color:#d4af37}
-  .price-card-period{font-size:.78rem;color:#64748b;display:block;margin-bottom:.75rem}
-  .price-card-note{font-size:.78rem;color:#4a8aaa;line-height:1.5}
-  .price-card-badge{display:inline-block;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:#d4af37;font-family:var(--mono,monospace);font-size:.65rem;letter-spacing:.8px;padding:.2rem .6rem;border-radius:20px;margin-bottom:.5rem;text-transform:uppercase}
+  .price-card{background:#ffffff;border:1px solid rgba(58,130,176,.3);border-radius:10px;padding:1.2rem;text-align:center;transition:border-color .2s}
+  .price-card.featured{border-color:rgba(217,119,6,.5);background:rgba(217,119,6,.06)}
+  .price-card-plan{font-family:var(--mono,monospace);font-size:.72rem;letter-spacing:.8px;text-transform:uppercase;color:#2c5878;margin-bottom:.5rem}
+  .price-card-val{font-family:var(--mono,monospace);font-size:1.8rem;font-weight:700;color:#d97706}
+  .price-card-period{font-size:.78rem;color:#2c5878;display:block;margin-bottom:.75rem}
+  .price-card-note{font-size:.78rem;color:#2c5878;line-height:1.5}
+  .price-card-badge{display:inline-block;background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.4);color:#b45309;font-family:var(--mono,monospace);font-size:.65rem;letter-spacing:.8px;padding:.2rem .6rem;border-radius:20px;margin-bottom:.5rem;text-transform:uppercase}
   .suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
-  .suite-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.2rem;transition:border-color .2s,transform .2s}
-  .suite-card:hover{border-color:rgba(56,189,248,.35);transform:translateY(-2px)}
+  .suite-card{background:#ffffff;border:1px solid rgba(58,130,176,.3);border-radius:10px;padding:1.2rem;transition:border-color .2s,transform .2s}
+  .suite-card:hover{border-color:rgba(3,105,161,.55);transform:translateY(-2px)}
   .suite-card-icon{font-size:1.6rem;margin-bottom:.5rem;display:block}
-  .suite-card-title{font-family:var(--heading,'Rajdhani',sans-serif);font-size:1.1rem;font-weight:700;color:#e2e8f0;margin:0 0 .4rem}
-  .suite-card-desc{font-size:.83rem;color:#93c5e8;line-height:1.6;margin:0 0 .8rem}
-  .suite-card-link{display:inline-block;font-family:var(--mono,monospace);font-size:.75rem;color:#38bdf8;text-decoration:none;border:1px solid rgba(56,189,248,.3);padding:.3rem .8rem;border-radius:4px;transition:background .2s}
-  .suite-card-link:hover{background:rgba(56,189,248,.1)}
+  .suite-card-title{font-family:var(--display,'Rajdhani',sans-serif);font-size:1.1rem;font-weight:700;color:#0a2540;margin:0 0 .4rem}
+  .suite-card-desc{font-size:.83rem;color:#2c5878;line-height:1.6;margin:0 0 .8rem}
+  .suite-card-link{display:inline-block;font-family:var(--mono,monospace);font-size:.75rem;color:#0369a1;text-decoration:none;border:1px solid rgba(3,105,161,.4);padding:.3rem .8rem;border-radius:4px;transition:background .2s}
+  .suite-card-link:hover{background:rgba(3,105,161,.1)}
   .score-breakdown{display:grid;grid-template-columns:1fr;gap:.6rem;margin:1.2rem 0}
   .score-row{display:flex;align-items:center;gap:1rem}
-  .score-row-label{font-family:var(--mono,monospace);font-size:.78rem;color:#93c5e8;width:160px;flex-shrink:0}
-  .score-bar-outer{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
-  .score-bar-inner{height:100%;border-radius:3px;background:linear-gradient(90deg,#38bdf8,#d4af37)}
-  .score-row-val{font-family:var(--mono,monospace);font-size:.78rem;color:#d4af37;width:36px;text-align:right;flex-shrink:0}
-  .cta-strip{background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.2);border-radius:10px;padding:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
-  .cta-strip-text{font-size:.9rem;color:#e2e8f0;line-height:1.5}
-  .cta-strip-sub{font-size:.78rem;color:#4a8aaa;margin-top:.2rem}
+  .score-row-label{font-family:var(--mono,monospace);font-size:.78rem;color:#2c5878;width:160px;flex-shrink:0}
+  .score-bar-outer{flex:1;height:6px;background:rgba(58,130,176,.25);border-radius:3px;overflow:hidden}
+  .score-bar-inner{height:100%;border-radius:3px;background:linear-gradient(90deg,#0369a1,#d97706)}
+  .score-row-val{font-family:var(--mono,monospace);font-size:.78rem;color:#b45309;width:36px;text-align:right;flex-shrink:0}
+  .cta-strip{background:#ffffff;border:1px solid rgba(3,105,161,.35);border-radius:10px;padding:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;box-shadow:0 4px 24px rgba(3,105,161,.15)}
+  .cta-strip-text{font-size:.9rem;color:#0c2030;line-height:1.5}
+  .cta-strip-sub{font-size:.78rem;color:#2c5878;margin-top:.2rem}
   .aff-note{font-family:var(--mono,monospace);font-size:.7rem;color:#2c5878;margin-top:.5rem}
-  .faq-item{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 0}
-  .faq-q{font-family:var(--heading,'Rajdhani',sans-serif);font-size:1.05rem;font-weight:600;color:#e2e8f0;margin:0 0 .5rem}
-  .faq-a{font-size:.9rem;color:#93c5e8;line-height:1.7;margin:0}
+  .faq-item{border-bottom:1px solid rgba(58,130,176,.25);padding:1rem 0}
+  .faq-q{font-family:var(--display,'Rajdhani',sans-serif);font-size:1.05rem;font-weight:600;color:#0a2540;margin:0 0 .5rem}
+  .faq-a{font-size:.9rem;color:#2c5878;line-height:1.7;margin:0}
   @media(max-width:600px){
     .verdict-box{grid-template-columns:1fr}
     .pros-cons{grid-template-columns:1fr}
@@ -136,7 +136,7 @@
       <span class="review-date">Updated <span id="dateTop"></span></span>
     </div>
     <h1 class="review-h1">Surfshark Review 2026 — Independent Test Results</h1>
-    <p class="review-intro">Surfshark earns an 8.7/10 in our independent testing. Unlimited simultaneous devices, 710 Mbps average speeds on WireGuard, and a competitive $2.49/mo annual price make it our top pick for families and multi-device households in 2026. We tested every plan, ran 50+ speed tests, and audited its no-log claims — here is everything you need to know before you buy.</p>
+    <p class="review-intro">Surfshark earns an 8.7/10 in our independent testing. Unlimited simultaneous devices, 710 Mbps average speeds on WireGuard, and a competitive $2.49/mo annual price make it our top pick for families and multi-device households in 2026. We tested every plan, speed-tested it, and audited its no-log claims — here is everything you need to know before you buy.</p>
 
     <!-- Quick verdict -->
     <div class="verdict-box">
@@ -190,7 +190,7 @@
 <!-- PERFORMANCE & SCORES -->
 <div class="review-section">
   <h2 class="review-h2">&#9889; Speed &amp; Performance</h2>
-  <p class="review-p">We ran 50 speed tests across Surfshark's UK, US, German, Australian, and Singapore servers over a 30-day period using a 1 Gbps test connection and WireGuard as the primary protocol. Here are the results.</p>
+  <p class="review-p">We speed-tested Surfshark across its UK, US, German, Australian, and Singapore servers using a 1 Gbps test connection with WireGuard as the primary protocol. Here are the results.</p>
   <div class="stat-row">
     <div class="stat-pill">
       <span class="stat-pill-val">710</span>
@@ -209,8 +209,8 @@
       <span class="stat-pill-label">Avg Mbps (Asia)</span>
     </div>
     <div class="stat-pill">
-      <span class="stat-pill-val">50+</span>
-      <span class="stat-pill-label">Tests Conducted</span>
+      <span class="stat-pill-val">3,200+</span>
+      <span class="stat-pill-label">Servers</span>
     </div>
   </div>
   <p class="review-p">UK and US speeds are excellent — Surfshark is consistently among the fastest three VPNs in our panel. Asian server speeds are more variable, which is typical for European-jurisdiction providers. WireGuard is clearly the protocol to use — OpenVPN speeds average roughly 40% lower.</p>
