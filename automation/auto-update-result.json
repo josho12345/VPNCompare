@@ -3,6 +3,11 @@
   "needsReview": [],
   "skipped": [
     {
+      "id": "purevpn",
+      "name": "PureVPN",
+      "reason": "Target price $2.15 unchanged -- other tokens on page changed (promo/layout)"
+    },
+    {
       "id": "express",
       "name": "ExpressVPN",
       "reason": "Target price $3 unchanged -- other tokens on page changed (promo/layout)"
