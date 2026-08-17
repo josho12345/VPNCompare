@@ -1,17 +1,15 @@
 {
   "autoUpdated": [],
-  "needsReview": [],
-  "skipped": [
+  "needsReview": [
     {
-      "id": "purevpn",
-      "name": "PureVPN",
-      "reason": "Target price $2.15 unchanged -- other tokens on page changed (promo/layout)"
-    },
-    {
-      "id": "express",
-      "name": "ExpressVPN",
-      "reason": "Target price $3 unchanged -- other tokens on page changed (promo/layout)"
+      "id": "surfshark",
+      "name": "Surfshark",
+      "reason": "Change of 50% exceeds 40% safety threshold -- manual verification required",
+      "currentStored": 1.99,
+      "detectedPrice": 1,
+      "field": "biennial"
     }
   ],
+  "skipped": [],
   "autoUpdateEnabled": true
 }
