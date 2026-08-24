@@ -1,15 +1,6 @@
 {
   "autoUpdated": [],
-  "needsReview": [
-    {
-      "id": "surfshark",
-      "name": "Surfshark",
-      "reason": "Change of 50% exceeds 40% safety threshold -- manual verification required",
-      "currentStored": 1.99,
-      "detectedPrice": 1,
-      "field": "biennial"
-    }
-  ],
+  "needsReview": [],
   "skipped": [],
   "autoUpdateEnabled": true
 }
