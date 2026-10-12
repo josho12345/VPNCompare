@@ -1,6 +1,24 @@
 {
-  "autoUpdated": [],
-  "needsReview": [],
+  "autoUpdated": [
+    {
+      "id": "proton",
+      "name": "Proton VPN",
+      "field": "biennial",
+      "oldPrice": 3.99,
+      "newPrice": 3.49,
+      "currency": "$"
+    }
+  ],
+  "needsReview": [
+    {
+      "id": "surfshark",
+      "name": "Surfshark",
+      "reason": "Change of 50% exceeds 40% safety threshold -- manual verification required",
+      "currentStored": 1.99,
+      "detectedPrice": 1,
+      "field": "biennial"
+    }
+  ],
   "skipped": [],
   "autoUpdateEnabled": true
 }
