@@ -1,14 +1,5 @@
 {
-  "autoUpdated": [
-    {
-      "id": "proton",
-      "name": "Proton VPN",
-      "field": "biennial",
-      "oldPrice": 3.99,
-      "newPrice": 3.49,
-      "currency": "$"
-    }
-  ],
+  "autoUpdated": [],
   "needsReview": [
     {
       "id": "surfshark",
