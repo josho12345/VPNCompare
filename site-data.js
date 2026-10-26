@@ -52,7 +52,7 @@ const SITE_DATA = {
   ────────────────────────────────────────────── */
   prices: {
     nordvpn:       { monthly: 11.99, annual: 3.49,  biennial: 2.99, origPrice: 11.99, buyPrice: '$3.49',  buyNote: 'per month · billed $83.76 every 2 years'},
-    purevpn:       { monthly: 10.95, annual: 3.74,  biennial: 2.15, origPrice: 10.95, buyPrice: '$2.15',  buyNote: 'per month · billed every 2 years' },
+    purevpn:       { monthly: 10.95, annual: 3.74,  biennial: 1.69, origPrice: 10.95, buyPrice: '$2.15',  buyNote: 'per month · billed every 2 years' },
     express:       { monthly: 12.95, annual: 6.67,  biennial: 3.00, origPrice: 12.95, buyPrice: '$6.67',  buyNote: 'per month · billed $80.04 per year' },
     cyberghost:    { monthly: 12.99, annual: 2.19,  biennial: 2.03, origPrice: 12.99, buyPrice: '$2.03',  buyNote: 'per month · billed every 2 years' },
     proton:        { monthly: 9.99,  annual: 4.99,  biennial: 3.49, origPrice: 9.99,  buyPrice: '$4.99',  buyNote: 'per month · billed $59.88 per year' },

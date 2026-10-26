@@ -1,5 +1,14 @@
 {
-  "autoUpdated": [],
+  "autoUpdated": [
+    {
+      "id": "purevpn",
+      "name": "PureVPN",
+      "field": "biennial",
+      "oldPrice": 2.15,
+      "newPrice": 1.69,
+      "currency": "$"
+    }
+  ],
   "needsReview": [
     {
       "id": "surfshark",
