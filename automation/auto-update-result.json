@@ -1,6 +1,44 @@
 {
-  "autoUpdated": [],
-  "needsReview": [],
+  "autoUpdated": [
+    {
+      "id": "purevpn",
+      "name": "PureVPN",
+      "field": "biennial",
+      "oldPrice": 1.69,
+      "newPrice": 1.49,
+      "currency": "$"
+    },
+    {
+      "id": "proton",
+      "name": "Proton VPN",
+      "field": "biennial",
+      "oldPrice": 3.49,
+      "newPrice": 2.99,
+      "currency": "$"
+    },
+    {
+      "id": "nordlayer",
+      "name": "NordLayer",
+      "field": "annual",
+      "oldPrice": 7,
+      "newPrice": 8,
+      "currency": "$"
+    }
+  ],
+  "needsReview": [
+    {
+      "id": "cyberghost",
+      "name": "CyberGhost",
+      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
+      "currentStored": 2.03
+    },
+    {
+      "id": "pia",
+      "name": "Private Internet Access",
+      "reason": "No price token found in $0.99-$6 range. Page may be JS-rendered, geo-locked, or behind a consent wall.",
+      "currentStored": 2.03
+    }
+  ],
   "skipped": [
     {
       "id": "express",
