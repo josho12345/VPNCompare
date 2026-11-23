@@ -1,30 +1,5 @@
 {
-  "autoUpdated": [
-    {
-      "id": "purevpn",
-      "name": "PureVPN",
-      "field": "biennial",
-      "oldPrice": 1.69,
-      "newPrice": 1.49,
-      "currency": "$"
-    },
-    {
-      "id": "proton",
-      "name": "Proton VPN",
-      "field": "biennial",
-      "oldPrice": 3.49,
-      "newPrice": 2.99,
-      "currency": "$"
-    },
-    {
-      "id": "nordlayer",
-      "name": "NordLayer",
-      "field": "annual",
-      "oldPrice": 7,
-      "newPrice": 8,
-      "currency": "$"
-    }
-  ],
+  "autoUpdated": [],
   "needsReview": [
     {
       "id": "cyberghost",
@@ -44,6 +19,11 @@
       "id": "express",
       "name": "ExpressVPN",
       "reason": "Target price $3 unchanged -- other tokens on page changed (promo/layout)"
+    },
+    {
+      "id": "proton",
+      "name": "Proton VPN",
+      "reason": "Target price $2.99 unchanged -- other tokens on page changed (promo/layout)"
     }
   ],
   "autoUpdateEnabled": true
